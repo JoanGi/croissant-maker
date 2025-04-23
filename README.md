@@ -19,7 +19,7 @@ It is highly recommended to use a virtual environment to manage dependencies.
     # Create a venv
     python3 -m venv .venv
 
-    # Activate the venv 
+    # Activate the venv
     source .venv/bin/activate
     ```
 
@@ -37,3 +37,14 @@ Check the command-line help:
 
 ```bash
 python -m croissant_maker --help
+```
+
+## Pre-Commit Hooks & Code Quality
+
+This project uses `pre-commit` with [Ruff](https://docs.astral.sh/ruff/) to automatically lint and format Python code, ensuring PEP 8 compliance and consistency before commits are made. Basic configuration file checks are also included.
+
+**Setup (run once after cloning and installing dev dependencies):**
+```bash
+# (Ensure dev dependencies are installed: pip install -e '.[dev]')
+pre-commit install
+```

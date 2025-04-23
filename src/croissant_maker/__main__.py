@@ -4,8 +4,9 @@ import typer
 app = typer.Typer(
     name="croissant-maker",
     help="A tool to automatically generate Croissant metadata for datasets.",
-    add_completion=False # Simple version for now
+    add_completion=False,  # Simple version for now
 )
+
 
 @app.command()
 def main():
@@ -15,6 +16,7 @@ def main():
     """
     typer.echo("Croissant Maker - Tool starting point (currently does nothing).")
     # Future logic for parsing arguments and calling core functions will go here
+
 
 # This standard Python construct allows the script to be run directly
 # using `python -m croissant_maker` and executes the Typer app.
