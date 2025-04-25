@@ -21,7 +21,7 @@ authors = [
 
 # Core runtime dependencies needed for the tool to function.
 dependencies = [
-    "typer[all] >= 0.9.0",
+    "typer >= 0.9.0",
 ]
 
 # Optional dependencies, installed via `pip install '.[test]'`
@@ -30,4 +30,9 @@ dependencies = [
 test = [
     # Test runner framework.
     "pytest >= 7.0",
+]
+# Optional dependencies for development and testing.
+dev = [
+    "ruff >= 0.1.0",
+    "pre-commit >= 3.0.0"
 ]

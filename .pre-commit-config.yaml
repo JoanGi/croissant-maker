@@ -1,0 +1,26 @@
+repos:
+# Basic file checks
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+    # Ensures files end with a single newline & no trailing newline
+    -   id: end-of-file-fixer
+
+    # Removes trailing whitespace
+    -   id: trailing-whitespace
+
+    # Checks TOML files (like pyproject.toml) for basic syntax errors
+    -   id: check-toml
+
+    # Checks YAML files (like this one) for basic syntax errors
+    -   id: check-yaml
+
+# Ruff for Python linting and formatting
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.11.6
+    hooks:
+    # Run the linter, auto-fixing where possible
+    -   id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
+    # Run the formatter
+    -   id: ruff-format
