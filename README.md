@@ -29,15 +29,31 @@ It is highly recommended to use a virtual environment to manage dependencies.
     ```
     This installs the package in editable mode along with testing requirements *inside* your virtual environment.
 
-## Basic Usage (Placeholder)
+## Usage
 
-Make sure your virtual environment is activated (`source .venv/bin/activate`).
-
-Check the command-line help:
+After installation, you can use the `croissant-maker` CLI:
 
 ```bash
-python -m croissant_maker --help
+croissant-maker --help
 ```
+
+### Generate Croissant Metadata
+
+```bash
+croissant-maker --input /path/to/dataset --output my-metadata.jsonld
+```
+- `--input` (`-i`): Path to the dataset directory
+- `--output` (`-o`): Output file for the Croissant metadata (default: <dataset-name>-croissant.jsonld)
+- Validation is performed by default
+
+### Validate a Croissant Metadata File
+
+Validation checks that the file can be loaded by `mlcroissant` and conforms to the basic structure of the specification.
+
+```bash
+croissant-maker validate my-metadata.jsonld
+```
+
 
 ## Pre-Commit Hooks & Code Quality
 
