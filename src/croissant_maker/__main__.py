@@ -4,6 +4,7 @@ import typer
 from pathlib import Path
 import importlib.metadata
 from rich.progress import Progress, SpinnerColumn, TextColumn
+from typing import Optional, List
 
 from croissant_maker.metadata_generator import MetadataGenerator
 
@@ -41,6 +42,34 @@ def main(
         True, "--validate/--no-validate", help="Validate metadata before saving"
     ),
     version: bool = typer.Option(False, "--version", help="Show version and exit"),
+    # Metadata override options
+    name: Optional[str] = typer.Option(
+        None, "--name", help="Dataset name (defaults to directory name)"
+    ),
+    description: Optional[str] = typer.Option(
+        None, "--description", help="Dataset description"
+    ),
+    url: Optional[str] = typer.Option(
+        None, "--url", help="Dataset URL (e.g., https://example.com/dataset)"
+    ),
+    license: Optional[str] = typer.Option(
+        None, "--license", help="License URL or SPDX identifier (e.g., CC-BY-4.0)"
+    ),
+    citation: Optional[str] = typer.Option(
+        None, "--citation", help="Citation text (preferably BibTeX format)"
+    ),
+    dataset_version: Optional[str] = typer.Option(
+        None, "--dataset-version", help="Dataset version (e.g., 1.0.0)"
+    ),
+    # Creator information following mlcroissant specification
+    # Spec: creator is REQUIRED with cardinality MANY (supports multiple creators)
+    # ExpectedType: Organization OR Person with flexible properties (name, email, url)
+    # Examples: --creator "John Doe" --creator "Jane Smith,jane@example.com,https://jane.com"
+    creator: Optional[List[str]] = typer.Option(
+        None,
+        "--creator",
+        help="Creator information. Format: 'Name[,Email[,URL]]'. Use multiple times for multiple creators. Examples: --creator 'John Doe' --creator 'Jane Smith,jane@example.com,https://jane.com'",
+    ),
 ) -> None:
     """🥐 **Croissant Maker** - Generate rich metadata for your datasets"""
 
@@ -69,9 +98,42 @@ def main(
             SpinnerColumn(),
             TextColumn("[progress.description]{task.description}"),
         ) as progress:
-            # Initialize generator
+            # Initialize generator with metadata overrides
             metadata_progress = progress.add_task("🔍 Analyzing dataset...", total=None)
-            generator = MetadataGenerator(input)
+
+            # Parse creators following mlcroissant specification
+            # Allows flexible Person/Organization objects with optional properties
+            parsed_creators = []
+            if creator:
+                for creator_info in creator:
+                    # Parse format: "Name[,Email[,URL]]"
+                    parts = [part.strip() for part in creator_info.split(",")]
+
+                    if not parts[0]:  # Empty name
+                        continue
+
+                    creator_obj = {"name": parts[0]}  # Name is required
+
+                    # Add optional email if provided and not empty
+                    if len(parts) > 1 and parts[1]:
+                        creator_obj["email"] = parts[1]
+
+                    # Add optional URL if provided and not empty
+                    if len(parts) > 2 and parts[2]:
+                        creator_obj["url"] = parts[2]
+
+                    parsed_creators.append(creator_obj)
+
+            generator = MetadataGenerator(
+                dataset_path=input,
+                name=name,
+                description=description,
+                url=url,
+                license=license,
+                citation=citation,
+                version=dataset_version,
+                creators=parsed_creators if parsed_creators else None,
+            )
 
             # Generate metadata
             progress.update(metadata_progress, description="⚡ Generating metadata...")

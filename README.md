@@ -1,8 +1,8 @@
-# Croissant Maker
+# 🥐 Croissant Maker
 
 A tool to automatically generate [Croissant](https://mlcommons.org/en/news/croissant-format-for-ml-datasets/) metadata for datasets, starting with those hosted on [PhysioNet](https://physionet.org/).
 
-*Status: Alpha - Initial Setup*
+*Status: Alpha - Development*
 
 ## Installation (Development)
 
@@ -42,9 +42,33 @@ croissant-maker --help
 ```bash
 croissant-maker --input /path/to/dataset --output my-metadata.jsonld
 ```
-- `--input` (`-i`): Path to the dataset directory
-- `--output` (`-o`): Output file for the Croissant metadata (default: <dataset-name>-croissant.jsonld)
-- Validation is performed by default
+
+### Metadata Override Options
+
+You can override default metadata fields:
+
+```bash
+croissant-maker --input /path/to/dataset \
+  --name "My Dataset" \
+  --description "A machine learning dataset" \
+  --creator "John Doe,john@example.com,https://john.com" \
+  --creator "Jane Smith,jane@example.com" \
+  --license "MIT" \
+  --citation "Doe et al. (2024). My Dataset."
+```
+
+| Flag | Description | Example |
+|------|-------------|---------|
+| `--input, -i` | Dataset directory | `--input /data/my-dataset` |
+| `--output, -o` | Output file | `--output metadata.jsonld` |
+| `--name` | Dataset name | `--name "MIMIC-IV Demo"` |
+| `--description` | Dataset description | `--description "Medical records"` |
+| `--creator` | Creator info (repeat for multiple) | `--creator "Name,email,url"` |
+| `--license` | License (SPDX ID or URL) | `--license "MIT"` |
+| `--citation` | Citation text | `--citation "Author (2024)..."` |
+| `--url` | Dataset homepage | `--url "https://example.com"` |
+| `--dataset-version` | Version | `--dataset-version "1.0.0"` |
+| `--no-validate` | Skip validation | `--no-validate` |
 
 ### Validate a Croissant Metadata File
 
@@ -54,6 +78,15 @@ Validation checks that the file can be loaded by `mlcroissant` and conforms to t
 croissant-maker validate my-metadata.jsonld
 ```
 
+## Testing
+
+```bash
+# Run all tests
+pytest -v
+
+# Run specific test
+pytest tests/test_cli.py::test_creator_formats -v
+```
 
 ## Pre-Commit Hooks & Code Quality
 
@@ -64,3 +97,7 @@ This project uses `pre-commit` with [Ruff](https://docs.astral.sh/ruff/) to auto
 # (Ensure dev dependencies are installed: pip install -e '.[dev]')
 pre-commit install
 ```
+
+## License
+
+MIT License - see [LICENSE](LICENSE) file.

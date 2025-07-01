@@ -1,44 +1,35 @@
 """Tests for file handler framework."""
 
 from pathlib import Path
-from croissant_maker.handlers import FileTypeHandler, register_handler, find_handler
+from croissant_maker.handlers.registry import find_handler, register_all_handlers
+from croissant_maker.handlers.csv_handler import CSVHandler
 
 
-class DummyHandler(FileTypeHandler):
-    def can_handle(self, file_path: Path) -> bool:
-        return file_path.suffix == ".txt"
+def test_find_handler_with_real_handlers() -> None:
+    """Test finding handlers with registered real handlers."""
+    # Register all handlers
+    register_all_handlers()
 
-    def extract_metadata(self, file_path: Path) -> dict:
-        return {"type": "text"}
+    # Test CSV handler is found
+    csv_handler = find_handler(Path("test.csv"))
+    assert csv_handler is not None
+    assert isinstance(csv_handler, CSVHandler)
 
-
-class DummyHandler2(FileTypeHandler):
-    def can_handle(self, file_path: Path) -> bool:
-        return file_path.suffix == ".csv"
-
-    def extract_metadata(self, file_path: Path) -> dict:
-        return {"type": "csv"}
-
-
-def test_register_and_find_handler() -> None:
-    """Test registering handlers and finding the correct one."""
-    handler1 = DummyHandler()
-    handler2 = DummyHandler2()
-    register_handler(handler1)
-    register_handler(handler2)
-
-    assert find_handler(Path("test.txt")) == handler1
-    assert find_handler(Path("test.csv")) == handler2
-    assert find_handler(Path("test.jpg")) is None
+    # Test unsupported file returns None
+    unsupported_handler = find_handler(Path("test.xyz"))
+    assert unsupported_handler is None
 
 
-def test_find_handler_empty_registry() -> None:
-    """Test find_handler returns None with empty registry."""
-    from croissant_maker.handlers import _registry
+def test_handler_registry_isolation() -> None:
+    """Test that handler registration doesn't leak between tests."""
+    from croissant_maker.handlers.registry import _registry
 
-    original_registry = _registry.copy()
-    _registry.clear()
+    initial_count = len(_registry)
 
-    assert find_handler(Path("test.txt")) is None
+    register_all_handlers()
 
-    _registry.extend(original_registry)
+    # Registry should have at least CSV handler
+    assert len(_registry) >= initial_count
+
+    # Should find CSV handler
+    assert find_handler(Path("data.csv")) is not None

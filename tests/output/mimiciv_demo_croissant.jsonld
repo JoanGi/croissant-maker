@@ -45,298 +45,328 @@
     "transform": "cr:transform"
   },
   "@type": "sc:Dataset",
-  "name": "physionet_mimic_iv",
-  "description": "Dataset containing 31 files with automatically inferred types",
+  "name": "MIMIC-IV Demo Dataset",
+  "description": "Demo subset of MIMIC-IV, a freely accessible electronic health record dataset from Beth Israel Deaconess Medical Center (2008-2019)",
   "conformsTo": "http://mlcommons.org/croissant/1.0",
-  "citeAs": "Generated Dataset. (2024). physionet_mimic_iv Dataset. Created with automated type inference.",
-  "creator": {
-    "@type": "sc:Person",
-    "name": "Dataset Generator",
-    "email": "generated@example.com"
-  },
-  "datePublished": "2025-06-11T13:57:55.015093",
-  "license": "https://creativecommons.org/licenses/by/4.0/",
-  "url": "file:///Users/rafraf/Documents/code/MIT/physionet_mimic_iv",
-  "version": "1.0.0",
+  "citeAs": "Johnson, A., Bulgarelli, L., Pollard, T., Horng, S., Celi, L. A., & Mark, R. (2023). MIMIC-IV (version 2.2). PhysioNet. https://doi.org/10.13026/6mm1-ek67",
+  "creator": [
+    {
+      "@type": "sc:Person",
+      "name": "Alistair Johnson",
+      "email": "aewj@mit.edu",
+      "url": "https://physionet.org/"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Lucas Bulgarelli",
+      "url": "https://mit.edu/"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Tom Pollard",
+      "email": "tpollard@mit.edu",
+      "url": "https://physionet.org/"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Steven Horng",
+      "url": "https://www.bidmc.org/"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Leo Anthony Celi",
+      "email": "lceli@mit.edu",
+      "url": "https://lcp.mit.edu/"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Roger Mark",
+      "url": "https://lcp.mit.edu/"
+    }
+  ],
+  "datePublished": "2025-06-30T21:18:44.232254",
+  "license": "PhysioNet Restricted Health Data License 1.5.0",
+  "url": "https://physionet.org/content/mimic-iv-demo/",
+  "version": "2.2",
   "distribution": [
     {
       "@type": "cr:FileObject",
       "@id": "file_0",
       "name": "poe.csv.gz",
-      "contentSize": "666594177",
-      "contentUrl": "data/hosp/poe.csv.gz",
+      "contentSize": "611200",
+      "contentUrl": "raw_files/mimic-iv-demo/hosp/poe.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "914eebd5e44bd634eb528ec36f23398ce364b8b0db5f1b83f23b0fae444c0dca"
+      "sha256": "25ece4e141c2d3e300565fe1957fcdd7d4048a3d66e0f483027543e35f4e056d"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_1",
       "name": "d_hcpcs.csv.gz",
-      "contentSize": "427554",
-      "contentUrl": "data/hosp/d_hcpcs.csv.gz",
+      "contentSize": "510070",
+      "contentUrl": "raw_files/mimic-iv-demo/hosp/d_hcpcs.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "fb09c682021ffcfc186f175ef6798b2b096974083c4ff67dd44b26c7cce32d77"
+      "sha256": "71e7b47a5b2267adeb9657ad4b9d41011a8dfdc16b6b84b6ee33fe94dde299f7"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_2",
       "name": "poe_detail.csv.gz",
-      "contentSize": "55267894",
-      "contentUrl": "data/hosp/poe_detail.csv.gz",
+      "contentSize": "26574",
+      "contentUrl": "raw_files/mimic-iv-demo/hosp/poe_detail.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "548fc355e28d9349315ac13dd0e1660a09f18cd2daf1c04833947a9d0510173d"
+      "sha256": "7585a34f5cb225e7549f4eaeb0eef4ef63b5ce46b952f90c9ec481608e7c8673"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_3",
       "name": "patients.csv.gz",
-      "contentSize": "2835586",
-      "contentUrl": "data/hosp/patients.csv.gz",
+      "contentSize": "1083",
+      "contentUrl": "raw_files/mimic-iv-demo/hosp/patients.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "11df8b065f89410e894ab72857c1ce5c431f6f5d675e1541f132d49122f7d756"
+      "sha256": "d6f7f45cad83a977cfe40cf80572ad13df3970071c5f91bf2fd319c3903516f0"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_4",
       "name": "diagnoses_icd.csv.gz",
-      "contentSize": "33564802",
-      "contentUrl": "data/hosp/diagnoses_icd.csv.gz",
+      "contentSize": "24198",
+      "contentUrl": "raw_files/mimic-iv-demo/hosp/diagnoses_icd.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "0fb9d03a4466bdb19ddc5f60360251ce22e30413af809bb4a635b929733af575"
+      "sha256": "ffb493244933ae7e1cbb17183f78a2e65625bd253489c01d376bfdc49df774af"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_5",
       "name": "emar_detail.csv.gz",
-      "contentSize": "748158322",
-      "contentUrl": "data/hosp/emar_detail.csv.gz",
+      "contentSize": "692290",
+      "contentUrl": "raw_files/mimic-iv-demo/hosp/emar_detail.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "b1df4fe253b6b99e9dad45c770e4d86596713a3029dfad313335855ecd73511d"
+      "sha256": "35731cf81adca9b99fbbf3d2c08f9f21ea4a7c5ee840015ced073a1bf4e36eed"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_6",
       "name": "provider.csv.gz",
-      "contentSize": "127330",
-      "contentUrl": "data/hosp/provider.csv.gz",
+      "contentSize": "151283",
+      "contentUrl": "raw_files/mimic-iv-demo/hosp/provider.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "aa022feb9cd4ba80389dc69d884d54453913e4c6dbbc8afbae045a6a78eeb20e"
+      "sha256": "e875328b0edd1a71a946ca51cdbae7a6110d058ee3640f838b902718361fe985"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_7",
       "name": "prescriptions.csv.gz",
-      "contentSize": "606298611",
-      "contentUrl": "data/hosp/prescriptions.csv.gz",
+      "contentSize": "606447",
+      "contentUrl": "raw_files/mimic-iv-demo/hosp/prescriptions.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "f7967bbf1a4aff8e37f466f675cb36b6bff0cea44faec139f572f5353e9738c0"
+      "sha256": "3865f9f13bec8bdfa6eca6205d26d1a55c40051a5c7d396609a68e532775db9d"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_8",
       "name": "drgcodes.csv.gz",
-      "contentSize": "9743908",
-      "contentUrl": "data/hosp/drgcodes.csv.gz",
+      "contentSize": "7459",
+      "contentUrl": "raw_files/mimic-iv-demo/hosp/drgcodes.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "75f1d69a87256991cdc65551b9de9dc688e4dfbc13b967a8965003382b86219d"
+      "sha256": "3afe54488408372c92b3c1deebbeff70dcbc0b70c72fdd187fa1039d52ff33b9"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_9",
       "name": "d_icd_diagnoses.csv.gz",
-      "contentSize": "876360",
-      "contentUrl": "data/hosp/d_icd_diagnoses.csv.gz",
+      "contentSize": "1813533",
+      "contentUrl": "raw_files/mimic-iv-demo/hosp/d_icd_diagnoses.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "1ab72c732bdde3a34831740da55b9ab35bc3dc4cabb05d453d4d4174c19cd971"
+      "sha256": "e1eaafe3916f25cb2162dc95c31c280d834434531afa3a91b40bdf9943e58d2b"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_10",
       "name": "d_labitems.csv.gz",
-      "contentSize": "13169",
-      "contentUrl": "data/hosp/d_labitems.csv.gz",
+      "contentSize": "13520",
+      "contentUrl": "raw_files/mimic-iv-demo/hosp/d_labitems.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "f3182dbace857d8cd3439ebbd2095d3128c1751cb42b12e3e4208bdc4b363567"
+      "sha256": "6a758494be345531d17ff3f2efcb0fefad78e7bfce83a4168f4ab5132e148856"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_11",
       "name": "transfers.csv.gz",
-      "contentSize": "46185771",
-      "contentUrl": "data/hosp/transfers.csv.gz",
+      "contentSize": "23480",
+      "contentUrl": "raw_files/mimic-iv-demo/hosp/transfers.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "99a5d03793a18c7497203ab79a94f6afa90b2faccc1b58cd86d88945ca6be6e8"
+      "sha256": "75a8f8c8bcaecb57406bbec43aa1cffee72cf2b91195a949aa7f21426432da8b"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_12",
       "name": "admissions.csv.gz",
-      "contentSize": "19928140",
-      "contentUrl": "data/hosp/admissions.csv.gz",
+      "contentSize": "11072",
+      "contentUrl": "raw_files/mimic-iv-demo/hosp/admissions.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "9592fb5d355321801f3cb5789a20921d7394fde2ade5325832ea527318056d63"
+      "sha256": "b08247c945ce0c69c505cf3427c6442135b89d9ea6315a89d4adb7b1733ce1d4"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_13",
       "name": "labevents.csv.gz",
-      "contentSize": "2592909134",
-      "contentUrl": "data/hosp/labevents.csv.gz",
+      "contentSize": "1963979",
+      "contentUrl": "raw_files/mimic-iv-demo/hosp/labevents.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "dc4deb75491acb09b0c589b88d36e72f6e6db7676152510d83221aa8133dff54"
+      "sha256": "f3feb488a9b7c6039e47a30d4f0ff9cd869fedf0e02df6c250d7405c0db1a8d9"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_14",
       "name": "pharmacy.csv.gz",
-      "contentSize": "525708076",
-      "contentUrl": "data/hosp/pharmacy.csv.gz",
+      "contentSize": "503956",
+      "contentUrl": "raw_files/mimic-iv-demo/hosp/pharmacy.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "13550119eedf974ec635c32880bcc3d349d1f243b2f6cb1aaf7811430e0dbebc"
+      "sha256": "62719a1c4b731fa604c6864994e3947169c60620a2180326dd777d7c7232e984"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_15",
       "name": "procedures_icd.csv.gz",
-      "contentSize": "7777324",
-      "contentUrl": "data/hosp/procedures_icd.csv.gz",
+      "contentSize": "6602",
+      "contentUrl": "raw_files/mimic-iv-demo/hosp/procedures_icd.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "b6553bc6b15581af519dbb6228fa73905c15c2024b41b4263133c75bd6ee4f71"
+      "sha256": "03161547a84ac86657f27c4fedd5d5f1e1b391b29e3faa53a6e6171e141b9fb6"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_16",
       "name": "hcpcsevents.csv.gz",
-      "contentSize": "2162335",
-      "contentUrl": "data/hosp/hcpcsevents.csv.gz",
+      "contentSize": "963",
+      "contentUrl": "raw_files/mimic-iv-demo/hosp/hcpcsevents.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "755340f1356a082b6e976ad5a76d70dc15af84240407c2951a3996a869c14443"
+      "sha256": "ad058e432fb2cf136c3edb0edbc64058488426c09b792778c8bfd1f7b7b3c0d7"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_17",
       "name": "services.csv.gz",
-      "contentSize": "8569241",
-      "contentUrl": "data/hosp/services.csv.gz",
+      "contentSize": "5072",
+      "contentUrl": "raw_files/mimic-iv-demo/hosp/services.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "7daf5e7bb880812bd6d3a474c09074ffd115b2acac5011228e2fb8cb31e79b0c"
+      "sha256": "78d0093c8829fa86dd1c1895128e62615d0da15a8faa4123f0ecfe00213dfcc7"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_18",
       "name": "d_icd_procedures.csv.gz",
-      "contentSize": "589186",
-      "contentUrl": "data/hosp/d_icd_procedures.csv.gz",
+      "contentSize": "1082613",
+      "contentUrl": "raw_files/mimic-iv-demo/hosp/d_icd_procedures.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "ccf952c8cafba1b2b20e4e781dda09ef5f68bc3c9c4b7e751824d4ed306e69aa"
+      "sha256": "ce5e256bc06ff8e2071e190799fe3bb99bd58be4d66d6b81276d61bfe9f65688"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_19",
       "name": "omr.csv.gz",
-      "contentSize": "44069351",
-      "contentUrl": "data/hosp/omr.csv.gz",
+      "contentSize": "17339",
+      "contentUrl": "raw_files/mimic-iv-demo/hosp/omr.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "844e89678b7a0949fbd50c54671a0d04618267e805d32dfbcb13c1f4f1693c7a"
+      "sha256": "64a75e495f3c85b16981c94fe72c4818f8dd67eeff534604a12d5f974c9c938f"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_20",
       "name": "emar.csv.gz",
-      "contentSize": "811305629",
-      "contentUrl": "data/hosp/emar.csv.gz",
+      "contentSize": "734347",
+      "contentUrl": "raw_files/mimic-iv-demo/hosp/emar.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "74a76ac03349d82e02908f3a7ade76e3c31121e6ac68b241fd349f1bbc453617"
+      "sha256": "ab8c5661c454edb2d0626e08b21e94585e72ee6e0e45bee22cfa89908117236d"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_21",
       "name": "microbiologyevents.csv.gz",
-      "contentSize": "117644075",
-      "contentUrl": "data/hosp/microbiologyevents.csv.gz",
+      "contentSize": "80991",
+      "contentUrl": "raw_files/mimic-iv-demo/hosp/microbiologyevents.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "2ae3f75d0399476902c9a17f41aeb5a3de663c4012c18a4f4a5a017d6b24d4bd"
+      "sha256": "2a26301e17a1d0b1ab9dabc76fc180a19b19bcd612eb055f699b5a415461fc80"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_22",
       "name": "datetimeevents.csv.gz",
-      "contentSize": "63481196",
-      "contentUrl": "data/icu/datetimeevents.csv.gz",
+      "contentSize": "119448",
+      "contentUrl": "raw_files/mimic-iv-demo/icu/datetimeevents.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "8a06804955091244d53a9f21648b73b0ae00650a4132f4b0a4a8f0169c4efd43"
+      "sha256": "50fd6008bf73f71fbbcbe58ddce6953aea876ead9c5a39841606b3ad9df3a298"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_23",
       "name": "caregiver.csv.gz",
-      "contentSize": "41566",
-      "contentUrl": "data/icu/caregiver.csv.gz",
+      "contentSize": "43441",
+      "contentUrl": "raw_files/mimic-iv-demo/icu/caregiver.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "4e0f21c383f4bf1d6715fd451a6fb21ba14f9167d57eb724b0a6d89c7b243086"
+      "sha256": "61a6937a2e9b91e6daa32ce564418278f3b8b6a076a8c1fd4212fdd32bd943d6"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_24",
       "name": "ingredientevents.csv.gz",
-      "contentSize": "311642048",
-      "contentUrl": "data/icu/ingredientevents.csv.gz",
+      "contentSize": "601205",
+      "contentUrl": "raw_files/mimic-iv-demo/icu/ingredientevents.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "5c27c31c81d4b59e2fe5dca4fc468fa04835f0ad9c8a78885c89ecccd63e19f4"
+      "sha256": "75aa430b3c38521ae0662559a28fb1960d26b6e96e8cd14e413f3af484b7e22b"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_25",
       "name": "inputevents.csv.gz",
-      "contentSize": "401088206",
-      "contentUrl": "data/icu/inputevents.csv.gz",
+      "contentSize": "788253",
+      "contentUrl": "raw_files/mimic-iv-demo/icu/inputevents.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "d0440445f74b2edeeef17106c941d08d29a3fed1f6f0625f3c956bed6237c9c2"
+      "sha256": "34ff7b19dbdfdf4608c4de3ad589a4b1624f6e767a09cd5489fe6d2448e4edfd"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_26",
       "name": "procedureevents.csv.gz",
-      "contentSize": "24096834",
-      "contentUrl": "data/icu/procedureevents.csv.gz",
+      "contentSize": "44817",
+      "contentUrl": "raw_files/mimic-iv-demo/icu/procedureevents.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "4858144bf33be198a002658556fd0352143653802a93d965de4f891b0beb1450"
+      "sha256": "f998085a5565540b0a407ee3172b023f56939593e3b981c77001df2f23905d32"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_27",
       "name": "d_items.csv.gz",
-      "contentSize": "58741",
-      "contentUrl": "data/icu/d_items.csv.gz",
+      "contentSize": "57073",
+      "contentUrl": "raw_files/mimic-iv-demo/icu/d_items.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "2e8987d8ac98e48358e582708f953710f50bdea7fb4a8bb427acb364a7212894"
+      "sha256": "3a9ff93b12727ec17000896c144c03573bccae0f8f71d5d5c2ba773ebf7ffa5d"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_28",
       "name": "chartevents.csv.gz",
-      "contentSize": "3502392765",
-      "contentUrl": "data/icu/chartevents.csv.gz",
+      "contentSize": "5549389",
+      "contentUrl": "raw_files/mimic-iv-demo/icu/chartevents.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "0d1932df345c2d135ce715df1f6afa603f7124894a5aa8c6ba56aa6ee02160d4"
+      "sha256": "e1b858b4d8bf721900e78dd702448430a5d3bb9652209f00baed35ac6c04eebd"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_29",
       "name": "icustays.csv.gz",
-      "contentSize": "3342355",
-      "contentUrl": "data/icu/icustays.csv.gz",
+      "contentSize": "5667",
+      "contentUrl": "raw_files/mimic-iv-demo/icu/icustays.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "3b16bc6cc9b93c7f20a040ba5ec38d00951f42475bf5157aea7ffde052676ef0"
+      "sha256": "9a79a759372a6075560a0dcf53d10122e691a8a4dce7141101f6660ab8476f42"
     },
     {
       "@type": "cr:FileObject",
       "@id": "file_30",
       "name": "outputevents.csv.gz",
-      "contentSize": "49307639",
-      "contentUrl": "data/icu/outputevents.csv.gz",
+      "contentSize": "96413",
+      "contentUrl": "raw_files/mimic-iv-demo/icu/outputevents.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "7eff7fa0bbbb4e0c6514e0235ed489e9f4bd541c8888b404525ace25f38b4755"
+      "sha256": "afdafb80d6e7353ead549862acbbb93d8d96db08e8843e23ce36c6371ffc0134"
     }
   ],
   "recordSet": [
@@ -567,7 +597,7 @@
           "@id": "file_1_category",
           "name": "category",
           "description": "Column 'category' from d_hcpcs.csv.gz",
-          "dataType": "sc:Float",
+          "dataType": "sc:Text",
           "source": {
             "@id": "file_1_source_category",
             "fileObject": {
@@ -704,7 +734,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_3",
       "name": "patients",
-      "description": "Records from patients.csv.gz (1000 rows)",
+      "description": "Records from patients.csv.gz (100 rows)",
       "field": [
         {
           "@type": "cr:Field",
@@ -1079,7 +1109,7 @@
           "@id": "file_5_dose_given",
           "name": "dose_given",
           "description": "Column 'dose_given' from emar_detail.csv.gz",
-          "dataType": "sc:Float",
+          "dataType": "sc:Text",
           "source": {
             "@id": "file_5_source_dose_given",
             "fileObject": {
@@ -1639,7 +1669,7 @@
           "@id": "file_7_gsn",
           "name": "gsn",
           "description": "Column 'gsn' from prescriptions.csv.gz",
-          "dataType": "sc:Float",
+          "dataType": "sc:Text",
           "source": {
             "@id": "file_7_source_gsn",
             "fileObject": {
@@ -1655,7 +1685,7 @@
           "@id": "file_7_ndc",
           "name": "ndc",
           "description": "Column 'ndc' from prescriptions.csv.gz",
-          "dataType": "sc:Integer",
+          "dataType": "sc:Float",
           "source": {
             "@id": "file_7_source_ndc",
             "fileObject": {
@@ -1735,7 +1765,7 @@
           "@id": "file_7_form_val_disp",
           "name": "form_val_disp",
           "description": "Column 'form_val_disp' from prescriptions.csv.gz",
-          "dataType": "sc:Text",
+          "dataType": "sc:Float",
           "source": {
             "@id": "file_7_source_form_val_disp",
             "fileObject": {
@@ -1800,7 +1830,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_8",
       "name": "drgcodes",
-      "description": "Records from drgcodes.csv.gz (1000 rows)",
+      "description": "Records from drgcodes.csv.gz (454 rows)",
       "field": [
         {
           "@type": "cr:Field",
@@ -1927,7 +1957,7 @@
           "@id": "file_9_icd_code",
           "name": "icd_code",
           "description": "Column 'icd_code' from d_icd_diagnoses.csv.gz",
-          "dataType": "sc:Integer",
+          "dataType": "sc:Text",
           "source": {
             "@id": "file_9_source_icd_code",
             "fileObject": {
@@ -2168,7 +2198,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_12",
       "name": "admissions",
-      "description": "Records from admissions.csv.gz (1000 rows)",
+      "description": "Records from admissions.csv.gz (275 rows)",
       "field": [
         {
           "@type": "cr:Field",
@@ -2959,7 +2989,7 @@
           "@id": "file_14_lockout_interval",
           "name": "lockout_interval",
           "description": "Column 'lockout_interval' from pharmacy.csv.gz",
-          "dataType": "sc:Float",
+          "dataType": "sc:Text",
           "source": {
             "@id": "file_14_source_lockout_interval",
             "fileObject": {
@@ -2975,7 +3005,7 @@
           "@id": "file_14_basal_rate",
           "name": "basal_rate",
           "description": "Column 'basal_rate' from pharmacy.csv.gz",
-          "dataType": "sc:Float",
+          "dataType": "sc:Text",
           "source": {
             "@id": "file_14_source_basal_rate",
             "fileObject": {
@@ -2991,7 +3021,7 @@
           "@id": "file_14_one_hr_max",
           "name": "one_hr_max",
           "description": "Column 'one_hr_max' from pharmacy.csv.gz",
-          "dataType": "sc:Float",
+          "dataType": "sc:Text",
           "source": {
             "@id": "file_14_source_one_hr_max",
             "fileObject": {
@@ -3136,7 +3166,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_15",
       "name": "procedures_icd",
-      "description": "Records from procedures_icd.csv.gz (1000 rows)",
+      "description": "Records from procedures_icd.csv.gz (722 rows)",
       "field": [
         {
           "@type": "cr:Field",
@@ -3240,7 +3270,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_16",
       "name": "hcpcsevents",
-      "description": "Records from hcpcsevents.csv.gz (1000 rows)",
+      "description": "Records from hcpcsevents.csv.gz (61 rows)",
       "field": [
         {
           "@type": "cr:Field",
@@ -3344,7 +3374,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_17",
       "name": "services",
-      "description": "Records from services.csv.gz (1000 rows)",
+      "description": "Records from services.csv.gz (319 rows)",
       "field": [
         {
           "@type": "cr:Field",
@@ -3439,7 +3469,7 @@
           "@id": "file_18_icd_code",
           "name": "icd_code",
           "description": "Column 'icd_code' from d_icd_procedures.csv.gz",
-          "dataType": "sc:Text",
+          "dataType": "sc:Integer",
           "source": {
             "@id": "file_18_source_icd_code",
             "fileObject": {
@@ -5404,33 +5434,33 @@
         },
         {
           "@type": "cr:Field",
-          "@id": "file_26_originalamount",
-          "name": "originalamount",
-          "description": "Column 'originalamount' from procedureevents.csv.gz",
+          "@id": "file_26_ORIGINALAMOUNT",
+          "name": "ORIGINALAMOUNT",
+          "description": "Column 'ORIGINALAMOUNT' from procedureevents.csv.gz",
           "dataType": "sc:Float",
           "source": {
-            "@id": "file_26_source_originalamount",
+            "@id": "file_26_source_ORIGINALAMOUNT",
             "fileObject": {
               "@id": "file_26"
             },
             "extract": {
-              "column": "originalamount"
+              "column": "ORIGINALAMOUNT"
             }
           }
         },
         {
           "@type": "cr:Field",
-          "@id": "file_26_originalrate",
-          "name": "originalrate",
-          "description": "Column 'originalrate' from procedureevents.csv.gz",
+          "@id": "file_26_ORIGINALRATE",
+          "name": "ORIGINALRATE",
+          "description": "Column 'ORIGINALRATE' from procedureevents.csv.gz",
           "dataType": "sc:Integer",
           "source": {
-            "@id": "file_26_source_originalrate",
+            "@id": "file_26_source_ORIGINALRATE",
             "fileObject": {
               "@id": "file_26"
             },
             "extract": {
-              "column": "originalrate"
+              "column": "ORIGINALRATE"
             }
           }
         }
@@ -5559,7 +5589,7 @@
           "@id": "file_27_lownormalvalue",
           "name": "lownormalvalue",
           "description": "Column 'lownormalvalue' from d_items.csv.gz",
-          "dataType": "sc:Float",
+          "dataType": "sc:Text",
           "source": {
             "@id": "file_27_source_lownormalvalue",
             "fileObject": {
@@ -5575,7 +5605,7 @@
           "@id": "file_27_highnormalvalue",
           "name": "highnormalvalue",
           "description": "Column 'highnormalvalue' from d_items.csv.gz",
-          "dataType": "sc:Float",
+          "dataType": "sc:Text",
           "source": {
             "@id": "file_27_source_highnormalvalue",
             "fileObject": {
@@ -5647,7 +5677,7 @@
           "@id": "file_28_caregiver_id",
           "name": "caregiver_id",
           "description": "Column 'caregiver_id' from chartevents.csv.gz",
-          "dataType": "sc:Float",
+          "dataType": "sc:Integer",
           "source": {
             "@id": "file_28_source_caregiver_id",
             "fileObject": {
@@ -5776,7 +5806,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_29",
       "name": "icustays",
-      "description": "Records from icustays.csv.gz (1000 rows)",
+      "description": "Records from icustays.csv.gz (140 rows)",
       "field": [
         {
           "@type": "cr:Field",
