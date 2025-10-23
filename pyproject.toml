@@ -25,6 +25,7 @@ dependencies = [
     "mlcroissant >= 1.0.0",
     "pandas >= 1.3.0",
     "rich >= 13.0.0",
+    "wfdb >= 4.0.0",
 ]
 
 # Optional dependencies, installed via `pip install '.[test]'`
