@@ -208,9 +208,15 @@ class MetadataGenerator:
 
         file_objects = []
         record_sets = []
+        # Use a counter instead of enumerate(i) to ensure unique FileObject IDs.
+        # Some formats (e.g., WFDB) create multiple FileObjects per iteration via
+        # related_files, so enumerate(i) would cause ID conflicts. The counter
+        # increments for every FileObject created, not just per iteration.
+        file_counter = 0
 
         for i, file_meta in enumerate(file_metadata):
-            file_id = f"file_{i}"
+            file_id = f"file_{file_counter}"
+            file_counter += 1
 
             # Create FileObject for each file
             # What this section does well:
@@ -227,6 +233,28 @@ class MetadataGenerator:
                 sha256=file_meta["sha256"],
             )
             file_objects.append(file_obj)
+
+            # Handle multi-file records (e.g., WFDB: .hea + .dat + .atr)
+            # Some formats like WFDB have multiple physical files per logical record
+            related_file_ids = []
+            if "related_files" in file_meta:
+                for related in file_meta["related_files"]:
+                    related_id = f"file_{file_counter}"
+                    file_counter += 1
+                    related_file_ids.append(related_id)
+
+                    rel_path = Path(related["path"])
+                    relative_path = str(rel_path.relative_to(self.dataset_path))
+
+                    related_obj = mlc.FileObject(
+                        id=related_id,
+                        name=related["name"],
+                        content_url=relative_path,
+                        encoding_formats=[related["encoding"]],
+                        content_size=str(related["size"]),
+                        sha256=related["sha256"],
+                    )
+                    file_objects.append(related_obj)
 
             # Create RecordSet and Fields for files with structured data that have column types
             # What this section does well:
@@ -259,6 +287,35 @@ class MetadataGenerator:
                     id=f"recordset_{i}",
                     name=get_clean_record_name(file_meta["file_name"]),
                     description=f"Records from {file_meta['file_name']} ({file_meta.get('num_rows', 'unknown')} rows)",
+                    fields=fields,
+                )
+                record_sets.append(record_set)
+
+            # Create RecordSet for signal data (e.g., WFDB physiological waveforms)
+            # Signal data has continuous time-series rather than discrete columns
+            elif "signal_types" in file_meta:
+                fields = []
+                for signal_name, signal_type in file_meta["signal_types"].items():
+                    field = mlc.Field(
+                        id=f"{file_id}_{signal_name}",
+                        name=signal_name,
+                        description=f"Signal '{signal_name}' from {file_meta['record_name']}",
+                        data_types=[signal_type],
+                        source=mlc.Source(
+                            id=f"{file_id}_source_{signal_name}",
+                            file_object=file_id,
+                        ),
+                    )
+                    fields.append(field)
+
+                duration = file_meta.get("duration_seconds", 0)
+                num_samples = file_meta.get("num_samples", 0)
+                sampling_freq = file_meta.get("sampling_frequency", 0)
+
+                record_set = mlc.RecordSet(
+                    id=f"recordset_{i}",
+                    name=file_meta["record_name"],
+                    description=f"WFDB record {file_meta['record_name']}: {file_meta.get('num_signals', 0)} signals at {sampling_freq} Hz, {num_samples} samples ({duration:.2f} seconds)",
                     fields=fields,
                 )
                 record_sets.append(record_set)

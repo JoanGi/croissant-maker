@@ -158,3 +158,79 @@ def test_eicu_demo_generation(eicu_demo_path: Path, output_dir: Path) -> None:
     assert len(metadata["creator"]) >= 4
     assert len(metadata["distribution"]) > 10
     assert len(metadata["recordSet"]) > 5
+
+
+@pytest.fixture
+def mitdb_wfdb_path() -> Path:
+    """Path to MIT-BIH Arrhythmia Database for testing."""
+    dataset_path = (
+        Path(__file__).parent
+        / "data"
+        / "input"
+        / "mitdb_wfdb"
+        / "physionet.org"
+        / "files"
+        / "mitdb"
+        / "1.0.0"
+    )
+    if not dataset_path.exists() or not (dataset_path / "100.hea").exists():
+        pytest.skip(f"MIT-BIH WFDB dataset not found at {dataset_path}")
+    return dataset_path
+
+
+def test_mitdb_wfdb_generation(mitdb_wfdb_path: Path, output_dir: Path) -> None:
+    """Test end-to-end metadata generation with MIT-BIH Arrhythmia Database."""
+    output_file = output_dir / "mitdb_wfdb_croissant.jsonld"
+
+    result = runner.invoke(
+        app,
+        [
+            "-i",
+            str(mitdb_wfdb_path),
+            "-o",
+            str(output_file),
+            "--name",
+            "MIT-BIH Arrhythmia Database",
+            "--description",
+            "MIT-BIH Arrhythmia Database containing 48 ECG recordings with annotations",
+            "--url",
+            "https://physionet.org/content/mitdb/1.0.0/",
+            "--license",
+            "https://physionet.org/content/mitdb/1.0.0/LICENSE.txt",
+            "--dataset-version",
+            "1.0.0",
+            "--date-published",
+            "1992-07-30",
+            "--creator",
+            "MIT-BIH",
+            "--citation",
+            "Moody GB, Mark RG. The impact of the MIT-BIH Arrhythmia Database. IEEE Eng in Med and Biol 20(3):45-50 (May-June 2001).",
+        ],
+    )
+
+    assert result.exit_code == 0, f"Command failed: {result.stdout}"
+    assert output_file.exists(), "Output file was not created"
+
+    with open(output_file) as f:
+        metadata = json.load(f)
+
+    assert metadata["name"] == "MIT-BIH Arrhythmia Database"
+    assert metadata["version"] == "1.0.0"
+    assert metadata["url"] == "https://physionet.org/content/mitdb/1.0.0/"
+
+    # Should have 71 records * 3 files each = 213 files (71 .hea + 71 .dat + 71 .atr)
+    # This includes the main 48 records (100-234) plus additional x_ prefixed records
+    assert len(metadata["distribution"]) == 213
+    assert len(metadata["recordSet"]) == 71
+
+    # Check a few specific records
+    record_names = [rs["name"] for rs in metadata["recordSet"]]
+    assert "100" in record_names
+    assert "200" in record_names
+    assert "234" in record_names
+
+    # Check that we have the expected signals
+    record_100 = next(rs for rs in metadata["recordSet"] if rs["name"] == "100")
+    assert len(record_100["field"]) == 2
+    assert "MLII" in [f["name"] for f in record_100["field"]]
+    assert "V5" in [f["name"] for f in record_100["field"]]
