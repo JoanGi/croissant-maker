@@ -234,3 +234,72 @@ def test_mitdb_wfdb_generation(mitdb_wfdb_path: Path, output_dir: Path) -> None:
     assert len(record_100["field"]) == 2
     assert "MLII" in [f["name"] for f in record_100["field"]]
     assert "V5" in [f["name"] for f in record_100["field"]]
+
+
+@pytest.fixture
+def mimiciv_demo_omop_path() -> Path:
+    """Path to the MIMIC-IV OMOP demo dataset for testing."""
+    dataset_path = (
+        Path(__file__).parent
+        / "data"
+        / "input"
+        / "mimiciv_demo_omop"
+        / "physionet.org"
+        / "files"
+        / "mimic-iv-demo-omop"
+        / "0.9"
+        / "1_omop_data_csv"
+    )
+
+    if not dataset_path.exists():
+        pytest.skip(f"MIMIC-IV OMOP demo dataset not found at {dataset_path}")
+
+    return dataset_path
+
+
+def test_mimiciv_demo_omop_generation(
+    mimiciv_demo_omop_path: Path, output_dir: Path
+) -> None:
+    """Test end-to-end metadata generation with MIMIC-IV OMOP demo dataset."""
+    output_file = output_dir / "mimiciv_demo_omop_croissant.jsonld"
+
+    result = runner.invoke(
+        app,
+        [
+            "-i",
+            str(mimiciv_demo_omop_path),
+            "-o",
+            str(output_file),
+            "--name",
+            "MIMIC-IV demo data in the OMOP Common Data Model",
+            "--description",
+            "A 100-patient demo of MIMIC-IV in the OMOP Common Data Model",
+            "--url",
+            "https://physionet.org/content/mimic-iv-demo-omop/0.9/",
+            "--dataset-version",
+            "0.9",
+            "--date-published",
+            "2021-06-21",
+            "--creator",
+            "Michael Kallfelz",
+            "--creator",
+            "Anna Tsvetkova",
+            "--creator",
+            "Tom Pollard",
+            "--citation",
+            "Kallfelz, M., et al. (2021). MIMIC-IV demo data in the OMOP Common Data Model (version 0.9). PhysioNet. https://doi.org/10.13026/p1f5-7x35",
+        ],
+    )
+
+    assert result.exit_code == 0, f"Command failed: {result.stdout}"
+    assert output_file.exists(), "Output file was not created"
+
+    with open(output_file) as f:
+        metadata = json.load(f)
+
+    assert metadata["name"] == "MIMIC-IV demo data in the OMOP Common Data Model"
+    assert metadata["version"] == "0.9"
+    assert metadata["url"] == "https://physionet.org/content/mimic-iv-demo-omop/0.9/"
+    assert len(metadata["creator"]) == 3
+    assert len(metadata["distribution"]) > 0
+    assert len(metadata["recordSet"]) > 0

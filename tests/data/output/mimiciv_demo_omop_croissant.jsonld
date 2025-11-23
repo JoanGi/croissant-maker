@@ -1,0 +1,4560 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "MIMIC-IV demo data in the OMOP Common Data Model",
+  "description": "A 100-patient demo of MIMIC-IV in the OMOP Common Data Model",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "citeAs": "Kallfelz, M., et al. (2021). MIMIC-IV demo data in the OMOP Common Data Model (version 0.9). PhysioNet. https://doi.org/10.13026/p1f5-7x35",
+  "creator": [
+    {
+      "@type": "sc:Person",
+      "name": "Michael Kallfelz"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Anna Tsvetkova"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Tom Pollard"
+    }
+  ],
+  "datePublished": "2021-06-21T00:00:00",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "url": "https://physionet.org/content/mimic-iv-demo-omop/0.9/",
+  "version": "0.9",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_0",
+      "name": "2b_vocabulary.csv",
+      "contentSize": "2189",
+      "contentUrl": "2b_vocabulary.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "6e70ea141f349a3d52e2be1ae86845d85488ac1c4fe7e485283c52cb37e53e68"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_1",
+      "name": "observation_period.csv",
+      "contentSize": "6991",
+      "contentUrl": "observation_period.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "b0c263713d3bc71059e9673a9890f855171ab94e14355afba517c96a0c4109f8"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_2",
+      "name": "drug_exposure.csv",
+      "contentSize": "3449419",
+      "contentUrl": "drug_exposure.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "f3805d399ec2b44ab33c49c8ed81fa03e2092275e67d6d38397573ea0d52068f"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_3",
+      "name": "care_site.csv",
+      "contentSize": "2874",
+      "contentUrl": "care_site.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "b69af64540f58b3a8a52dc07bf710315b3a376af242afab7ad9d7b4cf47c92b2"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_4",
+      "name": "2b_concept.csv",
+      "contentSize": "514903",
+      "contentUrl": "2b_concept.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "c18c0597de0d302e9677b4c7bcc56746b15dfeca3431006a60310945299595e7"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_5",
+      "name": "specimen.csv",
+      "contentSize": "25988",
+      "contentUrl": "specimen.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "a0538cbc680ddc116c4b467e09fa7a1562ca3ab2122cc9b583c3ea585e1b2b7f"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_6",
+      "name": "death.csv",
+      "contentSize": "1054",
+      "contentUrl": "death.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "c24291bf78df8673e4c352e01ab5ea8db6989135228c348130c54f2d3f132db4"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_7",
+      "name": "device_exposure.csv",
+      "contentSize": "617755",
+      "contentUrl": "device_exposure.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "044df7935912d14c8a6ed03eaed5eb95eacd9873dc7b3e2259724a586ab9f8ef"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_8",
+      "name": "fact_relationship.csv",
+      "contentSize": "93810",
+      "contentUrl": "fact_relationship.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "48ff8900d32727bd547db69f4cc20c58f3effa49e3d3b0809a2edf4f1c2c955d"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_9",
+      "name": "dose_era.csv",
+      "contentSize": "9641",
+      "contentUrl": "dose_era.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "7e91ad365255cd121f2ad512a8a2aa428d961dfb8418b72370d76d7523d91db2"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_10",
+      "name": "location.csv",
+      "contentSize": "107",
+      "contentUrl": "location.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "02b53d70857641f5f34087237d6bea5aeb56cfe4b8e4b1fc4cd56701bb9612b0"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_11",
+      "name": "measurement.csv",
+      "contentSize": "49830410",
+      "contentUrl": "measurement.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "c00f9e13e0fcaee304ea90da4898bd9d075912eea8b92455516df4e975387ed1"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_12",
+      "name": "condition_occurrence.csv",
+      "contentSize": "2788295",
+      "contentUrl": "condition_occurrence.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "1eb2a5a62c3cc30816fa49f92910e7d63fa55910c27b26a05e3e704ebf13f4e1"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_13",
+      "name": "2b_concept_relationship.csv",
+      "contentSize": "404757",
+      "contentUrl": "2b_concept_relationship.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "77d72242c03b0877b715b03b755d64ea3aa28e2f6fb57f238b5466a55d65b375"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_14",
+      "name": "drug_era.csv",
+      "contentSize": "593899",
+      "contentUrl": "drug_era.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "1bb78e065b49fc6cec9278d68a699a21ed516726e4f2c43b21849e6ec8014386"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_15",
+      "name": "cdm_source.csv",
+      "contentSize": "449",
+      "contentUrl": "cdm_source.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "69c720a89e846384cba872feb019b409afb14b3e82f84572c8ea5ab9bf00999e"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_16",
+      "name": "visit_occurrence.csv",
+      "contentSize": "151595",
+      "contentUrl": "visit_occurrence.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "ee4f46e12beef45ae0447277b291b0b6af64f3f74207cfc48a92d15bfd5c16f2"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_17",
+      "name": "person.csv",
+      "contentSize": "8380",
+      "contentUrl": "person.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "f816b5c57d8b13858a3c924e2cf8d30d838f2eb5e50ffcf74f0339448d0e831f"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_18",
+      "name": "observation.csv",
+      "contentSize": "4465346",
+      "contentUrl": "observation.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "466b195a9882aef85db62f53d11422b67e9667f4c6655d6d7fd67feab0b30f57"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_19",
+      "name": "visit_detail.csv",
+      "contentSize": "3824351",
+      "contentUrl": "visit_detail.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "453cc7b767e9b6755956f2b1fa2da95219a1263970014a7928468b6bc2109a69"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_20",
+      "name": "procedure_occurrence.csv",
+      "contentSize": "2418744",
+      "contentUrl": "procedure_occurrence.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "f12cce583c265076501bf0c95e997d3f2d33ba0a420e2f5d069f7f6041e25995"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_21",
+      "name": "condition_era.csv",
+      "contentSize": "271992",
+      "contentUrl": "condition_era.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "2d231f37f0c7d673b1c345a58dbafc2ca8207d77e003e1d1a27562be2ed3f018"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "recordset_0",
+      "name": "2b_vocabulary",
+      "description": "Records from 2b_vocabulary.csv (27 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_0_vocabulary_id",
+          "name": "vocabulary_id",
+          "description": "Column 'vocabulary_id' from 2b_vocabulary.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_0_source_vocabulary_id",
+            "fileObject": {
+              "@id": "file_0"
+            },
+            "extract": {
+              "column": "vocabulary_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_0_vocabulary_name",
+          "name": "vocabulary_name",
+          "description": "Column 'vocabulary_name' from 2b_vocabulary.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_0_source_vocabulary_name",
+            "fileObject": {
+              "@id": "file_0"
+            },
+            "extract": {
+              "column": "vocabulary_name"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_0_vocabulary_reference",
+          "name": "vocabulary_reference",
+          "description": "Column 'vocabulary_reference' from 2b_vocabulary.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_0_source_vocabulary_reference",
+            "fileObject": {
+              "@id": "file_0"
+            },
+            "extract": {
+              "column": "vocabulary_reference"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_0_vocabulary_version",
+          "name": "vocabulary_version",
+          "description": "Column 'vocabulary_version' from 2b_vocabulary.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_0_source_vocabulary_version",
+            "fileObject": {
+              "@id": "file_0"
+            },
+            "extract": {
+              "column": "vocabulary_version"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_0_vocabulary_concept_id",
+          "name": "vocabulary_concept_id",
+          "description": "Column 'vocabulary_concept_id' from 2b_vocabulary.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_0_source_vocabulary_concept_id",
+            "fileObject": {
+              "@id": "file_0"
+            },
+            "extract": {
+              "column": "vocabulary_concept_id"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "recordset_1",
+      "name": "observation_period",
+      "description": "Records from observation_period.csv (100 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_1_observation_period_id",
+          "name": "observation_period_id",
+          "description": "Column 'observation_period_id' from observation_period.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_1_source_observation_period_id",
+            "fileObject": {
+              "@id": "file_1"
+            },
+            "extract": {
+              "column": "observation_period_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_1_person_id",
+          "name": "person_id",
+          "description": "Column 'person_id' from observation_period.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_1_source_person_id",
+            "fileObject": {
+              "@id": "file_1"
+            },
+            "extract": {
+              "column": "person_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_1_observation_period_start_date",
+          "name": "observation_period_start_date",
+          "description": "Column 'observation_period_start_date' from observation_period.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_1_source_observation_period_start_date",
+            "fileObject": {
+              "@id": "file_1"
+            },
+            "extract": {
+              "column": "observation_period_start_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_1_observation_period_end_date",
+          "name": "observation_period_end_date",
+          "description": "Column 'observation_period_end_date' from observation_period.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_1_source_observation_period_end_date",
+            "fileObject": {
+              "@id": "file_1"
+            },
+            "extract": {
+              "column": "observation_period_end_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_1_period_type_concept_id",
+          "name": "period_type_concept_id",
+          "description": "Column 'period_type_concept_id' from observation_period.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_1_source_period_type_concept_id",
+            "fileObject": {
+              "@id": "file_1"
+            },
+            "extract": {
+              "column": "period_type_concept_id"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "recordset_2",
+      "name": "drug_exposure",
+      "description": "Records from drug_exposure.csv (1000 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_drug_exposure_id",
+          "name": "drug_exposure_id",
+          "description": "Column 'drug_exposure_id' from drug_exposure.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_2_source_drug_exposure_id",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "drug_exposure_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_person_id",
+          "name": "person_id",
+          "description": "Column 'person_id' from drug_exposure.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_2_source_person_id",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "person_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_drug_concept_id",
+          "name": "drug_concept_id",
+          "description": "Column 'drug_concept_id' from drug_exposure.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_2_source_drug_concept_id",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "drug_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_drug_exposure_start_date",
+          "name": "drug_exposure_start_date",
+          "description": "Column 'drug_exposure_start_date' from drug_exposure.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_2_source_drug_exposure_start_date",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "drug_exposure_start_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_drug_exposure_start_datetime",
+          "name": "drug_exposure_start_datetime",
+          "description": "Column 'drug_exposure_start_datetime' from drug_exposure.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_2_source_drug_exposure_start_datetime",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "drug_exposure_start_datetime"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_drug_exposure_end_date",
+          "name": "drug_exposure_end_date",
+          "description": "Column 'drug_exposure_end_date' from drug_exposure.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_2_source_drug_exposure_end_date",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "drug_exposure_end_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_drug_exposure_end_datetime",
+          "name": "drug_exposure_end_datetime",
+          "description": "Column 'drug_exposure_end_datetime' from drug_exposure.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_2_source_drug_exposure_end_datetime",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "drug_exposure_end_datetime"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_verbatim_end_date",
+          "name": "verbatim_end_date",
+          "description": "Column 'verbatim_end_date' from drug_exposure.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_2_source_verbatim_end_date",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "verbatim_end_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_drug_type_concept_id",
+          "name": "drug_type_concept_id",
+          "description": "Column 'drug_type_concept_id' from drug_exposure.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_2_source_drug_type_concept_id",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "drug_type_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_stop_reason",
+          "name": "stop_reason",
+          "description": "Column 'stop_reason' from drug_exposure.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_2_source_stop_reason",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "stop_reason"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_refills",
+          "name": "refills",
+          "description": "Column 'refills' from drug_exposure.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_2_source_refills",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "refills"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_quantity",
+          "name": "quantity",
+          "description": "Column 'quantity' from drug_exposure.csv",
+          "dataType": "sc:Float",
+          "source": {
+            "@id": "file_2_source_quantity",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "quantity"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_days_supply",
+          "name": "days_supply",
+          "description": "Column 'days_supply' from drug_exposure.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_2_source_days_supply",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "days_supply"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_sig",
+          "name": "sig",
+          "description": "Column 'sig' from drug_exposure.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_2_source_sig",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "sig"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_route_concept_id",
+          "name": "route_concept_id",
+          "description": "Column 'route_concept_id' from drug_exposure.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_2_source_route_concept_id",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "route_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_lot_number",
+          "name": "lot_number",
+          "description": "Column 'lot_number' from drug_exposure.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_2_source_lot_number",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "lot_number"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_provider_id",
+          "name": "provider_id",
+          "description": "Column 'provider_id' from drug_exposure.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_2_source_provider_id",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "provider_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_visit_occurrence_id",
+          "name": "visit_occurrence_id",
+          "description": "Column 'visit_occurrence_id' from drug_exposure.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_2_source_visit_occurrence_id",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "visit_occurrence_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_visit_detail_id",
+          "name": "visit_detail_id",
+          "description": "Column 'visit_detail_id' from drug_exposure.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_2_source_visit_detail_id",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "visit_detail_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_drug_source_value",
+          "name": "drug_source_value",
+          "description": "Column 'drug_source_value' from drug_exposure.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_2_source_drug_source_value",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "drug_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_drug_source_concept_id",
+          "name": "drug_source_concept_id",
+          "description": "Column 'drug_source_concept_id' from drug_exposure.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_2_source_drug_source_concept_id",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "drug_source_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_route_source_value",
+          "name": "route_source_value",
+          "description": "Column 'route_source_value' from drug_exposure.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_2_source_route_source_value",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "route_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_2_dose_unit_source_value",
+          "name": "dose_unit_source_value",
+          "description": "Column 'dose_unit_source_value' from drug_exposure.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_2_source_dose_unit_source_value",
+            "fileObject": {
+              "@id": "file_2"
+            },
+            "extract": {
+              "column": "dose_unit_source_value"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "recordset_3",
+      "name": "care_site",
+      "description": "Records from care_site.csv (31 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_3_care_site_id",
+          "name": "care_site_id",
+          "description": "Column 'care_site_id' from care_site.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_3_source_care_site_id",
+            "fileObject": {
+              "@id": "file_3"
+            },
+            "extract": {
+              "column": "care_site_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_3_care_site_name",
+          "name": "care_site_name",
+          "description": "Column 'care_site_name' from care_site.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_3_source_care_site_name",
+            "fileObject": {
+              "@id": "file_3"
+            },
+            "extract": {
+              "column": "care_site_name"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_3_place_of_service_concept_id",
+          "name": "place_of_service_concept_id",
+          "description": "Column 'place_of_service_concept_id' from care_site.csv",
+          "dataType": "sc:Float",
+          "source": {
+            "@id": "file_3_source_place_of_service_concept_id",
+            "fileObject": {
+              "@id": "file_3"
+            },
+            "extract": {
+              "column": "place_of_service_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_3_location_id",
+          "name": "location_id",
+          "description": "Column 'location_id' from care_site.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_3_source_location_id",
+            "fileObject": {
+              "@id": "file_3"
+            },
+            "extract": {
+              "column": "location_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_3_care_site_source_value",
+          "name": "care_site_source_value",
+          "description": "Column 'care_site_source_value' from care_site.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_3_source_care_site_source_value",
+            "fileObject": {
+              "@id": "file_3"
+            },
+            "extract": {
+              "column": "care_site_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_3_place_of_service_source_value",
+          "name": "place_of_service_source_value",
+          "description": "Column 'place_of_service_source_value' from care_site.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_3_source_place_of_service_source_value",
+            "fileObject": {
+              "@id": "file_3"
+            },
+            "extract": {
+              "column": "place_of_service_source_value"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "recordset_4",
+      "name": "2b_concept",
+      "description": "Records from 2b_concept.csv (1000 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_4_concept_id",
+          "name": "concept_id",
+          "description": "Column 'concept_id' from 2b_concept.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_4_source_concept_id",
+            "fileObject": {
+              "@id": "file_4"
+            },
+            "extract": {
+              "column": "concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_4_concept_name",
+          "name": "concept_name",
+          "description": "Column 'concept_name' from 2b_concept.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_4_source_concept_name",
+            "fileObject": {
+              "@id": "file_4"
+            },
+            "extract": {
+              "column": "concept_name"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_4_domain_id",
+          "name": "domain_id",
+          "description": "Column 'domain_id' from 2b_concept.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_4_source_domain_id",
+            "fileObject": {
+              "@id": "file_4"
+            },
+            "extract": {
+              "column": "domain_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_4_vocabulary_id",
+          "name": "vocabulary_id",
+          "description": "Column 'vocabulary_id' from 2b_concept.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_4_source_vocabulary_id",
+            "fileObject": {
+              "@id": "file_4"
+            },
+            "extract": {
+              "column": "vocabulary_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_4_concept_class_id",
+          "name": "concept_class_id",
+          "description": "Column 'concept_class_id' from 2b_concept.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_4_source_concept_class_id",
+            "fileObject": {
+              "@id": "file_4"
+            },
+            "extract": {
+              "column": "concept_class_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_4_standard_concept",
+          "name": "standard_concept",
+          "description": "Column 'standard_concept' from 2b_concept.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_4_source_standard_concept",
+            "fileObject": {
+              "@id": "file_4"
+            },
+            "extract": {
+              "column": "standard_concept"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_4_concept_code",
+          "name": "concept_code",
+          "description": "Column 'concept_code' from 2b_concept.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_4_source_concept_code",
+            "fileObject": {
+              "@id": "file_4"
+            },
+            "extract": {
+              "column": "concept_code"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_4_valid_start_DATE",
+          "name": "valid_start_DATE",
+          "description": "Column 'valid_start_DATE' from 2b_concept.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_4_source_valid_start_DATE",
+            "fileObject": {
+              "@id": "file_4"
+            },
+            "extract": {
+              "column": "valid_start_DATE"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_4_valid_end_DATE",
+          "name": "valid_end_DATE",
+          "description": "Column 'valid_end_DATE' from 2b_concept.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_4_source_valid_end_DATE",
+            "fileObject": {
+              "@id": "file_4"
+            },
+            "extract": {
+              "column": "valid_end_DATE"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_4_invalid_reason",
+          "name": "invalid_reason",
+          "description": "Column 'invalid_reason' from 2b_concept.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_4_source_invalid_reason",
+            "fileObject": {
+              "@id": "file_4"
+            },
+            "extract": {
+              "column": "invalid_reason"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "recordset_5",
+      "name": "specimen",
+      "description": "Records from specimen.csv (150 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_5_specimen_id",
+          "name": "specimen_id",
+          "description": "Column 'specimen_id' from specimen.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_5_source_specimen_id",
+            "fileObject": {
+              "@id": "file_5"
+            },
+            "extract": {
+              "column": "specimen_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_5_person_id",
+          "name": "person_id",
+          "description": "Column 'person_id' from specimen.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_5_source_person_id",
+            "fileObject": {
+              "@id": "file_5"
+            },
+            "extract": {
+              "column": "person_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_5_specimen_concept_id",
+          "name": "specimen_concept_id",
+          "description": "Column 'specimen_concept_id' from specimen.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_5_source_specimen_concept_id",
+            "fileObject": {
+              "@id": "file_5"
+            },
+            "extract": {
+              "column": "specimen_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_5_specimen_type_concept_id",
+          "name": "specimen_type_concept_id",
+          "description": "Column 'specimen_type_concept_id' from specimen.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_5_source_specimen_type_concept_id",
+            "fileObject": {
+              "@id": "file_5"
+            },
+            "extract": {
+              "column": "specimen_type_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_5_specimen_date",
+          "name": "specimen_date",
+          "description": "Column 'specimen_date' from specimen.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_5_source_specimen_date",
+            "fileObject": {
+              "@id": "file_5"
+            },
+            "extract": {
+              "column": "specimen_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_5_specimen_datetime",
+          "name": "specimen_datetime",
+          "description": "Column 'specimen_datetime' from specimen.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_5_source_specimen_datetime",
+            "fileObject": {
+              "@id": "file_5"
+            },
+            "extract": {
+              "column": "specimen_datetime"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_5_quantity",
+          "name": "quantity",
+          "description": "Column 'quantity' from specimen.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_5_source_quantity",
+            "fileObject": {
+              "@id": "file_5"
+            },
+            "extract": {
+              "column": "quantity"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_5_unit_concept_id",
+          "name": "unit_concept_id",
+          "description": "Column 'unit_concept_id' from specimen.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_5_source_unit_concept_id",
+            "fileObject": {
+              "@id": "file_5"
+            },
+            "extract": {
+              "column": "unit_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_5_anatomic_site_concept_id",
+          "name": "anatomic_site_concept_id",
+          "description": "Column 'anatomic_site_concept_id' from specimen.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_5_source_anatomic_site_concept_id",
+            "fileObject": {
+              "@id": "file_5"
+            },
+            "extract": {
+              "column": "anatomic_site_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_5_disease_status_concept_id",
+          "name": "disease_status_concept_id",
+          "description": "Column 'disease_status_concept_id' from specimen.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_5_source_disease_status_concept_id",
+            "fileObject": {
+              "@id": "file_5"
+            },
+            "extract": {
+              "column": "disease_status_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_5_specimen_source_id",
+          "name": "specimen_source_id",
+          "description": "Column 'specimen_source_id' from specimen.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_5_source_specimen_source_id",
+            "fileObject": {
+              "@id": "file_5"
+            },
+            "extract": {
+              "column": "specimen_source_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_5_specimen_source_value",
+          "name": "specimen_source_value",
+          "description": "Column 'specimen_source_value' from specimen.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_5_source_specimen_source_value",
+            "fileObject": {
+              "@id": "file_5"
+            },
+            "extract": {
+              "column": "specimen_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_5_unit_source_value",
+          "name": "unit_source_value",
+          "description": "Column 'unit_source_value' from specimen.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_5_source_unit_source_value",
+            "fileObject": {
+              "@id": "file_5"
+            },
+            "extract": {
+              "column": "unit_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_5_anatomic_site_source_value",
+          "name": "anatomic_site_source_value",
+          "description": "Column 'anatomic_site_source_value' from specimen.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_5_source_anatomic_site_source_value",
+            "fileObject": {
+              "@id": "file_5"
+            },
+            "extract": {
+              "column": "anatomic_site_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_5_disease_status_source_value",
+          "name": "disease_status_source_value",
+          "description": "Column 'disease_status_source_value' from specimen.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_5_source_disease_status_source_value",
+            "fileObject": {
+              "@id": "file_5"
+            },
+            "extract": {
+              "column": "disease_status_source_value"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "recordset_6",
+      "name": "death",
+      "description": "Records from death.csv (15 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_6_person_id",
+          "name": "person_id",
+          "description": "Column 'person_id' from death.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_6_source_person_id",
+            "fileObject": {
+              "@id": "file_6"
+            },
+            "extract": {
+              "column": "person_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_6_death_date",
+          "name": "death_date",
+          "description": "Column 'death_date' from death.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_6_source_death_date",
+            "fileObject": {
+              "@id": "file_6"
+            },
+            "extract": {
+              "column": "death_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_6_death_datetime",
+          "name": "death_datetime",
+          "description": "Column 'death_datetime' from death.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_6_source_death_datetime",
+            "fileObject": {
+              "@id": "file_6"
+            },
+            "extract": {
+              "column": "death_datetime"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_6_death_type_concept_id",
+          "name": "death_type_concept_id",
+          "description": "Column 'death_type_concept_id' from death.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_6_source_death_type_concept_id",
+            "fileObject": {
+              "@id": "file_6"
+            },
+            "extract": {
+              "column": "death_type_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_6_cause_concept_id",
+          "name": "cause_concept_id",
+          "description": "Column 'cause_concept_id' from death.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_6_source_cause_concept_id",
+            "fileObject": {
+              "@id": "file_6"
+            },
+            "extract": {
+              "column": "cause_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_6_cause_source_value",
+          "name": "cause_source_value",
+          "description": "Column 'cause_source_value' from death.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_6_source_cause_source_value",
+            "fileObject": {
+              "@id": "file_6"
+            },
+            "extract": {
+              "column": "cause_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_6_cause_source_concept_id",
+          "name": "cause_source_concept_id",
+          "description": "Column 'cause_source_concept_id' from death.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_6_source_cause_source_concept_id",
+            "fileObject": {
+              "@id": "file_6"
+            },
+            "extract": {
+              "column": "cause_source_concept_id"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "recordset_7",
+      "name": "device_exposure",
+      "description": "Records from device_exposure.csv (1000 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_7_device_exposure_id",
+          "name": "device_exposure_id",
+          "description": "Column 'device_exposure_id' from device_exposure.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_7_source_device_exposure_id",
+            "fileObject": {
+              "@id": "file_7"
+            },
+            "extract": {
+              "column": "device_exposure_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_7_person_id",
+          "name": "person_id",
+          "description": "Column 'person_id' from device_exposure.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_7_source_person_id",
+            "fileObject": {
+              "@id": "file_7"
+            },
+            "extract": {
+              "column": "person_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_7_device_concept_id",
+          "name": "device_concept_id",
+          "description": "Column 'device_concept_id' from device_exposure.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_7_source_device_concept_id",
+            "fileObject": {
+              "@id": "file_7"
+            },
+            "extract": {
+              "column": "device_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_7_device_exposure_start_date",
+          "name": "device_exposure_start_date",
+          "description": "Column 'device_exposure_start_date' from device_exposure.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_7_source_device_exposure_start_date",
+            "fileObject": {
+              "@id": "file_7"
+            },
+            "extract": {
+              "column": "device_exposure_start_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_7_device_exposure_start_datetime",
+          "name": "device_exposure_start_datetime",
+          "description": "Column 'device_exposure_start_datetime' from device_exposure.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_7_source_device_exposure_start_datetime",
+            "fileObject": {
+              "@id": "file_7"
+            },
+            "extract": {
+              "column": "device_exposure_start_datetime"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_7_device_exposure_end_date",
+          "name": "device_exposure_end_date",
+          "description": "Column 'device_exposure_end_date' from device_exposure.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_7_source_device_exposure_end_date",
+            "fileObject": {
+              "@id": "file_7"
+            },
+            "extract": {
+              "column": "device_exposure_end_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_7_device_exposure_end_datetime",
+          "name": "device_exposure_end_datetime",
+          "description": "Column 'device_exposure_end_datetime' from device_exposure.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_7_source_device_exposure_end_datetime",
+            "fileObject": {
+              "@id": "file_7"
+            },
+            "extract": {
+              "column": "device_exposure_end_datetime"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_7_device_type_concept_id",
+          "name": "device_type_concept_id",
+          "description": "Column 'device_type_concept_id' from device_exposure.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_7_source_device_type_concept_id",
+            "fileObject": {
+              "@id": "file_7"
+            },
+            "extract": {
+              "column": "device_type_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_7_unique_device_id",
+          "name": "unique_device_id",
+          "description": "Column 'unique_device_id' from device_exposure.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_7_source_unique_device_id",
+            "fileObject": {
+              "@id": "file_7"
+            },
+            "extract": {
+              "column": "unique_device_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_7_quantity",
+          "name": "quantity",
+          "description": "Column 'quantity' from device_exposure.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_7_source_quantity",
+            "fileObject": {
+              "@id": "file_7"
+            },
+            "extract": {
+              "column": "quantity"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_7_provider_id",
+          "name": "provider_id",
+          "description": "Column 'provider_id' from device_exposure.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_7_source_provider_id",
+            "fileObject": {
+              "@id": "file_7"
+            },
+            "extract": {
+              "column": "provider_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_7_visit_occurrence_id",
+          "name": "visit_occurrence_id",
+          "description": "Column 'visit_occurrence_id' from device_exposure.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_7_source_visit_occurrence_id",
+            "fileObject": {
+              "@id": "file_7"
+            },
+            "extract": {
+              "column": "visit_occurrence_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_7_visit_detail_id",
+          "name": "visit_detail_id",
+          "description": "Column 'visit_detail_id' from device_exposure.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_7_source_visit_detail_id",
+            "fileObject": {
+              "@id": "file_7"
+            },
+            "extract": {
+              "column": "visit_detail_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_7_device_source_value",
+          "name": "device_source_value",
+          "description": "Column 'device_source_value' from device_exposure.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_7_source_device_source_value",
+            "fileObject": {
+              "@id": "file_7"
+            },
+            "extract": {
+              "column": "device_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_7_device_source_concept_id",
+          "name": "device_source_concept_id",
+          "description": "Column 'device_source_concept_id' from device_exposure.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_7_source_device_source_concept_id",
+            "fileObject": {
+              "@id": "file_7"
+            },
+            "extract": {
+              "column": "device_source_concept_id"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "recordset_8",
+      "name": "fact_relationship",
+      "description": "Records from fact_relationship.csv (1000 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_8_domain_concept_id_1",
+          "name": "domain_concept_id_1",
+          "description": "Column 'domain_concept_id_1' from fact_relationship.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_8_source_domain_concept_id_1",
+            "fileObject": {
+              "@id": "file_8"
+            },
+            "extract": {
+              "column": "domain_concept_id_1"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_8_fact_id_1",
+          "name": "fact_id_1",
+          "description": "Column 'fact_id_1' from fact_relationship.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_8_source_fact_id_1",
+            "fileObject": {
+              "@id": "file_8"
+            },
+            "extract": {
+              "column": "fact_id_1"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_8_domain_concept_id_2",
+          "name": "domain_concept_id_2",
+          "description": "Column 'domain_concept_id_2' from fact_relationship.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_8_source_domain_concept_id_2",
+            "fileObject": {
+              "@id": "file_8"
+            },
+            "extract": {
+              "column": "domain_concept_id_2"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_8_fact_id_2",
+          "name": "fact_id_2",
+          "description": "Column 'fact_id_2' from fact_relationship.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_8_source_fact_id_2",
+            "fileObject": {
+              "@id": "file_8"
+            },
+            "extract": {
+              "column": "fact_id_2"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_8_relationship_concept_id",
+          "name": "relationship_concept_id",
+          "description": "Column 'relationship_concept_id' from fact_relationship.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_8_source_relationship_concept_id",
+            "fileObject": {
+              "@id": "file_8"
+            },
+            "extract": {
+              "column": "relationship_concept_id"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "recordset_9",
+      "name": "dose_era",
+      "description": "Records from dose_era.csv (117 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_9_dose_era_id",
+          "name": "dose_era_id",
+          "description": "Column 'dose_era_id' from dose_era.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_9_source_dose_era_id",
+            "fileObject": {
+              "@id": "file_9"
+            },
+            "extract": {
+              "column": "dose_era_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_9_person_id",
+          "name": "person_id",
+          "description": "Column 'person_id' from dose_era.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_9_source_person_id",
+            "fileObject": {
+              "@id": "file_9"
+            },
+            "extract": {
+              "column": "person_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_9_drug_concept_id",
+          "name": "drug_concept_id",
+          "description": "Column 'drug_concept_id' from dose_era.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_9_source_drug_concept_id",
+            "fileObject": {
+              "@id": "file_9"
+            },
+            "extract": {
+              "column": "drug_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_9_unit_concept_id",
+          "name": "unit_concept_id",
+          "description": "Column 'unit_concept_id' from dose_era.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_9_source_unit_concept_id",
+            "fileObject": {
+              "@id": "file_9"
+            },
+            "extract": {
+              "column": "unit_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_9_dose_value",
+          "name": "dose_value",
+          "description": "Column 'dose_value' from dose_era.csv",
+          "dataType": "sc:Float",
+          "source": {
+            "@id": "file_9_source_dose_value",
+            "fileObject": {
+              "@id": "file_9"
+            },
+            "extract": {
+              "column": "dose_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_9_dose_era_start_date",
+          "name": "dose_era_start_date",
+          "description": "Column 'dose_era_start_date' from dose_era.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_9_source_dose_era_start_date",
+            "fileObject": {
+              "@id": "file_9"
+            },
+            "extract": {
+              "column": "dose_era_start_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_9_dose_era_end_date",
+          "name": "dose_era_end_date",
+          "description": "Column 'dose_era_end_date' from dose_era.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_9_source_dose_era_end_date",
+            "fileObject": {
+              "@id": "file_9"
+            },
+            "extract": {
+              "column": "dose_era_end_date"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "recordset_10",
+      "name": "location",
+      "description": "Records from location.csv (1 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_10_location_id",
+          "name": "location_id",
+          "description": "Column 'location_id' from location.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_10_source_location_id",
+            "fileObject": {
+              "@id": "file_10"
+            },
+            "extract": {
+              "column": "location_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_10_address_1",
+          "name": "address_1",
+          "description": "Column 'address_1' from location.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_10_source_address_1",
+            "fileObject": {
+              "@id": "file_10"
+            },
+            "extract": {
+              "column": "address_1"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_10_address_2",
+          "name": "address_2",
+          "description": "Column 'address_2' from location.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_10_source_address_2",
+            "fileObject": {
+              "@id": "file_10"
+            },
+            "extract": {
+              "column": "address_2"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_10_city",
+          "name": "city",
+          "description": "Column 'city' from location.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_10_source_city",
+            "fileObject": {
+              "@id": "file_10"
+            },
+            "extract": {
+              "column": "city"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_10_state",
+          "name": "state",
+          "description": "Column 'state' from location.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_10_source_state",
+            "fileObject": {
+              "@id": "file_10"
+            },
+            "extract": {
+              "column": "state"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_10_zip",
+          "name": "zip",
+          "description": "Column 'zip' from location.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_10_source_zip",
+            "fileObject": {
+              "@id": "file_10"
+            },
+            "extract": {
+              "column": "zip"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_10_county",
+          "name": "county",
+          "description": "Column 'county' from location.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_10_source_county",
+            "fileObject": {
+              "@id": "file_10"
+            },
+            "extract": {
+              "column": "county"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_10_location_source_value",
+          "name": "location_source_value",
+          "description": "Column 'location_source_value' from location.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_10_source_location_source_value",
+            "fileObject": {
+              "@id": "file_10"
+            },
+            "extract": {
+              "column": "location_source_value"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "recordset_11",
+      "name": "measurement",
+      "description": "Records from measurement.csv (1000 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_11_measurement_id",
+          "name": "measurement_id",
+          "description": "Column 'measurement_id' from measurement.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_11_source_measurement_id",
+            "fileObject": {
+              "@id": "file_11"
+            },
+            "extract": {
+              "column": "measurement_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_11_person_id",
+          "name": "person_id",
+          "description": "Column 'person_id' from measurement.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_11_source_person_id",
+            "fileObject": {
+              "@id": "file_11"
+            },
+            "extract": {
+              "column": "person_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_11_measurement_concept_id",
+          "name": "measurement_concept_id",
+          "description": "Column 'measurement_concept_id' from measurement.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_11_source_measurement_concept_id",
+            "fileObject": {
+              "@id": "file_11"
+            },
+            "extract": {
+              "column": "measurement_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_11_measurement_date",
+          "name": "measurement_date",
+          "description": "Column 'measurement_date' from measurement.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_11_source_measurement_date",
+            "fileObject": {
+              "@id": "file_11"
+            },
+            "extract": {
+              "column": "measurement_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_11_measurement_datetime",
+          "name": "measurement_datetime",
+          "description": "Column 'measurement_datetime' from measurement.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_11_source_measurement_datetime",
+            "fileObject": {
+              "@id": "file_11"
+            },
+            "extract": {
+              "column": "measurement_datetime"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_11_measurement_time",
+          "name": "measurement_time",
+          "description": "Column 'measurement_time' from measurement.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_11_source_measurement_time",
+            "fileObject": {
+              "@id": "file_11"
+            },
+            "extract": {
+              "column": "measurement_time"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_11_measurement_type_concept_id",
+          "name": "measurement_type_concept_id",
+          "description": "Column 'measurement_type_concept_id' from measurement.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_11_source_measurement_type_concept_id",
+            "fileObject": {
+              "@id": "file_11"
+            },
+            "extract": {
+              "column": "measurement_type_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_11_operator_concept_id",
+          "name": "operator_concept_id",
+          "description": "Column 'operator_concept_id' from measurement.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_11_source_operator_concept_id",
+            "fileObject": {
+              "@id": "file_11"
+            },
+            "extract": {
+              "column": "operator_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_11_value_as_number",
+          "name": "value_as_number",
+          "description": "Column 'value_as_number' from measurement.csv",
+          "dataType": "sc:Float",
+          "source": {
+            "@id": "file_11_source_value_as_number",
+            "fileObject": {
+              "@id": "file_11"
+            },
+            "extract": {
+              "column": "value_as_number"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_11_value_as_concept_id",
+          "name": "value_as_concept_id",
+          "description": "Column 'value_as_concept_id' from measurement.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_11_source_value_as_concept_id",
+            "fileObject": {
+              "@id": "file_11"
+            },
+            "extract": {
+              "column": "value_as_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_11_unit_concept_id",
+          "name": "unit_concept_id",
+          "description": "Column 'unit_concept_id' from measurement.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_11_source_unit_concept_id",
+            "fileObject": {
+              "@id": "file_11"
+            },
+            "extract": {
+              "column": "unit_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_11_range_low",
+          "name": "range_low",
+          "description": "Column 'range_low' from measurement.csv",
+          "dataType": "sc:Float",
+          "source": {
+            "@id": "file_11_source_range_low",
+            "fileObject": {
+              "@id": "file_11"
+            },
+            "extract": {
+              "column": "range_low"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_11_range_high",
+          "name": "range_high",
+          "description": "Column 'range_high' from measurement.csv",
+          "dataType": "sc:Float",
+          "source": {
+            "@id": "file_11_source_range_high",
+            "fileObject": {
+              "@id": "file_11"
+            },
+            "extract": {
+              "column": "range_high"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_11_provider_id",
+          "name": "provider_id",
+          "description": "Column 'provider_id' from measurement.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_11_source_provider_id",
+            "fileObject": {
+              "@id": "file_11"
+            },
+            "extract": {
+              "column": "provider_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_11_visit_occurrence_id",
+          "name": "visit_occurrence_id",
+          "description": "Column 'visit_occurrence_id' from measurement.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_11_source_visit_occurrence_id",
+            "fileObject": {
+              "@id": "file_11"
+            },
+            "extract": {
+              "column": "visit_occurrence_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_11_visit_detail_id",
+          "name": "visit_detail_id",
+          "description": "Column 'visit_detail_id' from measurement.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_11_source_visit_detail_id",
+            "fileObject": {
+              "@id": "file_11"
+            },
+            "extract": {
+              "column": "visit_detail_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_11_measurement_source_value",
+          "name": "measurement_source_value",
+          "description": "Column 'measurement_source_value' from measurement.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_11_source_measurement_source_value",
+            "fileObject": {
+              "@id": "file_11"
+            },
+            "extract": {
+              "column": "measurement_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_11_measurement_source_concept_id",
+          "name": "measurement_source_concept_id",
+          "description": "Column 'measurement_source_concept_id' from measurement.csv",
+          "dataType": "sc:Float",
+          "source": {
+            "@id": "file_11_source_measurement_source_concept_id",
+            "fileObject": {
+              "@id": "file_11"
+            },
+            "extract": {
+              "column": "measurement_source_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_11_unit_source_value",
+          "name": "unit_source_value",
+          "description": "Column 'unit_source_value' from measurement.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_11_source_unit_source_value",
+            "fileObject": {
+              "@id": "file_11"
+            },
+            "extract": {
+              "column": "unit_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_11_value_source_value",
+          "name": "value_source_value",
+          "description": "Column 'value_source_value' from measurement.csv",
+          "dataType": "sc:Float",
+          "source": {
+            "@id": "file_11_source_value_source_value",
+            "fileObject": {
+              "@id": "file_11"
+            },
+            "extract": {
+              "column": "value_source_value"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "recordset_12",
+      "name": "condition_occurrence",
+      "description": "Records from condition_occurrence.csv (1000 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_12_condition_occurrence_id",
+          "name": "condition_occurrence_id",
+          "description": "Column 'condition_occurrence_id' from condition_occurrence.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_12_source_condition_occurrence_id",
+            "fileObject": {
+              "@id": "file_12"
+            },
+            "extract": {
+              "column": "condition_occurrence_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_12_person_id",
+          "name": "person_id",
+          "description": "Column 'person_id' from condition_occurrence.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_12_source_person_id",
+            "fileObject": {
+              "@id": "file_12"
+            },
+            "extract": {
+              "column": "person_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_12_condition_concept_id",
+          "name": "condition_concept_id",
+          "description": "Column 'condition_concept_id' from condition_occurrence.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_12_source_condition_concept_id",
+            "fileObject": {
+              "@id": "file_12"
+            },
+            "extract": {
+              "column": "condition_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_12_condition_start_date",
+          "name": "condition_start_date",
+          "description": "Column 'condition_start_date' from condition_occurrence.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_12_source_condition_start_date",
+            "fileObject": {
+              "@id": "file_12"
+            },
+            "extract": {
+              "column": "condition_start_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_12_condition_start_datetime",
+          "name": "condition_start_datetime",
+          "description": "Column 'condition_start_datetime' from condition_occurrence.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_12_source_condition_start_datetime",
+            "fileObject": {
+              "@id": "file_12"
+            },
+            "extract": {
+              "column": "condition_start_datetime"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_12_condition_end_date",
+          "name": "condition_end_date",
+          "description": "Column 'condition_end_date' from condition_occurrence.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_12_source_condition_end_date",
+            "fileObject": {
+              "@id": "file_12"
+            },
+            "extract": {
+              "column": "condition_end_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_12_condition_end_datetime",
+          "name": "condition_end_datetime",
+          "description": "Column 'condition_end_datetime' from condition_occurrence.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_12_source_condition_end_datetime",
+            "fileObject": {
+              "@id": "file_12"
+            },
+            "extract": {
+              "column": "condition_end_datetime"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_12_condition_type_concept_id",
+          "name": "condition_type_concept_id",
+          "description": "Column 'condition_type_concept_id' from condition_occurrence.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_12_source_condition_type_concept_id",
+            "fileObject": {
+              "@id": "file_12"
+            },
+            "extract": {
+              "column": "condition_type_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_12_stop_reason",
+          "name": "stop_reason",
+          "description": "Column 'stop_reason' from condition_occurrence.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_12_source_stop_reason",
+            "fileObject": {
+              "@id": "file_12"
+            },
+            "extract": {
+              "column": "stop_reason"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_12_provider_id",
+          "name": "provider_id",
+          "description": "Column 'provider_id' from condition_occurrence.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_12_source_provider_id",
+            "fileObject": {
+              "@id": "file_12"
+            },
+            "extract": {
+              "column": "provider_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_12_visit_occurrence_id",
+          "name": "visit_occurrence_id",
+          "description": "Column 'visit_occurrence_id' from condition_occurrence.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_12_source_visit_occurrence_id",
+            "fileObject": {
+              "@id": "file_12"
+            },
+            "extract": {
+              "column": "visit_occurrence_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_12_visit_detail_id",
+          "name": "visit_detail_id",
+          "description": "Column 'visit_detail_id' from condition_occurrence.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_12_source_visit_detail_id",
+            "fileObject": {
+              "@id": "file_12"
+            },
+            "extract": {
+              "column": "visit_detail_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_12_condition_source_value",
+          "name": "condition_source_value",
+          "description": "Column 'condition_source_value' from condition_occurrence.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_12_source_condition_source_value",
+            "fileObject": {
+              "@id": "file_12"
+            },
+            "extract": {
+              "column": "condition_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_12_condition_source_concept_id",
+          "name": "condition_source_concept_id",
+          "description": "Column 'condition_source_concept_id' from condition_occurrence.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_12_source_condition_source_concept_id",
+            "fileObject": {
+              "@id": "file_12"
+            },
+            "extract": {
+              "column": "condition_source_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_12_condition_status_source_value",
+          "name": "condition_status_source_value",
+          "description": "Column 'condition_status_source_value' from condition_occurrence.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_12_source_condition_status_source_value",
+            "fileObject": {
+              "@id": "file_12"
+            },
+            "extract": {
+              "column": "condition_status_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_12_condition_status_concept_id",
+          "name": "condition_status_concept_id",
+          "description": "Column 'condition_status_concept_id' from condition_occurrence.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_12_source_condition_status_concept_id",
+            "fileObject": {
+              "@id": "file_12"
+            },
+            "extract": {
+              "column": "condition_status_concept_id"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "recordset_13",
+      "name": "2b_concept_relationship",
+      "description": "Records from 2b_concept_relationship.csv (1000 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_13_concept_id_1",
+          "name": "concept_id_1",
+          "description": "Column 'concept_id_1' from 2b_concept_relationship.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_13_source_concept_id_1",
+            "fileObject": {
+              "@id": "file_13"
+            },
+            "extract": {
+              "column": "concept_id_1"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_13_concept_id_2",
+          "name": "concept_id_2",
+          "description": "Column 'concept_id_2' from 2b_concept_relationship.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_13_source_concept_id_2",
+            "fileObject": {
+              "@id": "file_13"
+            },
+            "extract": {
+              "column": "concept_id_2"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_13_relationship_id",
+          "name": "relationship_id",
+          "description": "Column 'relationship_id' from 2b_concept_relationship.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_13_source_relationship_id",
+            "fileObject": {
+              "@id": "file_13"
+            },
+            "extract": {
+              "column": "relationship_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_13_valid_start_DATE",
+          "name": "valid_start_DATE",
+          "description": "Column 'valid_start_DATE' from 2b_concept_relationship.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_13_source_valid_start_DATE",
+            "fileObject": {
+              "@id": "file_13"
+            },
+            "extract": {
+              "column": "valid_start_DATE"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_13_valid_end_DATE",
+          "name": "valid_end_DATE",
+          "description": "Column 'valid_end_DATE' from 2b_concept_relationship.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_13_source_valid_end_DATE",
+            "fileObject": {
+              "@id": "file_13"
+            },
+            "extract": {
+              "column": "valid_end_DATE"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_13_invalid_reason",
+          "name": "invalid_reason",
+          "description": "Column 'invalid_reason' from 2b_concept_relationship.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_13_source_invalid_reason",
+            "fileObject": {
+              "@id": "file_13"
+            },
+            "extract": {
+              "column": "invalid_reason"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "recordset_14",
+      "name": "drug_era",
+      "description": "Records from drug_era.csv (1000 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_14_drug_era_id",
+          "name": "drug_era_id",
+          "description": "Column 'drug_era_id' from drug_era.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_14_source_drug_era_id",
+            "fileObject": {
+              "@id": "file_14"
+            },
+            "extract": {
+              "column": "drug_era_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_14_person_id",
+          "name": "person_id",
+          "description": "Column 'person_id' from drug_era.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_14_source_person_id",
+            "fileObject": {
+              "@id": "file_14"
+            },
+            "extract": {
+              "column": "person_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_14_drug_concept_id",
+          "name": "drug_concept_id",
+          "description": "Column 'drug_concept_id' from drug_era.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_14_source_drug_concept_id",
+            "fileObject": {
+              "@id": "file_14"
+            },
+            "extract": {
+              "column": "drug_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_14_drug_era_start_date",
+          "name": "drug_era_start_date",
+          "description": "Column 'drug_era_start_date' from drug_era.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_14_source_drug_era_start_date",
+            "fileObject": {
+              "@id": "file_14"
+            },
+            "extract": {
+              "column": "drug_era_start_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_14_drug_era_end_date",
+          "name": "drug_era_end_date",
+          "description": "Column 'drug_era_end_date' from drug_era.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_14_source_drug_era_end_date",
+            "fileObject": {
+              "@id": "file_14"
+            },
+            "extract": {
+              "column": "drug_era_end_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_14_drug_exposure_count",
+          "name": "drug_exposure_count",
+          "description": "Column 'drug_exposure_count' from drug_era.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_14_source_drug_exposure_count",
+            "fileObject": {
+              "@id": "file_14"
+            },
+            "extract": {
+              "column": "drug_exposure_count"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_14_gap_days",
+          "name": "gap_days",
+          "description": "Column 'gap_days' from drug_era.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_14_source_gap_days",
+            "fileObject": {
+              "@id": "file_14"
+            },
+            "extract": {
+              "column": "gap_days"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "recordset_15",
+      "name": "cdm_source",
+      "description": "Records from cdm_source.csv (1 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_15_cdm_source_name",
+          "name": "cdm_source_name",
+          "description": "Column 'cdm_source_name' from cdm_source.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_15_source_cdm_source_name",
+            "fileObject": {
+              "@id": "file_15"
+            },
+            "extract": {
+              "column": "cdm_source_name"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_15_cdm_source_abbreviation",
+          "name": "cdm_source_abbreviation",
+          "description": "Column 'cdm_source_abbreviation' from cdm_source.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_15_source_cdm_source_abbreviation",
+            "fileObject": {
+              "@id": "file_15"
+            },
+            "extract": {
+              "column": "cdm_source_abbreviation"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_15_cdm_holder",
+          "name": "cdm_holder",
+          "description": "Column 'cdm_holder' from cdm_source.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_15_source_cdm_holder",
+            "fileObject": {
+              "@id": "file_15"
+            },
+            "extract": {
+              "column": "cdm_holder"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_15_source_description",
+          "name": "source_description",
+          "description": "Column 'source_description' from cdm_source.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_15_source_source_description",
+            "fileObject": {
+              "@id": "file_15"
+            },
+            "extract": {
+              "column": "source_description"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_15_source_documentation_reference",
+          "name": "source_documentation_reference",
+          "description": "Column 'source_documentation_reference' from cdm_source.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_15_source_source_documentation_reference",
+            "fileObject": {
+              "@id": "file_15"
+            },
+            "extract": {
+              "column": "source_documentation_reference"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_15_cdm_etl_reference",
+          "name": "cdm_etl_reference",
+          "description": "Column 'cdm_etl_reference' from cdm_source.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_15_source_cdm_etl_reference",
+            "fileObject": {
+              "@id": "file_15"
+            },
+            "extract": {
+              "column": "cdm_etl_reference"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_15_source_release_date",
+          "name": "source_release_date",
+          "description": "Column 'source_release_date' from cdm_source.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_15_source_source_release_date",
+            "fileObject": {
+              "@id": "file_15"
+            },
+            "extract": {
+              "column": "source_release_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_15_cdm_release_date",
+          "name": "cdm_release_date",
+          "description": "Column 'cdm_release_date' from cdm_source.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_15_source_cdm_release_date",
+            "fileObject": {
+              "@id": "file_15"
+            },
+            "extract": {
+              "column": "cdm_release_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_15_cdm_version",
+          "name": "cdm_version",
+          "description": "Column 'cdm_version' from cdm_source.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_15_source_cdm_version",
+            "fileObject": {
+              "@id": "file_15"
+            },
+            "extract": {
+              "column": "cdm_version"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_15_vocabulary_version",
+          "name": "vocabulary_version",
+          "description": "Column 'vocabulary_version' from cdm_source.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_15_source_vocabulary_version",
+            "fileObject": {
+              "@id": "file_15"
+            },
+            "extract": {
+              "column": "vocabulary_version"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "recordset_16",
+      "name": "visit_occurrence",
+      "description": "Records from visit_occurrence.csv (852 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_16_visit_occurrence_id",
+          "name": "visit_occurrence_id",
+          "description": "Column 'visit_occurrence_id' from visit_occurrence.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_16_source_visit_occurrence_id",
+            "fileObject": {
+              "@id": "file_16"
+            },
+            "extract": {
+              "column": "visit_occurrence_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_16_person_id",
+          "name": "person_id",
+          "description": "Column 'person_id' from visit_occurrence.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_16_source_person_id",
+            "fileObject": {
+              "@id": "file_16"
+            },
+            "extract": {
+              "column": "person_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_16_visit_concept_id",
+          "name": "visit_concept_id",
+          "description": "Column 'visit_concept_id' from visit_occurrence.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_16_source_visit_concept_id",
+            "fileObject": {
+              "@id": "file_16"
+            },
+            "extract": {
+              "column": "visit_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_16_visit_start_date",
+          "name": "visit_start_date",
+          "description": "Column 'visit_start_date' from visit_occurrence.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_16_source_visit_start_date",
+            "fileObject": {
+              "@id": "file_16"
+            },
+            "extract": {
+              "column": "visit_start_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_16_visit_start_datetime",
+          "name": "visit_start_datetime",
+          "description": "Column 'visit_start_datetime' from visit_occurrence.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_16_source_visit_start_datetime",
+            "fileObject": {
+              "@id": "file_16"
+            },
+            "extract": {
+              "column": "visit_start_datetime"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_16_visit_end_date",
+          "name": "visit_end_date",
+          "description": "Column 'visit_end_date' from visit_occurrence.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_16_source_visit_end_date",
+            "fileObject": {
+              "@id": "file_16"
+            },
+            "extract": {
+              "column": "visit_end_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_16_visit_end_datetime",
+          "name": "visit_end_datetime",
+          "description": "Column 'visit_end_datetime' from visit_occurrence.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_16_source_visit_end_datetime",
+            "fileObject": {
+              "@id": "file_16"
+            },
+            "extract": {
+              "column": "visit_end_datetime"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_16_visit_type_concept_id",
+          "name": "visit_type_concept_id",
+          "description": "Column 'visit_type_concept_id' from visit_occurrence.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_16_source_visit_type_concept_id",
+            "fileObject": {
+              "@id": "file_16"
+            },
+            "extract": {
+              "column": "visit_type_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_16_provider_id",
+          "name": "provider_id",
+          "description": "Column 'provider_id' from visit_occurrence.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_16_source_provider_id",
+            "fileObject": {
+              "@id": "file_16"
+            },
+            "extract": {
+              "column": "provider_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_16_care_site_id",
+          "name": "care_site_id",
+          "description": "Column 'care_site_id' from visit_occurrence.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_16_source_care_site_id",
+            "fileObject": {
+              "@id": "file_16"
+            },
+            "extract": {
+              "column": "care_site_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_16_visit_source_value",
+          "name": "visit_source_value",
+          "description": "Column 'visit_source_value' from visit_occurrence.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_16_source_visit_source_value",
+            "fileObject": {
+              "@id": "file_16"
+            },
+            "extract": {
+              "column": "visit_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_16_visit_source_concept_id",
+          "name": "visit_source_concept_id",
+          "description": "Column 'visit_source_concept_id' from visit_occurrence.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_16_source_visit_source_concept_id",
+            "fileObject": {
+              "@id": "file_16"
+            },
+            "extract": {
+              "column": "visit_source_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_16_admitting_source_concept_id",
+          "name": "admitting_source_concept_id",
+          "description": "Column 'admitting_source_concept_id' from visit_occurrence.csv",
+          "dataType": "sc:Float",
+          "source": {
+            "@id": "file_16_source_admitting_source_concept_id",
+            "fileObject": {
+              "@id": "file_16"
+            },
+            "extract": {
+              "column": "admitting_source_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_16_admitting_source_value",
+          "name": "admitting_source_value",
+          "description": "Column 'admitting_source_value' from visit_occurrence.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_16_source_admitting_source_value",
+            "fileObject": {
+              "@id": "file_16"
+            },
+            "extract": {
+              "column": "admitting_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_16_discharge_to_concept_id",
+          "name": "discharge_to_concept_id",
+          "description": "Column 'discharge_to_concept_id' from visit_occurrence.csv",
+          "dataType": "sc:Float",
+          "source": {
+            "@id": "file_16_source_discharge_to_concept_id",
+            "fileObject": {
+              "@id": "file_16"
+            },
+            "extract": {
+              "column": "discharge_to_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_16_discharge_to_source_value",
+          "name": "discharge_to_source_value",
+          "description": "Column 'discharge_to_source_value' from visit_occurrence.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_16_source_discharge_to_source_value",
+            "fileObject": {
+              "@id": "file_16"
+            },
+            "extract": {
+              "column": "discharge_to_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_16_preceding_visit_occurrence_id",
+          "name": "preceding_visit_occurrence_id",
+          "description": "Column 'preceding_visit_occurrence_id' from visit_occurrence.csv",
+          "dataType": "sc:Float",
+          "source": {
+            "@id": "file_16_source_preceding_visit_occurrence_id",
+            "fileObject": {
+              "@id": "file_16"
+            },
+            "extract": {
+              "column": "preceding_visit_occurrence_id"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "recordset_17",
+      "name": "person",
+      "description": "Records from person.csv (100 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_17_person_id",
+          "name": "person_id",
+          "description": "Column 'person_id' from person.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_17_source_person_id",
+            "fileObject": {
+              "@id": "file_17"
+            },
+            "extract": {
+              "column": "person_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_17_gender_concept_id",
+          "name": "gender_concept_id",
+          "description": "Column 'gender_concept_id' from person.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_17_source_gender_concept_id",
+            "fileObject": {
+              "@id": "file_17"
+            },
+            "extract": {
+              "column": "gender_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_17_year_of_birth",
+          "name": "year_of_birth",
+          "description": "Column 'year_of_birth' from person.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_17_source_year_of_birth",
+            "fileObject": {
+              "@id": "file_17"
+            },
+            "extract": {
+              "column": "year_of_birth"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_17_month_of_birth",
+          "name": "month_of_birth",
+          "description": "Column 'month_of_birth' from person.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_17_source_month_of_birth",
+            "fileObject": {
+              "@id": "file_17"
+            },
+            "extract": {
+              "column": "month_of_birth"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_17_day_of_birth",
+          "name": "day_of_birth",
+          "description": "Column 'day_of_birth' from person.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_17_source_day_of_birth",
+            "fileObject": {
+              "@id": "file_17"
+            },
+            "extract": {
+              "column": "day_of_birth"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_17_birth_datetime",
+          "name": "birth_datetime",
+          "description": "Column 'birth_datetime' from person.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_17_source_birth_datetime",
+            "fileObject": {
+              "@id": "file_17"
+            },
+            "extract": {
+              "column": "birth_datetime"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_17_race_concept_id",
+          "name": "race_concept_id",
+          "description": "Column 'race_concept_id' from person.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_17_source_race_concept_id",
+            "fileObject": {
+              "@id": "file_17"
+            },
+            "extract": {
+              "column": "race_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_17_ethnicity_concept_id",
+          "name": "ethnicity_concept_id",
+          "description": "Column 'ethnicity_concept_id' from person.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_17_source_ethnicity_concept_id",
+            "fileObject": {
+              "@id": "file_17"
+            },
+            "extract": {
+              "column": "ethnicity_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_17_location_id",
+          "name": "location_id",
+          "description": "Column 'location_id' from person.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_17_source_location_id",
+            "fileObject": {
+              "@id": "file_17"
+            },
+            "extract": {
+              "column": "location_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_17_provider_id",
+          "name": "provider_id",
+          "description": "Column 'provider_id' from person.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_17_source_provider_id",
+            "fileObject": {
+              "@id": "file_17"
+            },
+            "extract": {
+              "column": "provider_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_17_care_site_id",
+          "name": "care_site_id",
+          "description": "Column 'care_site_id' from person.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_17_source_care_site_id",
+            "fileObject": {
+              "@id": "file_17"
+            },
+            "extract": {
+              "column": "care_site_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_17_person_source_value",
+          "name": "person_source_value",
+          "description": "Column 'person_source_value' from person.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_17_source_person_source_value",
+            "fileObject": {
+              "@id": "file_17"
+            },
+            "extract": {
+              "column": "person_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_17_gender_source_value",
+          "name": "gender_source_value",
+          "description": "Column 'gender_source_value' from person.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_17_source_gender_source_value",
+            "fileObject": {
+              "@id": "file_17"
+            },
+            "extract": {
+              "column": "gender_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_17_gender_source_concept_id",
+          "name": "gender_source_concept_id",
+          "description": "Column 'gender_source_concept_id' from person.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_17_source_gender_source_concept_id",
+            "fileObject": {
+              "@id": "file_17"
+            },
+            "extract": {
+              "column": "gender_source_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_17_race_source_value",
+          "name": "race_source_value",
+          "description": "Column 'race_source_value' from person.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_17_source_race_source_value",
+            "fileObject": {
+              "@id": "file_17"
+            },
+            "extract": {
+              "column": "race_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_17_race_source_concept_id",
+          "name": "race_source_concept_id",
+          "description": "Column 'race_source_concept_id' from person.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_17_source_race_source_concept_id",
+            "fileObject": {
+              "@id": "file_17"
+            },
+            "extract": {
+              "column": "race_source_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_17_ethnicity_source_value",
+          "name": "ethnicity_source_value",
+          "description": "Column 'ethnicity_source_value' from person.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_17_source_ethnicity_source_value",
+            "fileObject": {
+              "@id": "file_17"
+            },
+            "extract": {
+              "column": "ethnicity_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_17_ethnicity_source_concept_id",
+          "name": "ethnicity_source_concept_id",
+          "description": "Column 'ethnicity_source_concept_id' from person.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_17_source_ethnicity_source_concept_id",
+            "fileObject": {
+              "@id": "file_17"
+            },
+            "extract": {
+              "column": "ethnicity_source_concept_id"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "recordset_18",
+      "name": "observation",
+      "description": "Records from observation.csv (1000 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_18_observation_id",
+          "name": "observation_id",
+          "description": "Column 'observation_id' from observation.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_18_source_observation_id",
+            "fileObject": {
+              "@id": "file_18"
+            },
+            "extract": {
+              "column": "observation_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_18_person_id",
+          "name": "person_id",
+          "description": "Column 'person_id' from observation.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_18_source_person_id",
+            "fileObject": {
+              "@id": "file_18"
+            },
+            "extract": {
+              "column": "person_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_18_observation_concept_id",
+          "name": "observation_concept_id",
+          "description": "Column 'observation_concept_id' from observation.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_18_source_observation_concept_id",
+            "fileObject": {
+              "@id": "file_18"
+            },
+            "extract": {
+              "column": "observation_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_18_observation_date",
+          "name": "observation_date",
+          "description": "Column 'observation_date' from observation.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_18_source_observation_date",
+            "fileObject": {
+              "@id": "file_18"
+            },
+            "extract": {
+              "column": "observation_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_18_observation_datetime",
+          "name": "observation_datetime",
+          "description": "Column 'observation_datetime' from observation.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_18_source_observation_datetime",
+            "fileObject": {
+              "@id": "file_18"
+            },
+            "extract": {
+              "column": "observation_datetime"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_18_observation_type_concept_id",
+          "name": "observation_type_concept_id",
+          "description": "Column 'observation_type_concept_id' from observation.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_18_source_observation_type_concept_id",
+            "fileObject": {
+              "@id": "file_18"
+            },
+            "extract": {
+              "column": "observation_type_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_18_value_as_number",
+          "name": "value_as_number",
+          "description": "Column 'value_as_number' from observation.csv",
+          "dataType": "sc:Float",
+          "source": {
+            "@id": "file_18_source_value_as_number",
+            "fileObject": {
+              "@id": "file_18"
+            },
+            "extract": {
+              "column": "value_as_number"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_18_value_as_string",
+          "name": "value_as_string",
+          "description": "Column 'value_as_string' from observation.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_18_source_value_as_string",
+            "fileObject": {
+              "@id": "file_18"
+            },
+            "extract": {
+              "column": "value_as_string"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_18_value_as_concept_id",
+          "name": "value_as_concept_id",
+          "description": "Column 'value_as_concept_id' from observation.csv",
+          "dataType": "sc:Float",
+          "source": {
+            "@id": "file_18_source_value_as_concept_id",
+            "fileObject": {
+              "@id": "file_18"
+            },
+            "extract": {
+              "column": "value_as_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_18_qualifier_concept_id",
+          "name": "qualifier_concept_id",
+          "description": "Column 'qualifier_concept_id' from observation.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_18_source_qualifier_concept_id",
+            "fileObject": {
+              "@id": "file_18"
+            },
+            "extract": {
+              "column": "qualifier_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_18_unit_concept_id",
+          "name": "unit_concept_id",
+          "description": "Column 'unit_concept_id' from observation.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_18_source_unit_concept_id",
+            "fileObject": {
+              "@id": "file_18"
+            },
+            "extract": {
+              "column": "unit_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_18_provider_id",
+          "name": "provider_id",
+          "description": "Column 'provider_id' from observation.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_18_source_provider_id",
+            "fileObject": {
+              "@id": "file_18"
+            },
+            "extract": {
+              "column": "provider_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_18_visit_occurrence_id",
+          "name": "visit_occurrence_id",
+          "description": "Column 'visit_occurrence_id' from observation.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_18_source_visit_occurrence_id",
+            "fileObject": {
+              "@id": "file_18"
+            },
+            "extract": {
+              "column": "visit_occurrence_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_18_visit_detail_id",
+          "name": "visit_detail_id",
+          "description": "Column 'visit_detail_id' from observation.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_18_source_visit_detail_id",
+            "fileObject": {
+              "@id": "file_18"
+            },
+            "extract": {
+              "column": "visit_detail_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_18_observation_source_value",
+          "name": "observation_source_value",
+          "description": "Column 'observation_source_value' from observation.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_18_source_observation_source_value",
+            "fileObject": {
+              "@id": "file_18"
+            },
+            "extract": {
+              "column": "observation_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_18_observation_source_concept_id",
+          "name": "observation_source_concept_id",
+          "description": "Column 'observation_source_concept_id' from observation.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_18_source_observation_source_concept_id",
+            "fileObject": {
+              "@id": "file_18"
+            },
+            "extract": {
+              "column": "observation_source_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_18_unit_source_value",
+          "name": "unit_source_value",
+          "description": "Column 'unit_source_value' from observation.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_18_source_unit_source_value",
+            "fileObject": {
+              "@id": "file_18"
+            },
+            "extract": {
+              "column": "unit_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_18_qualifier_source_value",
+          "name": "qualifier_source_value",
+          "description": "Column 'qualifier_source_value' from observation.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_18_source_qualifier_source_value",
+            "fileObject": {
+              "@id": "file_18"
+            },
+            "extract": {
+              "column": "qualifier_source_value"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "recordset_19",
+      "name": "visit_detail",
+      "description": "Records from visit_detail.csv (1000 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_19_visit_detail_id",
+          "name": "visit_detail_id",
+          "description": "Column 'visit_detail_id' from visit_detail.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_19_source_visit_detail_id",
+            "fileObject": {
+              "@id": "file_19"
+            },
+            "extract": {
+              "column": "visit_detail_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_19_person_id",
+          "name": "person_id",
+          "description": "Column 'person_id' from visit_detail.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_19_source_person_id",
+            "fileObject": {
+              "@id": "file_19"
+            },
+            "extract": {
+              "column": "person_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_19_visit_detail_concept_id",
+          "name": "visit_detail_concept_id",
+          "description": "Column 'visit_detail_concept_id' from visit_detail.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_19_source_visit_detail_concept_id",
+            "fileObject": {
+              "@id": "file_19"
+            },
+            "extract": {
+              "column": "visit_detail_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_19_visit_detail_start_date",
+          "name": "visit_detail_start_date",
+          "description": "Column 'visit_detail_start_date' from visit_detail.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_19_source_visit_detail_start_date",
+            "fileObject": {
+              "@id": "file_19"
+            },
+            "extract": {
+              "column": "visit_detail_start_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_19_visit_detail_start_datetime",
+          "name": "visit_detail_start_datetime",
+          "description": "Column 'visit_detail_start_datetime' from visit_detail.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_19_source_visit_detail_start_datetime",
+            "fileObject": {
+              "@id": "file_19"
+            },
+            "extract": {
+              "column": "visit_detail_start_datetime"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_19_visit_detail_end_date",
+          "name": "visit_detail_end_date",
+          "description": "Column 'visit_detail_end_date' from visit_detail.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_19_source_visit_detail_end_date",
+            "fileObject": {
+              "@id": "file_19"
+            },
+            "extract": {
+              "column": "visit_detail_end_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_19_visit_detail_end_datetime",
+          "name": "visit_detail_end_datetime",
+          "description": "Column 'visit_detail_end_datetime' from visit_detail.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_19_source_visit_detail_end_datetime",
+            "fileObject": {
+              "@id": "file_19"
+            },
+            "extract": {
+              "column": "visit_detail_end_datetime"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_19_visit_detail_type_concept_id",
+          "name": "visit_detail_type_concept_id",
+          "description": "Column 'visit_detail_type_concept_id' from visit_detail.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_19_source_visit_detail_type_concept_id",
+            "fileObject": {
+              "@id": "file_19"
+            },
+            "extract": {
+              "column": "visit_detail_type_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_19_provider_id",
+          "name": "provider_id",
+          "description": "Column 'provider_id' from visit_detail.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_19_source_provider_id",
+            "fileObject": {
+              "@id": "file_19"
+            },
+            "extract": {
+              "column": "provider_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_19_care_site_id",
+          "name": "care_site_id",
+          "description": "Column 'care_site_id' from visit_detail.csv",
+          "dataType": "sc:Float",
+          "source": {
+            "@id": "file_19_source_care_site_id",
+            "fileObject": {
+              "@id": "file_19"
+            },
+            "extract": {
+              "column": "care_site_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_19_admitting_source_concept_id",
+          "name": "admitting_source_concept_id",
+          "description": "Column 'admitting_source_concept_id' from visit_detail.csv",
+          "dataType": "sc:Float",
+          "source": {
+            "@id": "file_19_source_admitting_source_concept_id",
+            "fileObject": {
+              "@id": "file_19"
+            },
+            "extract": {
+              "column": "admitting_source_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_19_discharge_to_concept_id",
+          "name": "discharge_to_concept_id",
+          "description": "Column 'discharge_to_concept_id' from visit_detail.csv",
+          "dataType": "sc:Float",
+          "source": {
+            "@id": "file_19_source_discharge_to_concept_id",
+            "fileObject": {
+              "@id": "file_19"
+            },
+            "extract": {
+              "column": "discharge_to_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_19_preceding_visit_detail_id",
+          "name": "preceding_visit_detail_id",
+          "description": "Column 'preceding_visit_detail_id' from visit_detail.csv",
+          "dataType": "sc:Float",
+          "source": {
+            "@id": "file_19_source_preceding_visit_detail_id",
+            "fileObject": {
+              "@id": "file_19"
+            },
+            "extract": {
+              "column": "preceding_visit_detail_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_19_visit_detail_source_value",
+          "name": "visit_detail_source_value",
+          "description": "Column 'visit_detail_source_value' from visit_detail.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_19_source_visit_detail_source_value",
+            "fileObject": {
+              "@id": "file_19"
+            },
+            "extract": {
+              "column": "visit_detail_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_19_visit_detail_source_concept_id",
+          "name": "visit_detail_source_concept_id",
+          "description": "Column 'visit_detail_source_concept_id' from visit_detail.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_19_source_visit_detail_source_concept_id",
+            "fileObject": {
+              "@id": "file_19"
+            },
+            "extract": {
+              "column": "visit_detail_source_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_19_admitting_source_value",
+          "name": "admitting_source_value",
+          "description": "Column 'admitting_source_value' from visit_detail.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_19_source_admitting_source_value",
+            "fileObject": {
+              "@id": "file_19"
+            },
+            "extract": {
+              "column": "admitting_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_19_discharge_to_source_value",
+          "name": "discharge_to_source_value",
+          "description": "Column 'discharge_to_source_value' from visit_detail.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_19_source_discharge_to_source_value",
+            "fileObject": {
+              "@id": "file_19"
+            },
+            "extract": {
+              "column": "discharge_to_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_19_visit_detail_parent_id",
+          "name": "visit_detail_parent_id",
+          "description": "Column 'visit_detail_parent_id' from visit_detail.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_19_source_visit_detail_parent_id",
+            "fileObject": {
+              "@id": "file_19"
+            },
+            "extract": {
+              "column": "visit_detail_parent_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_19_visit_occurrence_id",
+          "name": "visit_occurrence_id",
+          "description": "Column 'visit_occurrence_id' from visit_detail.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_19_source_visit_occurrence_id",
+            "fileObject": {
+              "@id": "file_19"
+            },
+            "extract": {
+              "column": "visit_occurrence_id"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "recordset_20",
+      "name": "procedure_occurrence",
+      "description": "Records from procedure_occurrence.csv (1000 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_20_procedure_occurrence_id",
+          "name": "procedure_occurrence_id",
+          "description": "Column 'procedure_occurrence_id' from procedure_occurrence.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_20_source_procedure_occurrence_id",
+            "fileObject": {
+              "@id": "file_20"
+            },
+            "extract": {
+              "column": "procedure_occurrence_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_20_person_id",
+          "name": "person_id",
+          "description": "Column 'person_id' from procedure_occurrence.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_20_source_person_id",
+            "fileObject": {
+              "@id": "file_20"
+            },
+            "extract": {
+              "column": "person_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_20_procedure_concept_id",
+          "name": "procedure_concept_id",
+          "description": "Column 'procedure_concept_id' from procedure_occurrence.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_20_source_procedure_concept_id",
+            "fileObject": {
+              "@id": "file_20"
+            },
+            "extract": {
+              "column": "procedure_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_20_procedure_date",
+          "name": "procedure_date",
+          "description": "Column 'procedure_date' from procedure_occurrence.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_20_source_procedure_date",
+            "fileObject": {
+              "@id": "file_20"
+            },
+            "extract": {
+              "column": "procedure_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_20_procedure_datetime",
+          "name": "procedure_datetime",
+          "description": "Column 'procedure_datetime' from procedure_occurrence.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_20_source_procedure_datetime",
+            "fileObject": {
+              "@id": "file_20"
+            },
+            "extract": {
+              "column": "procedure_datetime"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_20_procedure_type_concept_id",
+          "name": "procedure_type_concept_id",
+          "description": "Column 'procedure_type_concept_id' from procedure_occurrence.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_20_source_procedure_type_concept_id",
+            "fileObject": {
+              "@id": "file_20"
+            },
+            "extract": {
+              "column": "procedure_type_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_20_modifier_concept_id",
+          "name": "modifier_concept_id",
+          "description": "Column 'modifier_concept_id' from procedure_occurrence.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_20_source_modifier_concept_id",
+            "fileObject": {
+              "@id": "file_20"
+            },
+            "extract": {
+              "column": "modifier_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_20_quantity",
+          "name": "quantity",
+          "description": "Column 'quantity' from procedure_occurrence.csv",
+          "dataType": "sc:Float",
+          "source": {
+            "@id": "file_20_source_quantity",
+            "fileObject": {
+              "@id": "file_20"
+            },
+            "extract": {
+              "column": "quantity"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_20_provider_id",
+          "name": "provider_id",
+          "description": "Column 'provider_id' from procedure_occurrence.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_20_source_provider_id",
+            "fileObject": {
+              "@id": "file_20"
+            },
+            "extract": {
+              "column": "provider_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_20_visit_occurrence_id",
+          "name": "visit_occurrence_id",
+          "description": "Column 'visit_occurrence_id' from procedure_occurrence.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_20_source_visit_occurrence_id",
+            "fileObject": {
+              "@id": "file_20"
+            },
+            "extract": {
+              "column": "visit_occurrence_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_20_visit_detail_id",
+          "name": "visit_detail_id",
+          "description": "Column 'visit_detail_id' from procedure_occurrence.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_20_source_visit_detail_id",
+            "fileObject": {
+              "@id": "file_20"
+            },
+            "extract": {
+              "column": "visit_detail_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_20_procedure_source_value",
+          "name": "procedure_source_value",
+          "description": "Column 'procedure_source_value' from procedure_occurrence.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_20_source_procedure_source_value",
+            "fileObject": {
+              "@id": "file_20"
+            },
+            "extract": {
+              "column": "procedure_source_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_20_procedure_source_concept_id",
+          "name": "procedure_source_concept_id",
+          "description": "Column 'procedure_source_concept_id' from procedure_occurrence.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_20_source_procedure_source_concept_id",
+            "fileObject": {
+              "@id": "file_20"
+            },
+            "extract": {
+              "column": "procedure_source_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_20_modifier_source_value",
+          "name": "modifier_source_value",
+          "description": "Column 'modifier_source_value' from procedure_occurrence.csv",
+          "dataType": "sc:Text",
+          "source": {
+            "@id": "file_20_source_modifier_source_value",
+            "fileObject": {
+              "@id": "file_20"
+            },
+            "extract": {
+              "column": "modifier_source_value"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "recordset_21",
+      "name": "condition_era",
+      "description": "Records from condition_era.csv (1000 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_21_condition_era_id",
+          "name": "condition_era_id",
+          "description": "Column 'condition_era_id' from condition_era.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_21_source_condition_era_id",
+            "fileObject": {
+              "@id": "file_21"
+            },
+            "extract": {
+              "column": "condition_era_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_21_person_id",
+          "name": "person_id",
+          "description": "Column 'person_id' from condition_era.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_21_source_person_id",
+            "fileObject": {
+              "@id": "file_21"
+            },
+            "extract": {
+              "column": "person_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_21_condition_concept_id",
+          "name": "condition_concept_id",
+          "description": "Column 'condition_concept_id' from condition_era.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_21_source_condition_concept_id",
+            "fileObject": {
+              "@id": "file_21"
+            },
+            "extract": {
+              "column": "condition_concept_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_21_condition_era_start_date",
+          "name": "condition_era_start_date",
+          "description": "Column 'condition_era_start_date' from condition_era.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_21_source_condition_era_start_date",
+            "fileObject": {
+              "@id": "file_21"
+            },
+            "extract": {
+              "column": "condition_era_start_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_21_condition_era_end_date",
+          "name": "condition_era_end_date",
+          "description": "Column 'condition_era_end_date' from condition_era.csv",
+          "dataType": "sc:Date",
+          "source": {
+            "@id": "file_21_source_condition_era_end_date",
+            "fileObject": {
+              "@id": "file_21"
+            },
+            "extract": {
+              "column": "condition_era_end_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "file_21_condition_occurrence_count",
+          "name": "condition_occurrence_count",
+          "description": "Column 'condition_occurrence_count' from condition_era.csv",
+          "dataType": "sc:Integer",
+          "source": {
+            "@id": "file_21_source_condition_occurrence_count",
+            "fileObject": {
+              "@id": "file_21"
+            },
+            "extract": {
+              "column": "condition_occurrence_count"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
