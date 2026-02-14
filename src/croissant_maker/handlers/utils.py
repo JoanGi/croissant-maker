@@ -5,6 +5,7 @@ import gzip  # Built-in: handles .gz (gzip) compression
 import bz2  # Built-in: handles .bz2 (bzip2) compression
 import lzma  # Built-in: handles .xz/.lzma (LZMA/xz) compression
 import logging
+import re
 from pathlib import Path
 from typing import Dict, Union
 
@@ -13,6 +14,20 @@ import pyarrow.types as patypes
 
 # Set up logger for this module
 logger = logging.getLogger(__name__)
+
+# Characters that are invalid in Croissant @id values.
+# mlcroissant rejects whitespace and URI-unsafe characters like >, (, ), %.
+_INVALID_ID_CHARS = re.compile(r"[^A-Za-z0-9_.\-]")
+
+
+def sanitize_id(raw: str) -> str:
+    """Replace characters that mlcroissant rejects in @id values.
+
+    Column names like 'Image Name' or 'Age>30(%)' contain spaces or
+    URI-unsafe characters that cause mlcroissant validation errors.
+    This replaces anything outside [A-Za-z0-9_.-] with underscores.
+    """
+    return _INVALID_ID_CHARS.sub("_", raw)
 
 
 def map_arrow_type(arrow_type: pa.DataType) -> str:
