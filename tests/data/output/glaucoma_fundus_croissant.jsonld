@@ -190,7 +190,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_0",
       "name": "Labels",
-      "description": "Records from Labels.csv (12 rows)",
+      "description": "Records from Labels.csv",
       "field": [
         {
           "@type": "cr:Field",

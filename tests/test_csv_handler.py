@@ -16,7 +16,7 @@ def test_csv_handler_can_handle() -> None:
 
 
 def test_csv_handler_extract_metadata(tmp_path: Path) -> None:
-    """Test CSV metadata extraction."""
+    """Test CSV metadata extraction (default: no row counting)."""
     csv_content = "id,name,age\n1,Alice,25\n2,Bob,30"
     csv_file = tmp_path / "test.csv"
     csv_file.write_text(csv_content)
@@ -26,7 +26,7 @@ def test_csv_handler_extract_metadata(tmp_path: Path) -> None:
 
     assert metadata["encoding_format"] == "text/csv"
     assert metadata["file_name"] == "test.csv"
-    assert metadata["num_rows"] == 2
+    assert metadata["num_rows"] is None
     assert metadata["num_columns"] == 3
     assert metadata["columns"] == ["id", "name", "age"]
 
@@ -34,6 +34,18 @@ def test_csv_handler_extract_metadata(tmp_path: Path) -> None:
     assert column_types["id"] == "cr:Int64"
     assert column_types["name"] == "sc:Text"
     assert column_types["age"] == "cr:Int64"
+
+
+def test_csv_handler_count_rows(tmp_path: Path) -> None:
+    """Test CSV metadata extraction with explicit row counting."""
+    csv_content = "id,name,age\n1,Alice,25\n2,Bob,30"
+    csv_file = tmp_path / "test.csv"
+    csv_file.write_text(csv_content)
+
+    handler = CSVHandler()
+    metadata = handler.extract_metadata(csv_file, count_rows=True)
+
+    assert metadata["num_rows"] == 2
 
 
 def test_csv_handler_empty_file(tmp_path: Path) -> None:

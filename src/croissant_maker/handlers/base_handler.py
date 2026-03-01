@@ -30,15 +30,19 @@ class FileTypeHandler(ABC):
         pass
 
     @abstractmethod
-    def extract_metadata(self, file_path: Path) -> dict:
+    def extract_metadata(self, file_path: Path, **kwargs) -> dict:
         """
         Extract comprehensive metadata from a single file.
 
         Should return a dictionary containing file information, structure,
         types, and any format-specific metadata needed for Croissant generation.
 
+        Subclasses may declare additional named parameters before **kwargs
+        to support handler-specific options (e.g. count_rows for CSV).
+
         Args:
             file_path: Path to the file to process
+            **kwargs: Handler-specific options forwarded from MetadataGenerator
 
         Returns:
             Dictionary containing extracted metadata. For tabular data, should include:

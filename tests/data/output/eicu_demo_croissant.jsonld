@@ -80,7 +80,7 @@
       "contentSize": "360548",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/diagnosis.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "b1adeaffb438b8893e384cda045012b85ed8d960b1e011750c4ec181c76236e7"
+      "sha256": "c99770c25fdeaee1eb34e490f982bd17459bc8902f951a2ae23adef65e7b1b52"
     },
     {
       "@type": "cr:FileObject",
@@ -89,7 +89,7 @@
       "contentSize": "2619980",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/vitalAperiodic.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "006aa6a3509010c307c00e15f6d4e4b2f07a06a7a5ae9d788e5845be431a2f95"
+      "sha256": "c294f46647990cb648b3ebfa589e83f330bdc0c2c922b5e8f23aa0ef99954635"
     },
     {
       "@type": "cr:FileObject",
@@ -98,7 +98,7 @@
       "contentSize": "95877",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/admissionDx.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "d5ce598c5770d2d73da53b29e862e3f54679dc028de8fb965207696c25420e0e"
+      "sha256": "607020180f1c7fbbc994a23552d6a4fdc70b86d4abc8e1b36f3ee28e96f15c42"
     },
     {
       "@type": "cr:FileObject",
@@ -107,7 +107,7 @@
       "contentSize": "58474",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/respiratoryCare.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "d66d98c4c16cb3e0bc9bdcf56d622da535e143fe130f3bc594c93529b7358914"
+      "sha256": "9e260512866498995b49d0f0676795b62115fc1045de3f7daf2e356769259de7"
     },
     {
       "@type": "cr:FileObject",
@@ -116,7 +116,7 @@
       "contentSize": "1099631",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/nurseAssessment.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "6eefbc26cf304229c78e5b2c83d27487aad09b035dfc4b4cf9e884d8135c0e42"
+      "sha256": "1664d3a7a0f9f535a15e2d032c270cfd64bab2d5a08b6bec1b31133893934d09"
     },
     {
       "@type": "cr:FileObject",
@@ -125,7 +125,7 @@
       "contentSize": "759",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/hospital.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "19512f8e5c0625d3bf398b6583877f7e72692f5dedb83dee2e6e8214abbe58ec"
+      "sha256": "4ed356f9c4e7c8ce80e89241697e94b77f21c2f325cd6ad126794b1e92805ef4"
     },
     {
       "@type": "cr:FileObject",
@@ -134,7 +134,7 @@
       "contentSize": "19391070",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/vitalPeriodic.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "bc2a5bf6f67b848adf7dc20502aaea30ca7a2d36731a315d22b48c3a365b9c6b"
+      "sha256": "04dc093a2e77cd4c52ac7f2a47a8356fbb7456c7f15deb20d5abb1ca4303231d"
     },
     {
       "@type": "cr:FileObject",
@@ -143,7 +143,7 @@
       "contentSize": "360368",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/carePlanGeneral.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "06445549ebf4d4f467b6fdee055a2fb6873d1dae5a3d37f24c1d683462779951"
+      "sha256": "f095258743a05717dda031b9a4f00061cffe82e06ae793c0e51f2890e1dcd44e"
     },
     {
       "@type": "cr:FileObject",
@@ -152,7 +152,7 @@
       "contentSize": "136791",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/patient.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "2ba8fc9b193cb26b74188362ab76f7a4b69a5094ac62a080595fa844d7f0f3a0"
+      "sha256": "15e1eb52169828e3cfff3b67132a087298de4d0365bbb31bb294f6043bffd474"
     },
     {
       "@type": "cr:FileObject",
@@ -161,7 +161,7 @@
       "contentSize": "31115",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/carePlanGoal.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "978c643c7371dd1f7da44eac3c6f3520cdae046e520302d67582f7c4fb7dfc7b"
+      "sha256": "b56d3443683b1b6a29d64da1ffd1de2662aac87b1f49560af720c1bd1325558e"
     },
     {
       "@type": "cr:FileObject",
@@ -170,7 +170,7 @@
       "contentSize": "460899",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/treatment.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "d78809601962962a3e83e3bf361fc53a3fc7b6403fc81ba0cdb03526357d8c05"
+      "sha256": "daefee030fa1ad29593dce880ad86bdfbdbb1e33fcb3e78fa21d71cb01a08628"
     },
     {
       "@type": "cr:FileObject",
@@ -179,7 +179,7 @@
       "contentSize": "68194",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/apacheApsVar.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "be3eca4352c898c1e6c8f3482a9e1d81229614db7f3e8ac8d35523dd592e8107"
+      "sha256": "2dc6d63f9807c7e663ffa253998691605d527b702ac1db8cc5dda92308061e78"
     },
     {
       "@type": "cr:FileObject",
@@ -188,7 +188,7 @@
       "contentSize": "289",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/carePlanEOL.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "62cab6ecb0cc1699d0e3de1773e2892dd89095ae47ecadde0237abb293155b93"
+      "sha256": "dfb5eafc8cb6d0c96f6ac289dd49998939df353d919ca0451d74542fd13a2f7f"
     },
     {
       "@type": "cr:FileObject",
@@ -197,7 +197,7 @@
       "contentSize": "403703",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/infusiondrug.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "ef4b639cb3ee09dac530e4e230caed5782bb9dacddbbfb6b57bdde6df432e94c"
+      "sha256": "3b9f024d28682884a820763ac516ae68b247ebf17903fee4f38240c04886d527"
     },
     {
       "@type": "cr:FileObject",
@@ -206,7 +206,7 @@
       "contentSize": "57790",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/carePlanCareProvider.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "a3a5ab656016a1c12574d77f02cb087853d16930062a44adeec5208917f79a6b"
+      "sha256": "af0dff697752a0d98200abdbf054a935a577319b26969a27a5287b18790d633e"
     },
     {
       "@type": "cr:FileObject",
@@ -215,7 +215,7 @@
       "contentSize": "3580",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/microLab.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "2ccb624244b8b2cb69d09b21adb284c4e85328df9d3310f6a9183d6ba8474b5e"
+      "sha256": "0250a23d70033f27e1954ced50935cefedaaf3fddd5a5cf5bda2d5a6927eb94d"
     },
     {
       "@type": "cr:FileObject",
@@ -224,7 +224,7 @@
       "contentSize": "499807",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/nurseCare.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "8b0889910c9890c60556cf3248ca367220fb851f36f7dcd7734d967974d65a89"
+      "sha256": "3cfde5dc14cc324e68c9af0807c5572e71fd7e167c5315e6b68cc241e0ff8d47"
     },
     {
       "@type": "cr:FileObject",
@@ -233,7 +233,7 @@
       "contentSize": "777258",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/physicalExam.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "13cab880c1db69404bb8fd5011b31a5b7d3649284410102075cbc58d77308290"
+      "sha256": "7c11cae91ce2828964b9212bb49e601a0e48911ef7df5480b547621845c9d73f"
     },
     {
       "@type": "cr:FileObject",
@@ -242,7 +242,7 @@
       "contentSize": "1630167",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/respiratoryCharting.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "cf88477db592243c7b807757469a10cdc23616f34e28fb13771b9f39ec26b035"
+      "sha256": "21bfe647fea0a229d09ff04c775ec4270d20ae084131a987943da836df534235"
     },
     {
       "@type": "cr:FileObject",
@@ -251,7 +251,7 @@
       "contentSize": "265926",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/note.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "98f85cd7b02779f8637aca2cb0875e0bd756c4a473cbebdd356a97a26c0fcba3"
+      "sha256": "ec67b0cd294a555dc39849a15eea2760e4f8696abbb293094b2003662c997ffa"
     },
     {
       "@type": "cr:FileObject",
@@ -260,7 +260,7 @@
       "contentSize": "114099",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/admissiondrug.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "ed8accbe45f5c4a76ce271ab357db8bd83c047ff21363e1644c5ae859d4938c9"
+      "sha256": "fcf0af0de0efe18ec932199d2fcb308143886df6d50daea869bea48464ea6d68"
     },
     {
       "@type": "cr:FileObject",
@@ -269,7 +269,7 @@
       "contentSize": "5729763",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/lab.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "5a4c8f377d169b10b0fbc2907dc804e42dca1fba99d03e433d54e8b51ac24f53"
+      "sha256": "e06852850abeb65211bc22ac43f17121ba41b14656fac862396449af84d8273a"
     },
     {
       "@type": "cr:FileObject",
@@ -278,7 +278,7 @@
       "contentSize": "53627",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/apachePredVar.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "77fd9b357b27363ee395a9aaf787e07543d7aba0108596616263444307806155"
+      "sha256": "99d5a4ab2c5cd07b6ee0a540c86a576e5975ed3b93df8525e3d287d5babf3eae"
     },
     {
       "@type": "cr:FileObject",
@@ -287,7 +287,7 @@
       "contentSize": "634",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/customLab.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "0c73ac21df4d03b1819bb3bb8c8665d969387666f48a00a19fd3c933513fa25d"
+      "sha256": "58e32f4c0620b22323a46336f9e406d90ce128b4005349b8e40f181f41672617"
     },
     {
       "@type": "cr:FileObject",
@@ -296,7 +296,7 @@
       "contentSize": "214122",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/apachePatientResult.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "8fd642e8949a955fe378abc711308d468ac5a9ba0b323082bb64a47cf3877829"
+      "sha256": "ce799692737f7a712c59aa8fbb9a302cee7c719887f0638caed3ae144b166821"
     },
     {
       "@type": "cr:FileObject",
@@ -305,7 +305,7 @@
       "contentSize": "1586",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/carePlanInfectiousDisease.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "11aaa03008bff01435445cfd746bffc14b7e999e2ad62cd1fc2e4f40823e6546"
+      "sha256": "413ff454d00a3a5b295f4bbd1d8a697a5657c5ac828cbe757a43cd5e664082a8"
     },
     {
       "@type": "cr:FileObject",
@@ -314,7 +314,7 @@
       "contentSize": "35475",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/allergy.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "947153a1ca0c38bb4cf9333acbd75d932d8bb583178091ae5b6c7ddb8e64a133"
+      "sha256": "be890a4cfaf7a194596583f882f491ced515f1714e3d07fc59413a83af5dad31"
     },
     {
       "@type": "cr:FileObject",
@@ -323,7 +323,7 @@
       "contentSize": "16838725",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/nurseCharting.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "36323eed84ae6afdfca9de56f773f46a0085cd3dbaf4cc43b6ab0cc137448366"
+      "sha256": "475000d63d4ef883b2e891d7197997201300bedc13fcf23e67add1abee11dafe"
     },
     {
       "@type": "cr:FileObject",
@@ -332,7 +332,7 @@
       "contentSize": "142402",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/pastHistory.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "e4f174257005916b075aafe7b2b3d8bc0282e9101a7ca6766f826aaec6e48124"
+      "sha256": "3af6e3101c037347365d81daf73ea487ba12e14a6a10f0b2ed53beed2e30c7d5"
     },
     {
       "@type": "cr:FileObject",
@@ -341,7 +341,7 @@
       "contentSize": "1458011",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/medication.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "d7c4c1322783f6cf645ac6a3534bb3b58d009f4f081c11eb168f462834d72204"
+      "sha256": "480a251570a27932110452f66f248061f712c306663c274f78f90875648cb720"
     },
     {
       "@type": "cr:FileObject",
@@ -350,7 +350,7 @@
       "contentSize": "1826646",
       "contentUrl": "physionet.org/files/eicu-crd-demo/2.0.1/intakeOutput.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "9f3edfe2ec915c9eb430631d817bdec96a718c31d6a77dccab38f2980a964ea1"
+      "sha256": "45db8ee0e64a4e3745284bde5828f740175770c45d00ea0c27daff789d18106e"
     }
   ],
   "recordSet": [
@@ -358,7 +358,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_0",
       "name": "diagnosis",
-      "description": "Records from diagnosis.csv.gz (24978 rows)",
+      "description": "Records from diagnosis.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -478,7 +478,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_1",
       "name": "vitalAperiodic",
-      "description": "Records from vitalAperiodic.csv.gz (274088 rows)",
+      "description": "Records from vitalAperiodic.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -694,7 +694,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_2",
       "name": "admissionDx",
-      "description": "Records from admissionDx.csv.gz (7578 rows)",
+      "description": "Records from admissionDx.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -798,7 +798,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_3",
       "name": "respiratoryCare",
-      "description": "Records from respiratoryCare.csv.gz (5436 rows)",
+      "description": "Records from respiratoryCare.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -1350,7 +1350,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_4",
       "name": "nurseAssessment",
-      "description": "Records from nurseAssessment.csv.gz (91589 rows)",
+      "description": "Records from nurseAssessment.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -1486,7 +1486,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_5",
       "name": "hospital",
-      "description": "Records from hospital.csv.gz (186 rows)",
+      "description": "Records from hospital.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -1558,7 +1558,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_6",
       "name": "vitalPeriodic",
-      "description": "Records from vitalPeriodic.csv.gz (1634960 rows)",
+      "description": "Records from vitalPeriodic.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -1870,7 +1870,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_7",
       "name": "carePlanGeneral",
-      "description": "Records from carePlanGeneral.csv.gz (33148 rows)",
+      "description": "Records from carePlanGeneral.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -1974,7 +1974,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_8",
       "name": "patient",
-      "description": "Records from patient.csv.gz (2520 rows)",
+      "description": "Records from patient.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -2446,7 +2446,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_9",
       "name": "carePlanGoal",
-      "description": "Records from carePlanGoal.csv.gz (3633 rows)",
+      "description": "Records from carePlanGoal.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -2566,7 +2566,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_10",
       "name": "treatment",
-      "description": "Records from treatment.csv.gz (38290 rows)",
+      "description": "Records from treatment.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -2654,7 +2654,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_11",
       "name": "apacheApsVar",
-      "description": "Records from apacheApsVar.csv.gz (2205 rows)",
+      "description": "Records from apacheApsVar.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -3078,7 +3078,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_12",
       "name": "carePlanEOL",
-      "description": "Records from carePlanEOL.csv.gz (15 rows)",
+      "description": "Records from carePlanEOL.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -3166,7 +3166,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_13",
       "name": "infusiondrug",
-      "description": "Records from infusiondrug.csv.gz (38256 rows)",
+      "description": "Records from infusiondrug.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -3285,7 +3285,7 @@
           "@id": "file_13_volumeoffluid",
           "name": "volumeoffluid",
           "description": "Column 'volumeoffluid' from infusiondrug.csv.gz",
-          "dataType": "cr:Float64",
+          "dataType": "cr:Int64",
           "source": {
             "@id": "file_13_source_volumeoffluid",
             "fileObject": {
@@ -3318,7 +3318,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_14",
       "name": "carePlanCareProvider",
-      "description": "Records from carePlanCareProvider.csv.gz (5627 rows)",
+      "description": "Records from carePlanCareProvider.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -3454,7 +3454,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_15",
       "name": "microLab",
-      "description": "Records from microLab.csv.gz (342 rows)",
+      "description": "Records from microLab.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -3574,7 +3574,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_16",
       "name": "nurseCare",
-      "description": "Records from nurseCare.csv.gz (42080 rows)",
+      "description": "Records from nurseCare.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -3710,7 +3710,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_17",
       "name": "physicalExam",
-      "description": "Records from physicalExam.csv.gz (84058 rows)",
+      "description": "Records from physicalExam.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -3814,7 +3814,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_18",
       "name": "respiratoryCharting",
-      "description": "Records from respiratoryCharting.csv.gz (176089 rows)",
+      "description": "Records from respiratoryCharting.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -3934,7 +3934,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_19",
       "name": "note",
-      "description": "Records from note.csv.gz (24758 rows)",
+      "description": "Records from note.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -4070,7 +4070,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_20",
       "name": "admissiondrug",
-      "description": "Records from admissiondrug.csv.gz (7417 rows)",
+      "description": "Records from admissiondrug.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -4302,7 +4302,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_21",
       "name": "lab",
-      "description": "Records from lab.csv.gz (434660 rows)",
+      "description": "Records from lab.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -4470,7 +4470,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_22",
       "name": "apachePredVar",
-      "description": "Records from apachePredVar.csv.gz (2205 rows)",
+      "description": "Records from apachePredVar.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -5294,7 +5294,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_23",
       "name": "customLab",
-      "description": "Records from customLab.csv.gz (30 rows)",
+      "description": "Records from customLab.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -5414,7 +5414,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_24",
       "name": "apachePatientResult",
-      "description": "Records from apachePatientResult.csv.gz (3676 rows)",
+      "description": "Records from apachePatientResult.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -5790,7 +5790,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_25",
       "name": "carePlanInfectiousDisease",
-      "description": "Records from carePlanInfectiousDisease.csv.gz (112 rows)",
+      "description": "Records from carePlanInfectiousDisease.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -5926,7 +5926,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_26",
       "name": "allergy",
-      "description": "Records from allergy.csv.gz (2475 rows)",
+      "description": "Records from allergy.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -6142,7 +6142,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_27",
       "name": "nurseCharting",
-      "description": "Records from nurseCharting.csv.gz (1477163 rows)",
+      "description": "Records from nurseCharting.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -6278,7 +6278,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_28",
       "name": "pastHistory",
-      "description": "Records from pastHistory.csv.gz (12109 rows)",
+      "description": "Records from pastHistory.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -6414,7 +6414,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_29",
       "name": "medication",
-      "description": "Records from medication.csv.gz (75604 rows)",
+      "description": "Records from medication.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -6662,7 +6662,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_30",
       "name": "intakeOutput",
-      "description": "Records from intakeOutput.csv.gz (100466 rows)",
+      "description": "Records from intakeOutput.csv.gz",
       "field": [
         {
           "@type": "cr:Field",

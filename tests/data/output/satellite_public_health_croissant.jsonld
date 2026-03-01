@@ -172,7 +172,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_0",
       "name": "metadata",
-      "description": "Records from metadata.csv (10 rows)",
+      "description": "Records from metadata.csv",
       "field": [
         {
           "@type": "cr:Field",

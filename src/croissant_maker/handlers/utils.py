@@ -1,9 +1,6 @@
 """Shared utilities for file handlers."""
 
 import hashlib
-import gzip  # Built-in: handles .gz (gzip) compression
-import bz2  # Built-in: handles .bz2 (bzip2) compression
-import lzma  # Built-in: handles .xz/.lzma (LZMA/xz) compression
 import logging
 import re
 from pathlib import Path
@@ -12,12 +9,14 @@ from typing import Dict, Union
 import pyarrow as pa
 import pyarrow.types as patypes
 
-# Set up logger for this module
 logger = logging.getLogger(__name__)
 
 # Characters that are invalid in Croissant @id values.
 # mlcroissant rejects whitespace and URI-unsafe characters like >, (, ), %.
 _INVALID_ID_CHARS = re.compile(r"[^A-Za-z0-9_.\-]")
+
+# Read files in 64 KB chunks for hashing — power-of-2 aligns with OS page cache.
+_HASH_CHUNK_SIZE = 64 * 1024
 
 
 def sanitize_id(raw: str) -> str:
@@ -118,10 +117,10 @@ def infer_column_types_from_arrow_schema(schema: pa.Schema) -> Dict[str, str]:
 
 def compute_file_hash(file_path: Union[str, Path]) -> str:
     """
-    Compute SHA256 hash of a file for integrity verification.
+    Compute SHA256 hash of a file for Croissant integrity verification.
 
-    Handles regular and compressed files by reading the uncompressed
-    content in chunks for memory efficiency.
+    Reads the file as-is on disk (compressed bytes included) rather than
+    decompressing first. This matches what users download and verify.
 
     Args:
         file_path: Path to the file (str or Path object)
@@ -145,24 +144,11 @@ def compute_file_hash(file_path: Union[str, Path]) -> str:
 
     try:
         sha256_hash = hashlib.sha256()
-        name_lower = file_path.name.lower()
-
-        if name_lower.endswith(".gz"):
-            with gzip.open(file_path, "rb") as f:
-                for chunk in iter(lambda: f.read(4096), b""):
-                    sha256_hash.update(chunk)
-        elif name_lower.endswith(".bz2"):
-            with bz2.open(file_path, "rb") as f:
-                for chunk in iter(lambda: f.read(4096), b""):
-                    sha256_hash.update(chunk)
-        elif name_lower.endswith(".xz"):
-            with lzma.open(file_path, "rb") as f:
-                for chunk in iter(lambda: f.read(4096), b""):
-                    sha256_hash.update(chunk)
-        else:
-            with open(file_path, "rb") as f:
-                for chunk in iter(lambda: f.read(4096), b""):
-                    sha256_hash.update(chunk)
+        # Hash the file as-is on disk (compressed bytes). This matches what users
+        # download and verify, and avoids decompressing gigabytes just for hashing.
+        with open(file_path, "rb") as f:
+            for chunk in iter(lambda: f.read(_HASH_CHUNK_SIZE), b""):
+                sha256_hash.update(chunk)
 
         return sha256_hash.hexdigest()
 

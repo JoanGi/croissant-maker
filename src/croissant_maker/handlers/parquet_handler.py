@@ -24,7 +24,7 @@ class ParquetHandler(FileTypeHandler):
     def can_handle(self, file_path: Path) -> bool:
         return file_path.suffix.lower() == ".parquet"
 
-    def extract_metadata(self, file_path: Path) -> dict:
+    def extract_metadata(self, file_path: Path, **kwargs) -> dict:
         """Extract metadata from a Parquet file via pyarrow schema inspection."""
         if not file_path.exists():
             raise FileNotFoundError(f"Parquet file not found: {file_path}")

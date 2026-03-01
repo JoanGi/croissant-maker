@@ -7,6 +7,7 @@ from rich.progress import Progress, SpinnerColumn, TextColumn
 from typing import Optional, List
 
 from croissant_maker.metadata_generator import MetadataGenerator
+from croissant_maker.files import discover_files
 
 # Create the Typer application instance
 app = typer.Typer(
@@ -74,6 +75,11 @@ def main(
         None,
         "--creator",
         help="Creator information. Format: 'Name[,Email[,URL]]'. Use multiple times for multiple creators. Examples: --creator 'John Doe' --creator 'Jane Smith,jane@example.com,https://jane.com'",
+    ),
+    count_csv_rows: bool = typer.Option(
+        False,
+        "--count-csv-rows",
+        help="Count exact row numbers for CSV files (slow for large datasets)",
     ),
 ) -> None:
     """🥐 **Croissant Maker** - Generate rich metadata for your datasets"""
@@ -149,6 +155,20 @@ def main(
 
                     parsed_creators.append(creator_obj)
 
+            # Warn early if --count-csv-rows is set but dataset has no CSV files
+            if count_csv_rows:
+                csv_extensions = {".csv", ".csv.gz", ".csv.bz2", ".csv.xz"}
+                all_files = discover_files(input)
+                has_csv = any(
+                    any(str(f).endswith(ext) for ext in csv_extensions)
+                    for f in all_files
+                )
+                if not has_csv:
+                    typer.echo(
+                        "Warning: --count-csv-rows has no effect: no CSV files found in dataset",
+                        err=True,
+                    )
+
             generator = MetadataGenerator(
                 dataset_path=input,
                 name=name,
@@ -159,6 +179,7 @@ def main(
                 version=dataset_version,
                 date_published=date_published,
                 creators=parsed_creators if parsed_creators else None,
+                count_csv_rows=count_csv_rows,
             )
 
             # Generate metadata

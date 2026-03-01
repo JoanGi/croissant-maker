@@ -67,7 +67,7 @@ class CSVHandler(FileTypeHandler):
     # Streaming with per-column type promotion
     # ------------------------------------------------------------------
 
-    def _stream_csv(self, file_path: Path):
+    def _stream_csv(self, file_path: Path, count_rows: bool = False):
         """Return (column_types, columns, num_rows) by streaming the CSV."""
         overrides = {}
         col_names = None
@@ -78,7 +78,7 @@ class CSVHandler(FileTypeHandler):
                 column_types=overrides or None,
             )
             try:
-                result = self._read_streaming(file_path, opts)
+                result = self._read_streaming(file_path, opts, count_rows=count_rows)
                 if overrides:
                     logger.info(
                         "%s: promoted %d column(s) due to type conflicts",
@@ -128,11 +128,11 @@ class CSVHandler(FileTypeHandler):
         opts = pa_csv.ConvertOptions(
             column_types={n: pa.string() for n in col_names},
         )
-        return self._read_streaming(file_path, opts)
+        return self._read_streaming(file_path, opts, count_rows=count_rows)
 
     @staticmethod
-    def _read_streaming(file_path: Path, convert_options):
-        """Open a streaming CSV reader, extract schema, and count rows."""
+    def _read_streaming(file_path: Path, convert_options, count_rows: bool = False):
+        """Open a streaming CSV reader, extract schema, and optionally count rows."""
         try:
             reader = pa_csv.open_csv(
                 str(file_path),
@@ -145,9 +145,12 @@ class CSVHandler(FileTypeHandler):
         column_types = infer_column_types_from_arrow_schema(schema)
         columns = schema.names
 
-        num_rows = 0
-        for batch in reader:
-            num_rows += batch.num_rows
+        if count_rows:
+            num_rows = 0
+            for batch in reader:
+                num_rows += batch.num_rows
+        else:
+            num_rows = None
 
         return column_types, columns, num_rows
 
@@ -185,7 +188,9 @@ class CSVHandler(FileTypeHandler):
             or name_lower.endswith(".csv.xz")
         )
 
-    def extract_metadata(self, file_path: Path) -> dict:
+    def extract_metadata(
+        self, file_path: Path, count_rows: bool = False, **kwargs
+    ) -> dict:
         """
         Extract comprehensive metadata from a CSV file.
 
@@ -194,6 +199,8 @@ class CSVHandler(FileTypeHandler):
 
         Args:
             file_path: Path to the CSV file
+            count_rows: If True, scan entire file for exact row count.
+                        Defaults to False for performance (returns num_rows=None).
 
         Returns:
             Dictionary containing:
@@ -208,9 +215,11 @@ class CSVHandler(FileTypeHandler):
         if not file_path.exists():
             raise FileNotFoundError(f"CSV file not found: {file_path}")
 
-        column_types, columns, num_rows = self._stream_csv(file_path)
+        column_types, columns, num_rows = self._stream_csv(
+            file_path, count_rows=count_rows
+        )
 
-        if num_rows == 0:
+        if count_rows and num_rows == 0:
             raise ValueError(f"CSV file is empty: {file_path}")
 
         # Extract file properties

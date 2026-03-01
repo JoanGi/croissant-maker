@@ -26,7 +26,7 @@ class WFDBHandler(FileTypeHandler):
     def can_handle(self, file_path: Path) -> bool:
         return file_path.suffix.lower() == ".hea"
 
-    def extract_metadata(self, file_path: Path) -> dict:
+    def extract_metadata(self, file_path: Path, **kwargs) -> dict:
         if not file_path.exists():
             raise FileNotFoundError(f"WFDB header file not found: {file_path}")
 

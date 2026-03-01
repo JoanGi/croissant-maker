@@ -42,6 +42,7 @@ class MetadataGenerator:
         version: Optional[str] = None,
         date_published: Optional[str] = None,
         creators: Optional[List[Dict[str, str]]] = None,
+        count_csv_rows: bool = False,
     ):
         """
         Initialize the metadata generator for a dataset.
@@ -73,6 +74,12 @@ class MetadataGenerator:
         self.version = version
         self.date_published = date_published
         self.creators = creators
+        # Generic options dict passed to every handler via **kwargs.
+        # Handlers declare what they use; others ignore the rest.
+        # To add a new handler-specific flag: add one key here — the call site never changes.
+        self._handler_kwargs = {
+            "count_rows": count_csv_rows,
+        }
 
     def generate_metadata(self) -> dict:
         """
@@ -97,7 +104,9 @@ class MetadataGenerator:
             handler = find_handler(full_path)
             if handler:
                 try:
-                    metadata = handler.extract_metadata(full_path)
+                    metadata = handler.extract_metadata(
+                        full_path, **self._handler_kwargs
+                    )
                     metadata["relative_path"] = str(file_path)
                     file_metadata.append(metadata)
                 except Exception as e:
@@ -284,10 +293,12 @@ class MetadataGenerator:
                     )
                     fields.append(field)
 
+                num_rows = file_meta.get("num_rows")
+                row_desc = f" ({num_rows} rows)" if num_rows is not None else ""
                 record_set = mlc.RecordSet(
                     id=f"recordset_{recordset_counter}",
                     name=get_clean_record_name(file_meta["file_name"]),
-                    description=f"Records from {file_meta['file_name']} ({file_meta.get('num_rows', 'unknown')} rows)",
+                    description=f"Records from {file_meta['file_name']}{row_desc}",
                     fields=fields,
                 )
                 record_sets.append(record_set)

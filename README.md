@@ -70,6 +70,7 @@ croissant-maker --input /path/to/dataset \
 | `--dataset-version` | Version | `--dataset-version "1.0.0"` | |
 | `--date-published` | Publication date | `--date-published "2023-12-15"` | |
 | `--no-validate` | Skip validation | `--no-validate` | |
+| `--count-csv-rows` | Count exact row numbers for CSV files (slow for large datasets) | `--count-csv-rows` | |
 
 ### Validate a Croissant Metadata File
 

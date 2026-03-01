@@ -106,7 +106,7 @@
       "contentSize": "611200",
       "contentUrl": "hosp/poe.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "25ece4e141c2d3e300565fe1957fcdd7d4048a3d66e0f483027543e35f4e056d"
+      "sha256": "bf850e1519f2c3df8c706dc5e2afcb83e86e1d6e4afd7c01426b6b07d25cfeef"
     },
     {
       "@type": "cr:FileObject",
@@ -115,7 +115,7 @@
       "contentSize": "510070",
       "contentUrl": "hosp/d_hcpcs.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "71e7b47a5b2267adeb9657ad4b9d41011a8dfdc16b6b84b6ee33fe94dde299f7"
+      "sha256": "493ea7fe1d22afd5abd9138be8a4e50c776986feded6891143120d2bc724d881"
     },
     {
       "@type": "cr:FileObject",
@@ -124,7 +124,7 @@
       "contentSize": "26574",
       "contentUrl": "hosp/poe_detail.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "7585a34f5cb225e7549f4eaeb0eef4ef63b5ce46b952f90c9ec481608e7c8673"
+      "sha256": "7010cbc4d74e9a7c998be33c3736af301ebe2c6678969e25800d28e90a2b5825"
     },
     {
       "@type": "cr:FileObject",
@@ -133,7 +133,7 @@
       "contentSize": "1083",
       "contentUrl": "hosp/patients.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "d6f7f45cad83a977cfe40cf80572ad13df3970071c5f91bf2fd319c3903516f0"
+      "sha256": "59dcc6cd8450ddf03ad32cc7d76e41caa4c9633541715987f590c74835cf6fae"
     },
     {
       "@type": "cr:FileObject",
@@ -142,7 +142,7 @@
       "contentSize": "24198",
       "contentUrl": "hosp/diagnoses_icd.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "ffb493244933ae7e1cbb17183f78a2e65625bd253489c01d376bfdc49df774af"
+      "sha256": "958565670c0b3903c0c12825366dc2bae8561d2d55f16feac0c949dd630ed3e4"
     },
     {
       "@type": "cr:FileObject",
@@ -151,7 +151,7 @@
       "contentSize": "692290",
       "contentUrl": "hosp/emar_detail.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "35731cf81adca9b99fbbf3d2c08f9f21ea4a7c5ee840015ced073a1bf4e36eed"
+      "sha256": "8ca5a09f2fa2e0ad5d77121fd62bf5f58bad056713223d9758b4ecd03fa0a435"
     },
     {
       "@type": "cr:FileObject",
@@ -160,7 +160,7 @@
       "contentSize": "151283",
       "contentUrl": "hosp/provider.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "e875328b0edd1a71a946ca51cdbae7a6110d058ee3640f838b902718361fe985"
+      "sha256": "7a56a24cfe2fcd5ed1995c696417bf8f5c09088eb546503b07362c504228c63a"
     },
     {
       "@type": "cr:FileObject",
@@ -169,7 +169,7 @@
       "contentSize": "606447",
       "contentUrl": "hosp/prescriptions.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "3865f9f13bec8bdfa6eca6205d26d1a55c40051a5c7d396609a68e532775db9d"
+      "sha256": "33c392ba5b9299b08eca0a61911ba106f0aebdba26ed31b856bb9ffd49fe3654"
     },
     {
       "@type": "cr:FileObject",
@@ -178,7 +178,7 @@
       "contentSize": "7459",
       "contentUrl": "hosp/drgcodes.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "3afe54488408372c92b3c1deebbeff70dcbc0b70c72fdd187fa1039d52ff33b9"
+      "sha256": "9ec47b7a49514cfe243236ca2eb5c5b517d2215d6589efb2bd80166883243537"
     },
     {
       "@type": "cr:FileObject",
@@ -187,7 +187,7 @@
       "contentSize": "1813533",
       "contentUrl": "hosp/d_icd_diagnoses.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "e1eaafe3916f25cb2162dc95c31c280d834434531afa3a91b40bdf9943e58d2b"
+      "sha256": "0f715a3c4c5e44400305d4deb86ff648e499a3bfcb946f353e8b030022d3ec06"
     },
     {
       "@type": "cr:FileObject",
@@ -196,7 +196,7 @@
       "contentSize": "13520",
       "contentUrl": "hosp/d_labitems.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "6a758494be345531d17ff3f2efcb0fefad78e7bfce83a4168f4ab5132e148856"
+      "sha256": "72ea5f020469fd24543bd98ab3bd0a4f645a5a4b7802d9d52af20d736f9d76db"
     },
     {
       "@type": "cr:FileObject",
@@ -205,7 +205,7 @@
       "contentSize": "23480",
       "contentUrl": "hosp/transfers.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "75a8f8c8bcaecb57406bbec43aa1cffee72cf2b91195a949aa7f21426432da8b"
+      "sha256": "41151539886d12d57159b65ffe4d7df5a7ef8ceb7cd113ea9a56fbfbfd78a87c"
     },
     {
       "@type": "cr:FileObject",
@@ -214,7 +214,7 @@
       "contentSize": "11072",
       "contentUrl": "hosp/admissions.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "b08247c945ce0c69c505cf3427c6442135b89d9ea6315a89d4adb7b1733ce1d4"
+      "sha256": "910b9f160ffdf1e08ea673585393f347c773ccc87d66875c627584a903ae8493"
     },
     {
       "@type": "cr:FileObject",
@@ -223,7 +223,7 @@
       "contentSize": "1963979",
       "contentUrl": "hosp/labevents.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "f3feb488a9b7c6039e47a30d4f0ff9cd869fedf0e02df6c250d7405c0db1a8d9"
+      "sha256": "d51a4cf1ea63245abe7d544b0d50a928e9ee2ec5eb9a5ce85500aed0bd6c6dfc"
     },
     {
       "@type": "cr:FileObject",
@@ -232,7 +232,7 @@
       "contentSize": "503956",
       "contentUrl": "hosp/pharmacy.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "62719a1c4b731fa604c6864994e3947169c60620a2180326dd777d7c7232e984"
+      "sha256": "3403865a279464b14d038a66b30ba3d609933f517262ea0402fef020046bd197"
     },
     {
       "@type": "cr:FileObject",
@@ -241,7 +241,7 @@
       "contentSize": "6602",
       "contentUrl": "hosp/procedures_icd.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "03161547a84ac86657f27c4fedd5d5f1e1b391b29e3faa53a6e6171e141b9fb6"
+      "sha256": "68f21dcba9ae0c4b7faa3ef38aa950a8ebeb6d167bc74416314dccdcf28674e0"
     },
     {
       "@type": "cr:FileObject",
@@ -250,7 +250,7 @@
       "contentSize": "963",
       "contentUrl": "hosp/hcpcsevents.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "ad058e432fb2cf136c3edb0edbc64058488426c09b792778c8bfd1f7b7b3c0d7"
+      "sha256": "87f8af876aa6a608c6761068386e93e0c91b59ff2ce0d7a650fe8d5ba833247d"
     },
     {
       "@type": "cr:FileObject",
@@ -259,7 +259,7 @@
       "contentSize": "5072",
       "contentUrl": "hosp/services.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "78d0093c8829fa86dd1c1895128e62615d0da15a8faa4123f0ecfe00213dfcc7"
+      "sha256": "28306d68e952fe2cc9ef6e60b0afda93c27d7a06bee8ef39e71ccc4de5ded793"
     },
     {
       "@type": "cr:FileObject",
@@ -268,7 +268,7 @@
       "contentSize": "1082613",
       "contentUrl": "hosp/d_icd_procedures.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "ce5e256bc06ff8e2071e190799fe3bb99bd58be4d66d6b81276d61bfe9f65688"
+      "sha256": "a921a20fbf3220e2a7fe874d6392d671c1cc769a001ef0a7841b80eb01030bb6"
     },
     {
       "@type": "cr:FileObject",
@@ -277,7 +277,7 @@
       "contentSize": "17339",
       "contentUrl": "hosp/omr.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "64a75e495f3c85b16981c94fe72c4818f8dd67eeff534604a12d5f974c9c938f"
+      "sha256": "6d7c69dbb2c79b9d1de7d1e68f3424ad248821d7c074dc6537d7290774af39b9"
     },
     {
       "@type": "cr:FileObject",
@@ -286,7 +286,7 @@
       "contentSize": "734347",
       "contentUrl": "hosp/emar.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "ab8c5661c454edb2d0626e08b21e94585e72ee6e0e45bee22cfa89908117236d"
+      "sha256": "f14a4b5597abcc2e8d62d291c7839347ef6260d4c548ea534ab62df6b2f49adc"
     },
     {
       "@type": "cr:FileObject",
@@ -295,7 +295,7 @@
       "contentSize": "80991",
       "contentUrl": "hosp/microbiologyevents.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "2a26301e17a1d0b1ab9dabc76fc180a19b19bcd612eb055f699b5a415461fc80"
+      "sha256": "fa462443cc5777ebf9d833f71c67f2a89b4a074eb376320da70bed220e918ad4"
     },
     {
       "@type": "cr:FileObject",
@@ -304,7 +304,7 @@
       "contentSize": "119448",
       "contentUrl": "icu/datetimeevents.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "50fd6008bf73f71fbbcbe58ddce6953aea876ead9c5a39841606b3ad9df3a298"
+      "sha256": "b9f05bb9b1c5aa52e9f25585853583a2e07046f22ed68419c20ef8daa8762da5"
     },
     {
       "@type": "cr:FileObject",
@@ -313,7 +313,7 @@
       "contentSize": "43441",
       "contentUrl": "icu/caregiver.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "61a6937a2e9b91e6daa32ce564418278f3b8b6a076a8c1fd4212fdd32bd943d6"
+      "sha256": "88ee01d7f21aadee273e2d1ce65b0f14fe96fe87ab42e2b40c89aa8103ef6371"
     },
     {
       "@type": "cr:FileObject",
@@ -322,7 +322,7 @@
       "contentSize": "601205",
       "contentUrl": "icu/ingredientevents.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "75aa430b3c38521ae0662559a28fb1960d26b6e96e8cd14e413f3af484b7e22b"
+      "sha256": "c9b0afdca936a9485422f72d227b3d1942125bb6d969eef57fdf0233458c6b23"
     },
     {
       "@type": "cr:FileObject",
@@ -331,7 +331,7 @@
       "contentSize": "788253",
       "contentUrl": "icu/inputevents.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "34ff7b19dbdfdf4608c4de3ad589a4b1624f6e767a09cd5489fe6d2448e4edfd"
+      "sha256": "69597dca47e554e16645ca505167e9f39b07c1724e915ba54ccfb40f5fa0078a"
     },
     {
       "@type": "cr:FileObject",
@@ -340,7 +340,7 @@
       "contentSize": "44817",
       "contentUrl": "icu/procedureevents.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "f998085a5565540b0a407ee3172b023f56939593e3b981c77001df2f23905d32"
+      "sha256": "37454f286dc1eee6cef666b4fdf91452eb8bea6bfc3cf98d4ad179ebb4a741fa"
     },
     {
       "@type": "cr:FileObject",
@@ -349,7 +349,7 @@
       "contentSize": "57073",
       "contentUrl": "icu/d_items.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "3a9ff93b12727ec17000896c144c03573bccae0f8f71d5d5c2ba773ebf7ffa5d"
+      "sha256": "1690467a822345226a041c1149237c418aa60098c6b699fb4cef64d73588a01f"
     },
     {
       "@type": "cr:FileObject",
@@ -358,7 +358,7 @@
       "contentSize": "5549389",
       "contentUrl": "icu/chartevents.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "e1b858b4d8bf721900e78dd702448430a5d3bb9652209f00baed35ac6c04eebd"
+      "sha256": "90f096ad3db847ed1aaec073f8d86053c51fea7b616d3b046410e030f083d560"
     },
     {
       "@type": "cr:FileObject",
@@ -367,7 +367,7 @@
       "contentSize": "5667",
       "contentUrl": "icu/icustays.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "9a79a759372a6075560a0dcf53d10122e691a8a4dce7141101f6660ab8476f42"
+      "sha256": "e05e81aa52a3022e522b6832a898101a69b84e64c17bb344d819e458d5bc21b3"
     },
     {
       "@type": "cr:FileObject",
@@ -376,7 +376,7 @@
       "contentSize": "96413",
       "contentUrl": "icu/outputevents.csv.gz",
       "encodingFormat": "application/gzip",
-      "sha256": "afdafb80d6e7353ead549862acbbb93d8d96db08e8843e23ce36c6371ffc0134"
+      "sha256": "3bcf68adaa11070d6c24e13d4bfaaf718606cd33b0df7f28e0de240c357a869e"
     }
   ],
   "recordSet": [
@@ -384,7 +384,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_0",
       "name": "demo_subject_id",
-      "description": "Records from demo_subject_id.csv (100 rows)",
+      "description": "Records from demo_subject_id.csv",
       "field": [
         {
           "@type": "cr:Field",
@@ -408,7 +408,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_1",
       "name": "poe",
-      "description": "Records from poe.csv.gz (45154 rows)",
+      "description": "Records from poe.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -608,7 +608,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_2",
       "name": "d_hcpcs",
-      "description": "Records from d_hcpcs.csv.gz (89200 rows)",
+      "description": "Records from d_hcpcs.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -680,7 +680,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_3",
       "name": "poe_detail",
-      "description": "Records from poe_detail.csv.gz (3795 rows)",
+      "description": "Records from poe_detail.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -768,7 +768,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_4",
       "name": "patients",
-      "description": "Records from patients.csv.gz (100 rows)",
+      "description": "Records from patients.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -872,7 +872,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_5",
       "name": "diagnoses_icd",
-      "description": "Records from diagnoses_icd.csv.gz (4506 rows)",
+      "description": "Records from diagnoses_icd.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -960,7 +960,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_6",
       "name": "emar_detail",
-      "description": "Records from emar_detail.csv.gz (72018 rows)",
+      "description": "Records from emar_detail.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -1496,7 +1496,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_7",
       "name": "provider",
-      "description": "Records from provider.csv.gz (40508 rows)",
+      "description": "Records from provider.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -1520,7 +1520,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_8",
       "name": "prescriptions",
-      "description": "Records from prescriptions.csv.gz (18087 rows)",
+      "description": "Records from prescriptions.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -1799,7 +1799,7 @@
           "@id": "file_8_form_val_disp",
           "name": "form_val_disp",
           "description": "Column 'form_val_disp' from prescriptions.csv.gz",
-          "dataType": "sc:Text",
+          "dataType": "cr:Int64",
           "source": {
             "@id": "file_8_source_form_val_disp",
             "fileObject": {
@@ -1864,7 +1864,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_9",
       "name": "drgcodes",
-      "description": "Records from drgcodes.csv.gz (454 rows)",
+      "description": "Records from drgcodes.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -1984,7 +1984,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_10",
       "name": "d_icd_diagnoses",
-      "description": "Records from d_icd_diagnoses.csv.gz (109775 rows)",
+      "description": "Records from d_icd_diagnoses.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -2040,7 +2040,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_11",
       "name": "d_labitems",
-      "description": "Records from d_labitems.csv.gz (1622 rows)",
+      "description": "Records from d_labitems.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -2112,7 +2112,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_12",
       "name": "transfers",
-      "description": "Records from transfers.csv.gz (1190 rows)",
+      "description": "Records from transfers.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -2232,7 +2232,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_13",
       "name": "admissions",
-      "description": "Records from admissions.csv.gz (275 rows)",
+      "description": "Records from admissions.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -2496,7 +2496,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_14",
       "name": "labevents",
-      "description": "Records from labevents.csv.gz (107727 rows)",
+      "description": "Records from labevents.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -2760,7 +2760,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_15",
       "name": "pharmacy",
-      "description": "Records from pharmacy.csv.gz (15306 rows)",
+      "description": "Records from pharmacy.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -3039,7 +3039,7 @@
           "@id": "file_15_basal_rate",
           "name": "basal_rate",
           "description": "Column 'basal_rate' from pharmacy.csv.gz",
-          "dataType": "cr:Float64",
+          "dataType": "cr:Int64",
           "source": {
             "@id": "file_15_source_basal_rate",
             "fileObject": {
@@ -3200,7 +3200,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_16",
       "name": "procedures_icd",
-      "description": "Records from procedures_icd.csv.gz (722 rows)",
+      "description": "Records from procedures_icd.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -3304,7 +3304,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_17",
       "name": "hcpcsevents",
-      "description": "Records from hcpcsevents.csv.gz (61 rows)",
+      "description": "Records from hcpcsevents.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -3408,7 +3408,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_18",
       "name": "services",
-      "description": "Records from services.csv.gz (319 rows)",
+      "description": "Records from services.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -3496,7 +3496,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_19",
       "name": "d_icd_procedures",
-      "description": "Records from d_icd_procedures.csv.gz (85257 rows)",
+      "description": "Records from d_icd_procedures.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -3552,7 +3552,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_20",
       "name": "omr",
-      "description": "Records from omr.csv.gz (2964 rows)",
+      "description": "Records from omr.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -3640,7 +3640,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_21",
       "name": "emar",
-      "description": "Records from emar.csv.gz (35835 rows)",
+      "description": "Records from emar.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -3840,7 +3840,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_22",
       "name": "microbiologyevents",
-      "description": "Records from microbiologyevents.csv.gz (2899 rows)",
+      "description": "Records from microbiologyevents.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -4248,7 +4248,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_23",
       "name": "datetimeevents",
-      "description": "Records from datetimeevents.csv.gz (15280 rows)",
+      "description": "Records from datetimeevents.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -4416,7 +4416,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_24",
       "name": "caregiver",
-      "description": "Records from caregiver.csv.gz (15468 rows)",
+      "description": "Records from caregiver.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -4440,7 +4440,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_25",
       "name": "ingredientevents",
-      "description": "Records from ingredientevents.csv.gz (25728 rows)",
+      "description": "Records from ingredientevents.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -4720,7 +4720,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_26",
       "name": "inputevents",
-      "description": "Records from inputevents.csv.gz (20404 rows)",
+      "description": "Records from inputevents.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -5031,7 +5031,7 @@
           "@id": "file_26_totalamount",
           "name": "totalamount",
           "description": "Column 'totalamount' from inputevents.csv.gz",
-          "dataType": "cr:Float64",
+          "dataType": "cr:Int64",
           "source": {
             "@id": "file_26_source_totalamount",
             "fileObject": {
@@ -5144,7 +5144,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_27",
       "name": "procedureevents",
-      "description": "Records from procedureevents.csv.gz (1468 rows)",
+      "description": "Records from procedureevents.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -5504,7 +5504,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_28",
       "name": "d_items",
-      "description": "Records from d_items.csv.gz (4014 rows)",
+      "description": "Records from d_items.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -5656,7 +5656,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_29",
       "name": "chartevents",
-      "description": "Records from chartevents.csv.gz (668862 rows)",
+      "description": "Records from chartevents.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -5840,7 +5840,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_30",
       "name": "icustays",
-      "description": "Records from icustays.csv.gz (140 rows)",
+      "description": "Records from icustays.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
@@ -5976,7 +5976,7 @@
       "@type": "cr:RecordSet",
       "@id": "recordset_31",
       "name": "outputevents",
-      "description": "Records from outputevents.csv.gz (9362 rows)",
+      "description": "Records from outputevents.csv.gz",
       "field": [
         {
           "@type": "cr:Field",
