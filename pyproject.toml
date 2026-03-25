@@ -1,60 +1,49 @@
 [build-system]
-# Specifies the build tools needed to create the package.
-# While newer versions exist, this provides broad compatibility for builders.
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [project]
 name = "croissant-maker"
 version = "0.0.1"
 description = "A tool to automatically generate Croissant metadata for datasets."
 readme = "README.md"
-# Requires Python 3.10 or newer.
-# Chosen as a balance between modern features (used by dependencies like Typer)
-# and allowing users on slightly older, but still supported, Python versions.
-# Avoids forcing users onto the absolute latest version (3.13+).
 requires-python = ">=3.10"
 authors = [
-  { name="Rafi Al Attrach", email="rafiaa@mit.edu" },
-  { name="Tom Pollard", email="tpollard@mit.edu" },
+  { name = "Rafi Al Attrach", email = "rafiaa@mit.edu" },
+  { name = "Tom Pollard", email = "tpollard@mit.edu" },
 ]
-
-# Core runtime dependencies needed for the tool to function.
-# Note: pandas is not a direct dependency — it is available transitively via wfdb.
+# Runtime dependencies (PEP 508 specifiers, lowercase canonical names).
+# Note: pandas is not a direct dependency — available transitively via wfdb.
 dependencies = [
-    "typer >= 0.9.0",
-    "mlcroissant >= 1.0.20",
-    "rich >= 13.0.0",
-    "wfdb >= 4.0.0",
-    "pyarrow >= 15.0.0",
-    "Pillow >= 11.0.0",
-    "tifffile >= 2024.1.0",
+    "typer>=0.9.0",
+    "mlcroissant>=1.0.20",
+    "rich>=13.0.0",
+    "wfdb>=4.0.0",
+    "pyarrow>=15.0.0",
+    "pillow>=11.0.0",
+    "tifffile>=2024.1.0",
 ]
 
-# Optional dependencies, installed via `pip install '.[test]'`
-[project.optional-dependencies]
-# Dependencies needed only for running the test suite.
-test = [
-    # Test runner framework.
-    "pytest >= 7.0",
-]
-# Optional dependencies for development and testing.
-dev = [
-    "ruff >= 0.1.0",
-    "pre-commit >= 3.0.0"
-]
-
-# Console script entry points - makes 'croissant-maker' command available
 [project.scripts]
 croissant-maker = "croissant_maker.__main__:app"
 
-[tool.setuptools.packages.find]
-where = ["src"]
+# PEP 735 dependency groups — not propagated to downstream consumers.
+# Install with: uv sync --group dev
+[dependency-groups]
+test = ["pytest>=7.0"]
+dev = [
+    "ruff>=0.1.0",
+    "pre-commit>=3.0.0",
+    { include-group = "test" },
+]
 
-[tool.setuptools.package-dir]
-"" = "src"
+[tool.hatch.build.targets.wheel]
+packages = ["src/croissant_maker"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 # Suppress rdflib warning from mlcroissant (external dependency)
 filterwarnings = ["ignore::DeprecationWarning:rdflib.*"]
+
+[tool.ruff]
+src = ["src"]

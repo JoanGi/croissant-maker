@@ -6,7 +6,7 @@ A tool to automatically generate [Croissant](https://mlcommons.org/en/news/crois
 
 ## Installation (Development)
 
-It is highly recommended to use a virtual environment to manage dependencies.
+This project uses [uv](https://docs.astral.sh/uv/) for environment and dependency management.
 
 1.  **Clone the repository:**
     ```bash
@@ -14,33 +14,29 @@ It is highly recommended to use a virtual environment to manage dependencies.
     cd croissant-maker
     ```
 
-2.  **Create and activate a virtual environment:**
+2.  **Install dependencies:**
     ```bash
-    # Create a venv
-    python3 -m venv .venv
-
-    # Activate the venv
-    source .venv/bin/activate
+    uv sync --group dev
     ```
+    This creates a `.venv`, installs the package in editable mode, and includes all development and test dependencies.
 
-3.  **Install dependencies:** (Make sure the venv is active)
+3.  **Install the pre-commit hook** (run once; fires automatically on every `git commit` thereafter):
     ```bash
-    pip install -e '.[test]'
+    uv run pre-commit install
     ```
-    This installs the package in editable mode along with testing requirements *inside* your virtual environment.
 
 ## Usage
 
 After installation, you can use the `croissant-maker` CLI:
 
 ```bash
-croissant-maker --help
+uv run croissant-maker --help
 ```
 
 ### Generate Croissant Metadata
 
 ```bash
-croissant-maker --input /path/to/dataset --creator "Your Name" --output my-metadata.jsonld
+uv run croissant-maker --input /path/to/dataset --creator "Your Name" --output my-metadata.jsonld
 ```
 
 ### Metadata Override Options
@@ -48,7 +44,7 @@ croissant-maker --input /path/to/dataset --creator "Your Name" --output my-metad
 You can override default metadata fields:
 
 ```bash
-croissant-maker --input /path/to/dataset \
+uv run croissant-maker --input /path/to/dataset \
   --name "My Dataset" \
   --description "A machine learning dataset" \
   --creator "John Doe,john@example.com,https://john.com" \
@@ -77,28 +73,76 @@ croissant-maker --input /path/to/dataset \
 Validation checks that the file can be loaded by `mlcroissant` and conforms to the basic structure of the specification.
 
 ```bash
-croissant-maker validate my-metadata.jsonld
+uv run croissant-maker validate my-metadata.jsonld
 ```
 
 ## Testing
 
 ```bash
 # Run all tests
-pytest -v
+uv run pytest -v
 
-# Run specific test
-pytest tests/test_cli.py::test_creator_formats -v
+# Run a single test
+uv run pytest tests/test_cli.py::test_creator_formats -v
 ```
 
 ## Pre-Commit Hooks & Code Quality
 
-This project uses `pre-commit` with [Ruff](https://docs.astral.sh/ruff/) to automatically lint and format Python code, ensuring PEP 8 compliance and consistency before commits are made. Basic configuration file checks are also included.
+This project uses `pre-commit` with [Ruff](https://docs.astral.sh/ruff/) to automatically lint and format Python code before commits. Basic configuration file checks (TOML, YAML) are also included.
 
-**Setup (run once after cloning and installing dev dependencies):**
+After running `uv run pre-commit install` once, the hook fires automatically on every `git commit`. To run it manually across all files:
+
 ```bash
-# (Ensure dev dependencies are installed: pip install -e '.[dev]')
-pre-commit install
+uv run pre-commit run --all-files
 ```
+
+## Releases
+
+This project uses [release-please](https://github.com/googleapis/release-please) to automate versioning and GitHub Releases. You do not need to manually edit the version number or write a changelog.
+
+### How it works
+
+Every time a PR is merged into `main`, the release-please GitHub Action opens or updates a **Release PR** — a bot-authored pull request that:
+
+- bumps the version in `pyproject.toml`
+- generates a `CHANGELOG.md` entry listing every merged PR since the last release
+
+The Release PR stays open and accumulates entries as more PRs are merged. When the team is ready to cut a release, **merge the Release PR**. That merge:
+
+1. creates a git tag (e.g. `v0.1.0`)
+2. creates a GitHub Release with the generated notes
+3. triggers the `publish` job, which builds the package with `uv build`
+
+Nothing else is required — no manual tagging, no direct commits to `main`.
+
+### Commit message conventions
+
+release-please reads commit messages (or PR titles, which become the squash-merge commit) to decide what kind of version bump to apply:
+
+| Prefix | Effect | Example |
+|--------|--------|---------|
+| `feat:` | minor bump (`0.1.0 → 0.2.0`) | `feat: add Parquet handler` |
+| `fix:` | patch bump (`0.1.0 → 0.1.1`) | `fix: handle empty CSV files` |
+| `perf:` | patch bump | `perf: stream CSV in chunks` |
+| `feat!:` or `BREAKING CHANGE:` in body | major bump (`0.1.0 → 1.0.0`) | `feat!: remove legacy API` |
+| `docs:`, `build:`, `chore:` | no bump (appear in changelog or hidden) | `docs: update README` |
+
+If a PR contains only `chore:` or `build:` commits it will not trigger a version bump on its own, but those commits will appear in the Release PR's diff so you can decide to merge it when combined with a real bump.
+
+### One-time repository setup
+
+The workflow needs permission to open PRs and create tags. In the GitHub repository settings:
+
+**Settings → Actions → General → Workflow permissions → select "Read and write permissions"**
+
+Without this the bot will fail silently and no Release PR will appear.
+
+### Publishing to PyPI
+
+The `publish` job in `.github/workflows/release-please.yaml` already runs `uv build` on every release. To enable PyPI upload:
+
+1. Add a PyPI API token as a repository secret named `PYPI_API_TOKEN`
+2. Uncomment the publish step in the workflow file
 
 ## License
 
