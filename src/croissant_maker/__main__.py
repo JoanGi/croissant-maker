@@ -81,6 +81,23 @@ def main(
         "--count-csv-rows",
         help="Count exact row numbers for CSV files (slow for large datasets)",
     ),
+    include: Optional[List[str]] = typer.Option(
+        None,
+        "--include",
+        "-I",
+        help="Glob pattern to include (e.g., '*.csv'). Can be used multiple times.",
+    ),
+    exclude: Optional[List[str]] = typer.Option(
+        None,
+        "--exclude",
+        "-E",
+        help="Glob pattern to exclude (e.g., '*.tmp'). Can be used multiple times.",
+    ),
+    list_files: bool = typer.Option(
+        False,
+        "--dry-run",
+        help="List the matching files that would be processed and exit.",
+    ),
 ) -> None:
     """🥐 **Croissant Maker** - Generate rich metadata for your datasets"""
 
@@ -112,7 +129,7 @@ def main(
         raise typer.Exit(code=1)
 
     # 2. At least one creator required by the Croissant spec (cardinality MANY)
-    if not creator:
+    if not creator and not list_files:
         typer.echo(
             "Error: At least one '--creator' option is required "
             "to comply with the Croissant specification.",
@@ -123,6 +140,20 @@ def main(
             err=True,
         )
         raise typer.Exit(code=1)
+
+    # If just listing files, output and exit
+    if list_files:
+        try:
+            matched_files = discover_files(
+                input, include_patterns=include, exclude_patterns=exclude
+            )
+            typer.echo(f"Matched {len(matched_files)} files in '{input}':")
+            for f in matched_files:
+                typer.echo(f"  {f}")
+        except Exception as e:
+            typer.echo(f"Error listing files: {e}", err=True)
+            raise typer.Exit(code=1)
+        return
 
     try:
         with Progress(
@@ -158,7 +189,9 @@ def main(
             # Warn early if --count-csv-rows is set but dataset has no CSV files
             if count_csv_rows:
                 csv_extensions = {".csv", ".csv.gz", ".csv.bz2", ".csv.xz"}
-                all_files = discover_files(input)
+                all_files = discover_files(
+                    input, include_patterns=include, exclude_patterns=exclude
+                )
                 has_csv = any(
                     any(str(f).endswith(ext) for ext in csv_extensions)
                     for f in all_files
@@ -180,6 +213,8 @@ def main(
                 date_published=date_published,
                 creators=parsed_creators if parsed_creators else None,
                 count_csv_rows=count_csv_rows,
+                includes=include,
+                excludes=exclude,
             )
 
             # Generate metadata
