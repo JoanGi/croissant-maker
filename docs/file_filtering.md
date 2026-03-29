@@ -18,7 +18,7 @@ Specify patterns to ignore certain files or directories. Exclusion happens *afte
 - `croissant-maker -i dataset --exclude "tmp/*"`
 - `croissant-maker -i dataset -I "*.jpg" -E "thumbnails/*"`
 
-### Dry-Run Discovery (`--dry-run`)
+### Dry Run (`--dry-run`)
 Preview which files will be included in the metadata generation without actually running the processing logic.
 - `croissant-maker -i dataset --include "*.csv" --dry-run`
 

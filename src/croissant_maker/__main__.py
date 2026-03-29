@@ -93,10 +93,10 @@ def main(
         "-E",
         help="Glob pattern to exclude (e.g., '*.tmp'). Can be used multiple times.",
     ),
-    list_files: bool = typer.Option(
+    dry_run: bool = typer.Option(
         False,
         "--dry-run",
-        help="List the matching files that would be processed and exit.",
+        help="Perform a dry run to list matching files without generating metadata.",
     ),
 ) -> None:
     """🥐 **Croissant Maker** - Generate rich metadata for your datasets"""
@@ -129,7 +129,7 @@ def main(
         raise typer.Exit(code=1)
 
     # 2. At least one creator required by the Croissant spec (cardinality MANY)
-    if not creator and not list_files:
+    if not creator and not dry_run:
         typer.echo(
             "Error: At least one '--creator' option is required "
             "to comply with the Croissant specification.",
@@ -142,12 +142,23 @@ def main(
         raise typer.Exit(code=1)
 
     # If just listing files, output and exit
-    if list_files:
+    if dry_run:
+        from croissant_maker.handlers.registry import (
+            find_handler,
+            register_all_handlers,
+        )
+
         try:
-            matched_files = discover_files(
+            register_all_handlers()
+            all_files = discover_files(
                 input, include_patterns=include, exclude_patterns=exclude
             )
-            typer.echo(f"Matched {len(matched_files)} files in '{input}':")
+            # Only keep files that have a registered handler
+            matched_files = [f for f in all_files if find_handler(Path(input) / f)]
+
+            typer.echo(
+                f"Dry run: Matched {len(matched_files)} files with registered handlers in '{input}':"
+            )
             for f in matched_files:
                 typer.echo(f"  {f}")
         except Exception as e:

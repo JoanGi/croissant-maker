@@ -59,6 +59,9 @@ class MetadataGenerator:
             version: Dataset version
             date_published: Publication date (e.g., "2023-12-15" or "2023-12-15T10:30:00")
             creators: List of creator dictionaries with name, email, url fields
+            count_csv_rows: Whether to count exact row numbers for CSV files
+            includes: Optional list of glob patterns to include. Applies before excludes.
+            excludes: Optional list of glob patterns to exclude. Applies after includes.
 
         Raises:
             ValueError: If the dataset path is not a directory
