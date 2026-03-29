@@ -36,16 +36,10 @@ def discover_files(
         ]
 
         if include_patterns:
-            files = [
-                f for f in files
-                if any(f.match(p) for p in include_patterns)
-            ]
+            files = [f for f in files if any(f.match(p) for p in include_patterns)]
 
         if exclude_patterns:
-            files = [
-                f for f in files
-                if not any(f.match(p) for p in exclude_patterns)
-            ]
+            files = [f for f in files if not any(f.match(p) for p in exclude_patterns)]
 
         return files
     except FileNotFoundError as e:
