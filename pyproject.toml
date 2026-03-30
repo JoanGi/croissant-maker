@@ -11,6 +11,7 @@ requires-python = ">=3.10"
 authors = [
   { name = "Rafi Al Attrach", email = "rafiaa@mit.edu" },
   { name = "Tom Pollard", email = "tpollard@mit.edu" },
+  { name = "Sebastian Lobentanzer", email = "sebastian.lobentanzer@gmail.com"},
 ]
 # Runtime dependencies (PEP 508 specifiers, lowercase canonical names).
 # Note: pandas is not a direct dependency — available transitively via wfdb.
