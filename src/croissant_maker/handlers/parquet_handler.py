@@ -30,13 +30,13 @@ class ParquetHandler(FileTypeHandler):
             raise FileNotFoundError(f"Parquet file not found: {file_path}")
 
         try:
-            pq = ParquetFile(str(file_path))
-            schema = pq.schema_arrow
-            num_rows = pq.metadata.num_rows if pq.metadata is not None else 0
+            with ParquetFile(str(file_path)) as pq:
+                schema = pq.schema_arrow
+                num_rows = pq.metadata.num_rows if pq.metadata is not None else 0
 
-            # Use the shared Arrow type mapper (same as CSV handler)
-            column_types = infer_column_types_from_arrow_schema(schema)
-            columns = [field.name for field in schema]
+                # Use the shared Arrow type mapper (same as CSV handler)
+                column_types = infer_column_types_from_arrow_schema(schema)
+                columns = [field.name for field in schema]
 
             file_size = file_path.stat().st_size
             sha256_hash = compute_file_hash(file_path)
