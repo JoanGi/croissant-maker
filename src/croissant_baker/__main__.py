@@ -164,7 +164,7 @@ def main(
             if creator:
                 for creator_info in creator:
                     # Parse format: "Name[,Email[,URL]]"
-                    parts = [part.strip() for part in creator_info.split(",")]
+                    parts = [part.strip() for part in creator_info.rsplit(",", maxsplit=2)]
 
                     if not parts[0]:  # Empty name
                         continue
