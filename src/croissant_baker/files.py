@@ -26,7 +26,7 @@ def discover_files(dir_path: str) -> List[Path]:
         return [
             file.relative_to(directory)
             for file in directory.rglob("*")
-            if file.is_file()
+            if file.is_file() and not any(part.startswith(".") for part in file.parts)
         ]
     except FileNotFoundError as e:
         raise FileNotFoundError(f"Directory not found: {e}")
