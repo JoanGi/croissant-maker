@@ -178,89 +178,6 @@
   "recordSet": [
     {
       "@type": "cr:RecordSet",
-      "@id": "drug_molecule",
-      "name": "drug_molecule",
-      "description": "Records from part-00000.parquet (5 rows)",
-      "field": [
-        {
-          "@type": "cr:Field",
-          "@id": "drug_molecule/id",
-          "name": "id",
-          "description": "Column 'id'",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "file_8"
-            },
-            "extract": {
-              "column": "id"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "drug_molecule/name",
-          "name": "name",
-          "description": "Column 'name'",
-          "dataType": "sc:Text",
-          "source": {
-            "fileObject": {
-              "@id": "file_8"
-            },
-            "extract": {
-              "column": "name"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "drug_molecule/maxClinicalTrialPhase",
-          "name": "maxClinicalTrialPhase",
-          "description": "Column 'maxClinicalTrialPhase'",
-          "dataType": "cr:Float32",
-          "source": {
-            "fileObject": {
-              "@id": "file_8"
-            },
-            "extract": {
-              "column": "maxClinicalTrialPhase"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "drug_molecule/yearOfFirstApproval",
-          "name": "yearOfFirstApproval",
-          "description": "Column 'yearOfFirstApproval'",
-          "dataType": "cr:Int16",
-          "source": {
-            "fileObject": {
-              "@id": "file_8"
-            },
-            "extract": {
-              "column": "yearOfFirstApproval"
-            }
-          }
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "drug_molecule/hasBeenWithdrawn",
-          "name": "hasBeenWithdrawn",
-          "description": "Column 'hasBeenWithdrawn'",
-          "dataType": "sc:Boolean",
-          "source": {
-            "fileObject": {
-              "@id": "file_8"
-            },
-            "extract": {
-              "column": "hasBeenWithdrawn"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "@type": "cr:RecordSet",
       "@id": "targets",
       "name": "targets",
       "description": "Partitioned table 'targets' (2 Parquet files, 10 total rows)",
@@ -635,6 +552,89 @@
             },
             "extract": {
               "column": "isTherapeuticArea"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "drug_molecule",
+      "name": "drug_molecule",
+      "description": "Records from part-00000.parquet (5 rows)",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "drug_molecule/id",
+          "name": "id",
+          "description": "Column 'id'",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "file_8"
+            },
+            "extract": {
+              "column": "id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "drug_molecule/name",
+          "name": "name",
+          "description": "Column 'name'",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "file_8"
+            },
+            "extract": {
+              "column": "name"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "drug_molecule/maxClinicalTrialPhase",
+          "name": "maxClinicalTrialPhase",
+          "description": "Column 'maxClinicalTrialPhase'",
+          "dataType": "cr:Float32",
+          "source": {
+            "fileObject": {
+              "@id": "file_8"
+            },
+            "extract": {
+              "column": "maxClinicalTrialPhase"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "drug_molecule/yearOfFirstApproval",
+          "name": "yearOfFirstApproval",
+          "description": "Column 'yearOfFirstApproval'",
+          "dataType": "cr:Int16",
+          "source": {
+            "fileObject": {
+              "@id": "file_8"
+            },
+            "extract": {
+              "column": "yearOfFirstApproval"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "drug_molecule/hasBeenWithdrawn",
+          "name": "hasBeenWithdrawn",
+          "description": "Column 'hasBeenWithdrawn'",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "file_8"
+            },
+            "extract": {
+              "column": "hasBeenWithdrawn"
             }
           }
         }

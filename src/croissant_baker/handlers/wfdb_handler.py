@@ -3,8 +3,10 @@
 from pathlib import Path
 import wfdb
 
+import mlcroissant as mlc
+
 from croissant_baker.handlers.base_handler import FileTypeHandler
-from croissant_baker.handlers.utils import compute_file_hash
+from croissant_baker.handlers.utils import compute_file_hash, sanitize_id
 
 
 class WFDBHandler(FileTypeHandler):
@@ -102,3 +104,40 @@ class WFDBHandler(FileTypeHandler):
             metadata["fmt"] = record.fmt
 
         return metadata
+
+    def build_croissant(self, file_metas: list, file_ids: list) -> tuple:
+        record_sets = []
+        for file_id, file_meta in zip(file_ids, file_metas):
+            fields = []
+            for signal_name, signal_type in file_meta["signal_types"].items():
+                safe_name = sanitize_id(signal_name)
+                fields.append(
+                    mlc.Field(
+                        id=f"{file_id}_{safe_name}",
+                        name=signal_name,
+                        description=f"Signal '{signal_name}' from {file_meta['record_name']}",
+                        data_types=[signal_type],
+                        source=mlc.Source(
+                            file_object=file_id,
+                        ),
+                    )
+                )
+
+            duration = file_meta.get("duration_seconds", 0)
+            num_samples = file_meta.get("num_samples", 0)
+            sampling_freq = file_meta.get("sampling_frequency", 0)
+
+            record_sets.append(
+                mlc.RecordSet(
+                    id=sanitize_id(file_meta["record_name"]),
+                    name=file_meta["record_name"],
+                    description=(
+                        f"WFDB record {file_meta['record_name']}: "
+                        f"{file_meta.get('num_signals', 0)} signals at {sampling_freq} Hz, "
+                        f"{num_samples} samples ({duration:.2f} seconds)"
+                    ),
+                    fields=fields,
+                )
+            )
+
+        return [], record_sets

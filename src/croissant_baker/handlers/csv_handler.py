@@ -4,13 +4,16 @@ import logging
 import re
 from pathlib import Path
 
+import mlcroissant as mlc
 import pyarrow as pa
 import pyarrow.csv as pa_csv
 
 from croissant_baker.handlers.base_handler import FileTypeHandler
 from croissant_baker.handlers.utils import (
     compute_file_hash,
+    get_clean_record_name,
     infer_column_types_from_arrow_schema,
+    sanitize_id,
 )
 
 logger = logging.getLogger(__name__)
@@ -248,3 +251,38 @@ class CSVHandler(FileTypeHandler):
             "num_columns": len(columns),
             "columns": columns,
         }
+
+    def build_croissant(self, file_metas: list, file_ids: list) -> tuple:
+        record_sets = []
+        for file_id, file_meta in zip(file_ids, file_metas):
+            rs_name = get_clean_record_name(file_meta["file_name"])
+            rs_id = sanitize_id(rs_name)
+
+            fields = []
+            for col_name, col_type in file_meta["column_types"].items():
+                safe_name = sanitize_id(col_name)
+                field_id = f"{rs_id}/{safe_name}"
+                field = mlc.Field(
+                    id=field_id,
+                    name=col_name,
+                    description=f"Column '{col_name}' from {file_meta['file_name']}",
+                    data_types=[col_type],
+                    source=mlc.Source(
+                        file_object=file_id,
+                        extract=mlc.Extract(column=col_name),
+                    ),
+                )
+                fields.append(field)
+
+            num_rows = file_meta.get("num_rows")
+            row_desc = f" ({num_rows} rows)" if num_rows is not None else ""
+            record_sets.append(
+                mlc.RecordSet(
+                    id=rs_id,
+                    name=rs_name,
+                    description=f"Records from {file_meta['file_name']}{row_desc}",
+                    fields=fields,
+                )
+            )
+
+        return [], record_sets

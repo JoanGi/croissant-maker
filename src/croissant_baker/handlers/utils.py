@@ -6,6 +6,7 @@ import re
 from pathlib import Path
 from typing import Dict, Union
 
+import mlcroissant as mlc
 import pyarrow as pa
 import pyarrow.types as patypes
 
@@ -164,6 +165,59 @@ def compute_file_hash(file_path: Union[str, Path]) -> str:
 
     except (IOError, OSError) as e:
         raise PermissionError(f"Cannot read file {file_path}: {e}")
+
+
+def _build_fields(
+    arrow_schema,
+    parent_id: str,
+    source_ref: dict,
+    col_path_prefix: str = "",
+) -> list:
+    """Recursively build mlc.Field objects from a PyArrow schema or struct type.
+
+    Handles three cases:
+    - Scalar column: maps to a Croissant type via map_arrow_type().
+    - List column: sets is_array=True; recurses on the element type.
+    - Struct column: recurses to produce sub_fields.
+    """
+    fields = []
+    for arrow_field in arrow_schema:
+        col_name = arrow_field.name
+        arrow_type = arrow_field.type
+        safe_name = sanitize_id(col_name)
+        field_id = f"{parent_id}/{safe_name}"
+        col_path = f"{col_path_prefix}/{col_name}" if col_path_prefix else col_name
+
+        is_array = is_arrow_list(arrow_type)
+        inner_type = arrow_type.value_type if is_array else arrow_type
+
+        source = mlc.Source(
+            extract=mlc.Extract(column=col_path),
+            **source_ref,
+        )
+
+        if patypes.is_struct(inner_type):
+            sub_fields = _build_fields(inner_type, field_id, source_ref, col_path)
+            field = mlc.Field(
+                id=field_id,
+                name=col_name,
+                description=f"Column '{col_name}'",
+                is_array=True if is_array else None,
+                source=source,
+                sub_fields=sub_fields,
+            )
+        else:
+            col_type = map_arrow_type(inner_type)
+            field = mlc.Field(
+                id=field_id,
+                name=col_name,
+                description=f"Column '{col_name}'",
+                data_types=[col_type],
+                is_array=True if is_array else None,
+                source=source,
+            )
+        fields.append(field)
+    return fields
 
 
 def get_clean_record_name(file_name: str) -> str:

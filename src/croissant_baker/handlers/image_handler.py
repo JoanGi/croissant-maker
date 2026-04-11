@@ -4,6 +4,8 @@ import logging
 from pathlib import Path
 from typing import Dict, List
 
+import mlcroissant as mlc
+
 from croissant_baker.handlers.base_handler import FileTypeHandler
 from croissant_baker.handlers.utils import compute_file_hash
 
@@ -140,6 +142,62 @@ class ImageHandler(FileTypeHandler):
                 "image_format": img_meta["image_format"],
             },
         }
+
+    def build_croissant(self, file_metas: list, file_ids: list) -> tuple:
+        summary = collect_image_summary(file_metas)
+        w_lo, w_hi = summary["width_range"]
+        h_lo, h_hi = summary["height_range"]
+        b_lo, b_hi = summary["num_bands_range"]
+        formats_str = ", ".join(
+            f"{fmt} ({cnt})" for fmt, cnt in summary["format_counts"].items()
+        )
+
+        if w_lo == w_hi and h_lo == h_hi:
+            dims = f"{w_lo}x{h_lo}"
+        else:
+            dims = f"{w_lo}-{w_hi}x{h_lo}-{h_hi}"
+
+        bands_note = f", {b_lo}-{b_hi} bands" if b_hi > 4 else ""
+
+        extensions = set()
+        mime_types = set()
+        for meta in file_metas:
+            ext = Path(meta["file_name"]).suffix.lower()
+            extensions.add(ext)
+            mime_types.add(meta["encoding_format"])
+
+        includes = [f"**/*{ext}" for ext in sorted(extensions)]
+
+        fileset_id = "image-files"
+        image_fileset = mlc.FileSet(
+            id=fileset_id,
+            name="Image files",
+            description=f"{summary['num_images']} image files ({formats_str})",
+            encoding_formats=sorted(mime_types),
+            includes=includes,
+        )
+
+        image_fields = [
+            mlc.Field(
+                id="images/image_content",
+                name="image",
+                description=f"Image content ({summary['num_images']} files, {formats_str})",
+                data_types=["sc:ImageObject"],
+                source=mlc.Source(
+                    file_set=fileset_id,
+                    extract=mlc.Extract(file_property="content"),
+                ),
+            ),
+        ]
+
+        image_record_set = mlc.RecordSet(
+            id="images",
+            name="images",
+            description=f"{summary['num_images']} images ({dims}{bands_note}): {formats_str}",
+            fields=image_fields,
+        )
+
+        return [image_fileset], [image_record_set]
 
 
 def collect_image_summary(image_metadata_list: List[Dict]) -> Dict:

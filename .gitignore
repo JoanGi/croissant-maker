@@ -176,5 +176,8 @@ cython_debug/
 # AI assistant context files
 CLAUDE.md
 
+# Planning
+.planning/
+
 # Large reference outputs not under version control
 tests/data/output/open_targets_official_croissant.json
