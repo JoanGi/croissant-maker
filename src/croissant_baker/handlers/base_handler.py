@@ -8,12 +8,16 @@ class FileTypeHandler(ABC):
     """
     Abstract base class for file type handlers.
 
-    Each handler is responsible for:
-    - Detecting if it can process a specific file type
-    - Extracting comprehensive metadata from files it handles
+    Each handler is responsible for three things:
+    - can_handle: decide if this handler owns a given file
+    - extract_metadata: extract raw metadata from a single file
+    - build_croissant: turn that metadata into Croissant FileSets + RecordSets
 
-    This design allows easy extension to new file formats (Parquet, JSON, etc.)
-    without modifying existing code.
+    All three are required. The generator owns FileObject creation and ID
+    assignment; build_croissant returns only FileSets and RecordSets.
+
+    Adding a new format: subclass this, implement all three methods,
+    register the instance in registry.py — no other files need to change.
     """
 
     @abstractmethod
@@ -51,5 +55,23 @@ class FileTypeHandler(ABC):
 
         Raises:
             Exception: If the file cannot be processed
+        """
+        pass
+
+    @abstractmethod
+    def build_croissant(self, file_metas: list, file_ids: list) -> tuple:
+        """Build Croissant FileSets and RecordSets for all files this handler processed.
+
+        Called once per handler after the FileObject loop. Receives all metadata
+        dicts this handler produced for the dataset, with pre-assigned FileObject
+        IDs aligned by position.
+
+        Args:
+            file_metas: metadata dicts from extract_metadata, one per file
+            file_ids: FileObject IDs assigned by the generator, aligned with file_metas
+
+        Returns:
+            (additional_distributions, record_sets) — additional_distributions
+            contains FileSets only. FileObjects are always owned by the generator.
         """
         pass
